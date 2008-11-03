@@ -1,0 +1,11 @@
+/* Guilherme Blanco contributions */
+
+/* Fix the top bar display on IE */
+#top-navigation {
+    margin-top: -15px;
+}
+
+/* Fix page content display on IE */
+#content {
+    margin-top: -15px;
+}

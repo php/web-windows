@@ -1,0 +1,43 @@
+a, a:active {
+	text-decoration: none;
+	color: #345570;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+}
+a:visited {color: #48468F;}
+a:hover, a:focus {text-decoration: underline; color: red;}
+body {
+	background-image: url(/images/php-win-logo.png);
+	background-repeat: no-repeat;
+	background-color: #585891;
+	color: #203444;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	margin-top: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-bottom: 8px;
+	padding: 0px;
+
+}
+h2 {
+	margin-bottom: 80px;
+	color: #FFFFFF;
+	margin-left: 200px;
+	margin-top: 12px;
+
+}
+pre.header {
+	position: relative;
+	margin-top: 70px;
+	background-color: Lavender;
+	font-family: Arial;
+	font-size: 1.3em;
+}
+table {margin-left: 12px;}
+th, td { font-family: \"Courier New\", Courier, mono; font-size: 9pt; text-align: left;}
+th { font-weight: bold; padding-right: 14px; padding-bottom: 23px; padding-top: 2px;}
+td {padding-right: 14px;}
+td.s, th.s {text-align: right;}
+div.list { background-color: white; background-image: url('http://www.libgd.org/skins/libgd/bluebg.jpg'); background-repeat: repeat-x; border-top: 1px solid #345570; border-bottom: 1px solid #345570; padding-top: 10px; padding-bottom: 14px;}
+div.foot { text-align: center; font-family: \"Courier New\", Courier, monospace; font-size: 10pt; color: #FFFFFF; padding-top: 4px;}
