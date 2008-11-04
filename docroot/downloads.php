@@ -111,7 +111,7 @@ include TPL_PATH . 'left_column.php';
 							<span class="md5sum">md5: acd06f16b7ae0d13669e1f25d64bd479</span>
 <!--	    						<blockquote><strong>Update 2008/09/12:</strong>Fix missing XML support, no src change</blockquote>-->
 
-	    						<blockquote><strong>Note:</strong>VC9 x86 builds, not compabitible with official apache releases.<br />
+	    						<blockquote><strong>Note:</strong>VC9 x86 builds, not compatible with official apache releases.<br />
 							    Experimental builds for x86 platform.
 		    					</blockquote>
 		    					<a href="http://downloads.php.net/pierre/php-debug-pack-5.3.0alpha2-Win32-VC9.zip">Debug pack</a>
@@ -119,7 +119,7 @@ include TPL_PATH . 'left_column.php';
 						    <li>
 						    	<a href="http://downloads.php.net/pierre/php-5.3.0alpha2-Win32-VC9-x64.zip">PHP 5.3.0alpha2 VC9 x64</a> - 2 September 2008<br />
     							<span class="md5sum">md5: acd06f16b7ae0d13669e1f25d64bd479</span>
-    							<blockquote><strong>Note:</strong>VC9 x64 builds, not compabitible with official apache releases.<br />
+    							<blockquote><strong>Note:</strong>VC9 x64 builds, not compatible with official apache releases.<br />
     							Experimental builds for x64 platform.
     							</blockquote>
 						    </li>
