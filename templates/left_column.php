@@ -19,7 +19,9 @@
                             </div><!-- .block -->
 <?php
 if (strpos($_SERVER['SCRIPT_FILENAME'], 'snapshots') !== FALSE
- || strpos($_SERVER['SCRIPT_FILENAME'], 'qa') !== FALSE)
+ || strpos($_SERVER['SCRIPT_FILENAME'], 'qa') !== FALSE
+ || strpos($_SERVER['SCRIPT_FILENAME'], 'download') !== FALSE
+ )
 
 {
 ?>
