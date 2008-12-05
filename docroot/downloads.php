@@ -28,7 +28,7 @@ $version_order = array(
                                 <span class="corners-top"><span></span></span>
                                 
                                 <div class="info entry"><!-- .info -->
-                                    <h2 name="top" id="top">PHP Windows Snapshots</h2>
+                                    <h2 name="top" id="top">PHP Windows Releases</h2>
                                     
                                     <select onchange="window.location.hash=this.options[this.selectedIndex].value">
                                         <option value="top" selected="true">Select an option to direct access...</option>
