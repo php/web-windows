@@ -40,7 +40,8 @@ function buildReleasesCache($snaps_dir, $release=false)
 	foreach (glob('*.zip') as $file) {
 		$lower_file = strtolower($file);
 
-		if (strpos($lower_file, '-debug-pack-') === false && strpos($lower_file, '-src') === false) {
+		if (strpos($lower_file, '-debug-pack-') === false && strpos($lower_file, '-src') === false
+			&& strpos($lower_file, '-test-pack-') === false) {
 			$basename = str_replace('.zip',  '', $file);
 			$elm = explode('-', $basename);
 			if (count($elm) > 5) {
@@ -140,11 +141,28 @@ function buildSnapsCache($snaps_dir, $release=false)
 			}
 
 			if (!array_key_exists($point_version, $releases)) {
+
+
+
 				$releases[$point_version] = array(
 						'size' => bytes2string(filesize('php-' . $point_version . DIRECTORY_SEPARATOR . 'php-' . $point_version . '-src-latest.zip')),
 						'file' => 'php-' . $point_version . '/php-' . $point_version . '-src-latest.zip',
 						);
+
+				$testpack_file = 'php-test-pack-' . $point_version . '-latest.zip';
+				if (file_exists($testpack_file)) {
+					if (file_exists($testpack_file)) {
+						$releases[$point_version]['test-pack'] = array(
+								'file' => $testpack_file,
+								'size' => bytes2string(filesize($testpack_file)),
+
+								);
+
+					}
+				}
+
 			}
+
 			$releases[$point_version][$intermediate_version] = array(
 					'mtime' => $mtime,
 					'size' => bytes2string(filesize('php-' . $full_version . '-latest.zip')),
@@ -166,6 +184,7 @@ function buildSnapsCache($snaps_dir, $release=false)
 						);
 
 			}
+
 			$installer_file = 'php-' . $full_version . '-latest.msi';
 			if (file_exists($installer_file)) {
 				$releases[$point_version][$intermediate_version]['installer'] = array(
@@ -248,9 +267,15 @@ function buildPointVersionBox($point_version, $version, $version_order, $mode = 
 		<p class="news-date"></p>
 		<p>
 		<a href="' . $path . $version['file'] . '">Download source code</a> [' . $version['size'] . ']
-		</p>
-		<div>
-		';
+		</p>';
+		
+	if (isset($version['test-pack'])) {
+		$str .= '<p>
+			<a href="' . $path . $version['test-pack']['file'] . '">Download Tests packages</a> [' . $version['test-pack']['size'] . ']
+			</p>
+			';
+	}
+	$str .= '<div';
 	unset($version['size'], $version['file']);
 	foreach($version_order as $v) {
 		if (isset($version[$v])) {
@@ -324,6 +349,7 @@ function buildIntermediateReleaseBox($point_version, $intermediate_version, $bui
 				<span class="md5sum">sha1: '.$build_version['debug-pack']['sha1'].'</span>
 				';
 	}
+
 	if (!$release) {
 		$ret .= '<blockquote>
 			<strong>Logs:</strong>
