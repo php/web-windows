@@ -232,7 +232,7 @@ function buildOptionPerReleases($releases, $order)
 
 function buildPointVersionBox($point_version, $version, $version_order, $mode = false)
 {
-	if ($mode == 'release') {
+	if ($mode === 'release') {
 		$path = '/downloads/releases/';
 	} elseif ($mode) {
 		$path = '/downloads/qa/';
@@ -283,7 +283,8 @@ function buildIntermediateReleaseBox($point_version, $intermediate_version, $bui
 					);
 
 	$intermediate_version_human = $version_human[$intermediate_version];
-	if ($release == 'release') {
+		if ($release === 'release') {
+
 		$path = '/downloads/releases/';
 		$version = $build_version['version'];
 	} elseif ($release) {
