@@ -22,6 +22,16 @@ include TPL_PATH . 'left_column.php';
                             
                             <div class="block"><!-- .block -->
                                 <span class="corners-top"><span></span></span>
+
+                                <div class="info entry"><!-- .info -->
+                                    <h3 class="summary entry-title">PHP 5.2.9RC3 released</h3>
+                                    <p class="news-date"><abbr class="published newsdate" title="2009-02-19T21:03:42+02:00">23-Oct-2008</abbr></p>
+                                    <div class="newsImage"></div>
+                                    <div>
+                                        <p>PHP 5.2.9RC3 is now available for testing. Get it <a href="/qa/">here</a>.</p>
+                                    </div>
+                                </div><!-- .info -->
+ 
                                 <div class="info entry"><!-- .info -->
                                     <h3 class="summary entry-title">Installer and non thread safe builds available for the snapshots</h3>
                                     <p class="news-date"><abbr class="published newsdate" title="2008-10-23T11:03:42+02:00">23-Oct-2008</abbr></p>
