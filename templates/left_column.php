@@ -40,7 +40,7 @@ if (strpos($_SERVER['SCRIPT_FILENAME'], 'snapshots') !== FALSE
 				    
 				    <p>VC9 Versions are compiled with the Visual Studio 2008 compiler and 
 				    have improvements in performance and stability. The VC9 versions 
-				    require you to have the <a href="http://www.microsoft.com/downloads/details.aspx?FamilyID=9B2DA534-3E03-4391-8A4D-074B9F2BC1BF">Microsoft 2008 C++ Runtime </a> installed</p>
+				    require you to have the <a href="http://www.microsoft.com/downloads/details.aspx?FamilyID=9B2DA534-3E03-4391-8A4D-074B9F2BC1BF">Microsoft 2008 C++ Runtime (x86) </a> or he <a href="http://www.microsoft.com/downloads/details.aspx?familyid=bd2a6171-e2d6-4230-b809-9a8d7548c1b6&displaylang=en">Microsoft 2008 C++ Runtime (x64) </a>  installed</p>
 				    <p>Do <b>NOT</b> use VC9 version with apache.org binaries</b>
 	
 <?php
