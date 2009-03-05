@@ -19,6 +19,9 @@ $version_order = array(
 	'nts-win32-VC6-x86',
 	'win32-VC9-x86',
 	'nts-win32-VC9-x86',
+	'win32-VC9-x64',
+	'nts-win32-VC9-x64',
+
 );
 ?>
             <li id="content">
