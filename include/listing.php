@@ -199,7 +199,7 @@ function buildSnapsCache($snaps_dir, $release=false)
 	$cache_content = '<?php $releases = ' . var_export($releases, true) . ';';
 
 	$tmp_name = tempnam('.', '_cachinfo');
-//	file_put_contents($tmp_name, $cache_content);
+	file_put_contents($tmp_name, $cache_content);
 	rename($tmp_name, 'cache.info');
 	chdir($old_dir);
 	return $releases;
