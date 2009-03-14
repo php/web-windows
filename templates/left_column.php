@@ -18,7 +18,8 @@
                                 <span class="corners-bottom"><span></span></span>
                             </div><!-- .block -->
 <?php
-if (strpos($_SERVER['SCRIPT_FILENAME'], 'snapshots') !== FALSE
+if ((isset($mode) && $mode == 'snapshots' || $mode == 'qa')
+ || strpos($_SERVER['SCRIPT_FILENAME'], 'snapshots') !== FALSE
  || strpos($_SERVER['SCRIPT_FILENAME'], 'qa') !== FALSE
  || strpos($_SERVER['SCRIPT_FILENAME'], 'download') !== FALSE
  )
@@ -44,12 +45,13 @@ if (strpos($_SERVER['SCRIPT_FILENAME'], 'snapshots') !== FALSE
 				    <p>Do <b>NOT</b> use VC9 version with apache.org binaries</b>
 	
 <?php
-if (strpos($_SERVER['SCRIPT_FILENAME'], 'snapshots') !== FALSE
+if ((isset($mode) && $mode == 'snapshots' || $mode == 'qa')
+|| strpos($_SERVER['SCRIPT_FILENAME'], 'snapshots') !== FALSE
 || strpos($_SERVER['SCRIPT_FILENAME'], 'qa') !== FALSE)
 
 {
 ?>
-				    <p>These packages are NOT intended for production use; please use the packages at PHP downloads.</p>
+				    <p>These binaries are NOT intended for production use; please use the binaries at PHP Windows <a href="/download/">downloads</a>.</p>
 <?php
 }
 ?>
