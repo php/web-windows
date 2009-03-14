@@ -1,6 +1,6 @@
 <?php
 include 'config.php';
-include '../include/listing2.php';
+include '../include/listing.php';
 $snaps = false;
 $mode = isset($_GET['mode']) ? $_GET['mode'] : 'releases';
 switch ($mode) {
