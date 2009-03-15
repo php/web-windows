@@ -98,7 +98,9 @@ function generate_listing($path, $snaps = false) {
 			$snap_time->setDate($m[1], $m[2], $m[3]);
 			$snap_time->setTime( $m[4], $m[5], 0);
 			$mtime = date_format($snap_time, 'Y-M-d H:i:s');
+			$snap_time_suffix = $m[1] . $m[2] . $m[3] . $m[4] . $m[5];
 		}
+
 
 		$elms = parse_file_name(basename($file));
 		$key = ($elms['nts'] ? 'nts-' : 'ts-') . $elms['vc'] . '-' . $elms['arch'];
@@ -112,11 +114,15 @@ function generate_listing($path, $snaps = false) {
 				'size' => bytes2string(filesize($file_ori)),
 				'sha1' => $sha1sums[strtolower($file_ori)]
 				);
+		$compile = $configure = $buildconf = false;
 		if ($snaps) {
 			$debug_pack = 'php-debug-pack-' . $elms['version_short'] . ($elms['nts'] ? '-' . $elms['nts'] : '') . '-win32' . ($elms['ts'] ? '-' . $elms['vc'] . '-' . $elms['arch'] . '-latest' : '') . '.zip';
 			$installer =  'php-' . $elms['version_short'] . ($elms['nts'] ? '-' . $elms['nts'] : '') . '-win32' . ($elms['ts'] ? '-' . $elms['vc'] . '-' . $elms['arch'] . '-latest' : '') . '.msi';
-			$source = 'php-' . $elms['version_short'] . '/php-' . $elms['version_short'] . '-src-latest.zip';
 
+			$source     = 'php-' . $elms['version_short'] . '/php-' . $elms['version_short'] . '-src-latest.zip';
+			$configure  = 'configure-' . $elms['version_short'] . '-' . $elms['vc'] . '-' . $elms['arch'] . '-' . ($elms['nts'] ? $elms['nts'] . '-' : '') .  $snap_time_suffix . '.log';
+			$compile    = 'compile-' . $elms['version_short'] . '-' . $elms['vc'] . '-' . $elms['arch'] . '-' . ($elms['nts'] ? $elms['nts'] . '-' : '') . $snap_time_suffix . '.log';
+			$buildconf  = 'buildconf-'. $elms['version_short'] . '-' . $elms['vc'] . '-' . $elms['arch'] . '-' . ($elms['nts'] ? $elms['nts'] . '-' : '') . $snap_time_suffix . '.log'; 
 		} elseif ($version_short != '5.2') {	
 			$debug_pack = 'php-debug-pack-' . $elms['version'] . ($elms['nts'] ? '-' . $elms['nts'] : '') . '-Win32-' . $elms['vc'] . '-' . $elms['arch'] . ($elms['ts'] ? '-' . $elms['ts'] : '') . '.zip';
 			$installer =  'php-' . $elms['version'] . ($elms['nts'] ? '-' . $elms['nts'] : '') . '-Win32-' . $elms['vc'] . '-' . $elms['arch'] . ($elms['ts'] ? '-' . $elms['ts'] : '') . '.msi';
@@ -146,13 +152,24 @@ function generate_listing($path, $snaps = false) {
 					'sha1' => $sha1sums[strtolower($installer)]
 						);
 		}
+
+		if ($snaps) {
+			if ($buildconf) {
+				$releases[$version_short][$key]['buildconf'] = $buildconf;
+			}
+			if ($compile) {
+				$releases[$version_short][$key]['compile'] = $compile;
+			}
+			if ($configure) {
+				$releases[$version_short][$key]['configure'] = $configure;
+			}
+		}
 	}
 
 	$cache_content = '<?php $releases = ' . var_export($releases, true) . ';';
 	$tmp_name = tempnam('.', '_cachinfo');
 	file_put_contents($tmp_name, $cache_content);
 	rename($tmp_name, 'cache.info');
-
 	chdir($old_cwd);
 	return $releases;
 }

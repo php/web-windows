@@ -134,33 +134,42 @@ foreach ($major_order as $major) {
 		</li>
 <?php } ?>
 		</ul>
-		</p>
-		<span class="corners-bottom"><span></span></span>
-		</div><!-- innerbox -->
-
+<?php
+	if ($mode == 'snapshots') {
+?>
+			<blockquote>
+			[<a href="<?php  echo $baseurl . $versions[$major][$minor]['buildconf']; ?>">Buildconf</a>] [<a href="<?php  echo $baseurl . $versions[$major][$minor]['configure']; ?>">Configure</a>] [<a href="<?php  echo $baseurl . $versions[$major][$minor]['compile']; ?>">Compile</a>]
+			</blockquote>
 <?php
 }
 ?>
-<?php
+			</p>
+			<span class="corners-bottom"><span></span></span>
+			</div><!-- innerbox -->
+
+	<?php
 	}
-?>
-	</div>
-	<span class="corners-bottom"><span></span></span>
-	</div> <!-- block -->
-<?php 
-}
-?>
+	?>
+	<?php
+		}
+	?>
+		</div>
+		<span class="corners-bottom"><span></span></span>
+		</div> <!-- block -->
+	<?php 
+	}
+	?>
 
-                            <p class="t-center">
-                            </p>
-                        </div> <!-- .content -->
-                    </li><!-- #main-column -->
+				    <p class="t-center">
+				    </p>
+				</div> <!-- .content -->
+			    </li><!-- #main-column -->
 
-                </ul> <!-- #content-columns -->
-            </li> <!-- #content -->
+			</ul> <!-- #content-columns -->
+		    </li> <!-- #content -->
 
-<?php
+	<?php
 
-include TPL_PATH . 'footer.php';
+	include TPL_PATH . 'footer.php';
 
 ?>
