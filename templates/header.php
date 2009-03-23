@@ -10,7 +10,7 @@
         <link type="text/css" media="screen" rel="stylesheet" href="/styles/screen.css">
         <link type="text/css" media="print" rel="stylesheet" href="/styles/print.css">
         <link type="text/css" media="handfield" rel="stylesheet" href="/styles/handfield.css">
-        <!--[if IE ]>
+        <!--[if lt IE 8]>
             <link type="text/css" rel="stylesheet" media="screen" href="styles/ie.css" />
         <![endif]-->
 	<link rel="icon" href="http://windows.php.net/favicon.ico" type="image/x-icon" />
