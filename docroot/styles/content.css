@@ -256,10 +256,6 @@
 	margin:0 160px;
 }
 
-#main-column .adv-block select {
-	width:25%;
-}
-
 #main-column .adv-block input {
     background:url(../images/block_sprites.gif) 0 -77px no-repeat;
 	width:57px;
