@@ -36,6 +36,7 @@
                     <li><a href="http://windows.php.net/download/">Downloads</a></li>
                     <li><a href="http://windows.php.net/qa/">QA Releases</a></li>
                     <li><a href="http://windows.php.net/snapshots/">Snapshots</a></li>
+                    <li><a href="http://windows.php.net/team/">Team</a></li>
                     <!-- <li><a href="http://windows.php.net/docs.php">Documentation</a></li> -->
                     <li class="last"><a href="http://www.php.net">Php.net site</a></li>
                 </ul>
