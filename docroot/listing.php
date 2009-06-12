@@ -102,6 +102,15 @@ foreach ($major_order as $major) {
 	}
 ?>
 	<p><a href="<?php echo $baseurl . $versions[$major]['source']['path']; ?>">Download source code</a> [<?php echo $versions[$major]['source']['size']; ?>]</p>
+
+<?php 
+if (isset($versions[$major]['test_pack'])) { 
+?>
+	<p><a href="<?php echo $baseurl . $versions[$major]['test_pack']['path']; ?>">Download tests package (phpt)</a> [<?php echo $versions[$major]['test_pack']['size']; ?>]</p>
+<?php
+}
+?>
+
 <?php
 	foreach ($minor_order[$major] as $minor) { 
 ?>
@@ -124,6 +133,11 @@ foreach ($major_order as $major) {
 			<a href="<?php echo $baseurl . $versions[$major][$minor]['installer']['path']; ?>">Installer</a>
 		[<?php echo $versions[$major][$minor]['installer']['size']; ?>]<br />
 		<span class="md5sum">sha1: <?php echo $versions[$major][$minor]['installer']['sha1']; ?></span>
+		</li>
+<?php } ?>
+<?php if (isset($versions[$major][$minor]['webpi_installer'])) { ?>
+		<li>
+			<a href="<?php echo $versions[$major][$minor]['webpi_installer']; ?>">Web Platform Installer (general installer for IIS only)</a><br />
 		</li>
 <?php } ?>
 <?php if (isset($versions[$major][$minor]['debug_pack'])) { ?>

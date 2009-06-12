@@ -86,6 +86,9 @@ function generate_listing($path, $snaps = false) {
 	$releases = array();
 	$sha1sums = processSha1Sums($path);
 	foreach ($versions as $file) {
+		if (0&& !$snap && strpos($file, '5.2.9-2')) {
+			continue;
+		}
 		$file_ori = $file;
 		if ($snaps) {
 			$file = readlink($file);
@@ -118,7 +121,7 @@ function generate_listing($path, $snaps = false) {
 		if ($snaps) {
 			$debug_pack = 'php-debug-pack-' . $elms['version_short'] . ($elms['nts'] ? '-' . $elms['nts'] : '') . '-win32' . ($elms['ts'] ? '-' . $elms['vc'] . '-' . $elms['arch'] . '-latest' : '') . '.zip';
 			$installer =  'php-' . $elms['version_short'] . ($elms['nts'] ? '-' . $elms['nts'] : '') . '-win32' . ($elms['ts'] ? '-' . $elms['vc'] . '-' . $elms['arch'] . '-latest' : '') . '.msi';
-
+			$testpack = 'php-test-pack-' . $elms['version_short'] . '-latest.zip';
 			$source     = 'php-' . $elms['version_short'] . '/php-' . $elms['version_short'] . '-src-latest.zip';
 			$configure  = 'configure-' . $elms['version_short'] . '-' . $elms['vc'] . '-' . $elms['arch'] . '-' . ($elms['nts'] ? $elms['nts'] . '-' : '') .  $snap_time_suffix . '.log';
 			$compile    = 'compile-' . $elms['version_short'] . '-' . $elms['vc'] . '-' . $elms['arch'] . '-' . ($elms['nts'] ? $elms['nts'] . '-' : '') . $snap_time_suffix . '.log';
@@ -152,6 +155,14 @@ function generate_listing($path, $snaps = false) {
 					'sha1' => $sha1sums[strtolower($installer)]
 						);
 		}
+		if (file_exists($testpack)) {
+			$releases[$version_short]['test_pack'] = array(
+					'size' => bytes2string(filesize($testpack)),
+					'path' => $testpack,
+					'sha1' => $sha1sums[strtolower($testpack)]
+						);
+		}
+
 
 		if ($snaps) {
 			if ($buildconf) {
@@ -162,6 +173,10 @@ function generate_listing($path, $snaps = false) {
 			}
 			if ($configure) {
 				$releases[$version_short][$key]['configure'] = $configure;
+			}
+		} else {
+			if ($version_short == '5.2' && strpos($key, 'nts') !== false) {
+				$releases[$version_short][$key]['webpi_installer'] = 'http://www.microsoft.com/web/gallery/install.aspx?appsxml=www.microsoft.com%2Fweb%2Fwebpi%2F2.0%2FWebProductList.xml%3Bwww.microsoft.com%2Fweb%2Fwebpi%2F2.0%2FWebProductList.xml%3Bwww.microsoft.com%2Fweb%2Fwebpi%2F2.0%2FWebProductList.xml&appid=201%3B202%3B203';
 			}
 		}
 	}
