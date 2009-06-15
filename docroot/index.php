@@ -1,4 +1,4 @@
-<?php
+	<?php
 include "config.php";
 define('CUR_PATH', dirname(__FILE__) . DIRECTORY_SEPARATOR);
 //define('TPL_PATH', CUR_PATH . 'templates' . DIRECTORY_SEPARATOR);
@@ -15,26 +15,39 @@ include TPL_PATH . 'news_line.php';
 
 include TPL_PATH . 'left_column.php';
 
-?>
+	?>
 
-                    <li id="main-column">
-                        <div class="content">
-                            
-                            <div class="block"><!-- .block -->
-                               <span class="corners-top"><span></span></span>
+			    <li id="main-column">
+				<div class="content">
+				    
+				    <div class="block"><!-- .block -->
  
-                               <div class="info entry"><!-- .info -->
-                                   <h3 class="summary entry-title">PHP 5.2.9-1 (Windows) released</h3>
-                                   <p class="news-date"><abbr class="published newsdate" title="2009-03-10T21:03:42+02:00">10-Mar-2009</abbr></p>
-                                   <div class="newsImage"></div>
-                                   <div>
-					<p>The PHP Development Team would like to announce the availability of a new Windows build of PHP - PHP 5.2.9-1</p>
+				       <div class="info entry"><!-- .info -->
+					   <h3 class="summary entry-title">PHP 5.2.9-2 (Windows) released</h3>
+					   <p class="news-date"><abbr class="published newsdate" title="2009-04-07T21:03:42+02:00">07-Apr-2009</abbr></p>
+					   <div class="newsImage"></div>
+					   <div>
+<p>The PHP Development Team would like to announce the availability of a new Windows build for PHP - PHP 5.2.9-2</p>
+<p>This release focuses on fixing security flaws in the included OpenSSL library (CVE-2009-0590, CVE-2009-0591 and CVE-2009-0789). The security advisory is available <a href="http://openssl.org/news/secadv_20090325.txt"> here</a>.</p>
+<p>The OpenSSL library has been updated to 0.9.8k, which includes fixes for these flaws.</p>
+<p>Note: Only the Windows binaries are affected. There are no changes to the PHP sources, therefore no source releases are necessary.</p>
+<p>Binaries are available in our <a href="/download/">downloads page</a></p>
+</div>
+                               </div><!-- .info -->
+	 
+				       <div class="info entry"><!-- .info -->
+					   <h3 class="summary entry-title">PHP 5.2.9-1 (Windows) released</h3>
+					   <p class="news-date"><abbr class="published newsdate" title="2009-03-10T21:03:42+02:00">10-Mar-2009</abbr></p>
+					   <div class="newsImage"></div>
+					   <div>
+						<p>The PHP Development Team would like to announce the availability of a new Windows build of PHP - PHP 5.2.9-1</p>
 				     	<p>This release focuses on fixing a security flaw introduced by the cURL library (CVE-2009-0037). Please see the following for a full description: <a href="http://curl.haxx.se/docs/adv_20090303.html">http://curl.haxx.se/docs/adv_20090303.html</a></p>
 			     		<p>Please note that the cURL related function is disabled when open_basedir or safe_mode enabled.</p>
 		     			<p>Note: Only the Windows packages are affected.</p>
 					<p>Binaries are available in our <a href="/download/">downloads page</a></p>
                                     </div>
                                </div><!-- .info -->
+                               <span class="corners-top"><span></span></span>
 
                                 <div class="info entry"><!-- .info -->
                                     <h3 class="summary entry-title">PHP 5.2.9 released</h3>
