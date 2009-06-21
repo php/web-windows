@@ -182,7 +182,7 @@ if (isset($versions[$major]['test_pack'])) {
 			</ul> <!-- #content-columns -->
 		    </li> <!-- #content -->
 
-	<?php
+<?php
 
 	include TPL_PATH . 'footer.php';
 

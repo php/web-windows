@@ -1,4 +1,4 @@
-	<?php
+<?php
 include "config.php";
 define('CUR_PATH', dirname(__FILE__) . DIRECTORY_SEPARATOR);
 //define('TPL_PATH', CUR_PATH . 'templates' . DIRECTORY_SEPARATOR);
@@ -15,12 +15,14 @@ include TPL_PATH . 'news_line.php';
 
 include TPL_PATH . 'left_column.php';
 
-	?>
+?>
 
 			    <li id="main-column">
 				<div class="content">
 				    
 				    <div class="block"><!-- .block -->
+                                      <span class="corners-top"><span></span></span>
+
  
 				       <div class="info entry"><!-- .info -->
 					   <h3 class="summary entry-title">PHP 5.2.9-2 (Windows) released</h3>
@@ -47,8 +49,6 @@ include TPL_PATH . 'left_column.php';
 					<p>Binaries are available in our <a href="/download/">downloads page</a></p>
                                     </div>
                                </div><!-- .info -->
-                               <span class="corners-top"><span></span></span>
-
                                 <div class="info entry"><!-- .info -->
                                     <h3 class="summary entry-title">PHP 5.2.9 released</h3>
                                     <p class="news-date"><abbr class="published newsdate" title="2009-02-26T21:03:42+02:00">26-Feb-2009</abbr></p>
@@ -118,10 +118,10 @@ include TPL_PATH . 'left_column.php';
                                 -->
                             </p>
                         </div> <!-- .content -->
-                    </li><!-- #main-column -->
+                    </li><!-- .main-column -->
 
-                </ul> <!-- #content-columns -->
-            </li> <!-- #content -->
+                </ul> <!-- .content-columns -->
+            </li> <!-- .content -->
 
 <?php
 
