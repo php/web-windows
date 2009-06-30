@@ -24,6 +24,72 @@ include TPL_PATH . 'left_column.php';
                                       <span class="corners-top"><span></span></span>
 
  
+					<div class="info entry"><!-- .info -->
+						<h3 class="summary entry-title">PHP 5.3.0 released</h3>
+						<p class="news-date"><abbr class="published newsdate" title="2009-06-30T11:47:17+02:00">30-Jun-2009</abbr></p>
+						<div class="newsImage"></div>
+						<div>
+							<p>
+								The PHP development team is proud to announce the immediate release of PHP
+								<a href="http://php.net/downloads.php#v5.3.0">5.3.0</a>.
+								This release is a major improvement in the 5.X series, which includes a
+								large number of new features and bug fixes.
+							</p>
+							<p>
+								Some of the key new features include:
+								<a href="http://php.net/namespaces">namespaces</a>,
+								<a href="http://php.net/lsb">late static binding</a>,
+								<a href="http://php.net/closures">closures</a>,
+								optional <a href="http://php.net/gc_enable">garbage collection</a> for cyclic references,
+								new extensions (like <a href="http://php.net/phar">ext/phar</a>,
+								<a href="http://php.net/intl">ext/intl</a> and
+								<a href="http://php.net/fileinfo">ext/fileinfo</a>),
+								over 140 bug fixes and much more.
+							</p>
+							<p>
+								For users upgrading from PHP 5.2 there is a
+								<a href="http://php.net/migration53">migration guide</a>
+								available here, detailing the changes between those
+								releases and <a href="http://php.net/downloads.php#v5.3.0">PHP 5.3.0</a>.
+							</p>
+							<p>
+								Further details about the
+								<a href="http://php.net/downloads.php#v5.3.0">PHP 5.3.0</a> release
+								can be found in the
+								<a href="http://php.net/releases/5_3_0.php">release announcement</a>,
+								and the full list of changes are available in the
+								<a href="http://php.net/ChangeLog-5.php">ChangeLog</a>.
+							</p>
+						</div>
+					</div><!-- .info -->
+
+					<div class="info entry"><!-- .info -->
+						<h3 class="summary entry-title">PHP 5.2.10 released</h3>
+						<p class="news-date"><abbr class="published newsdate" title="2009-04-07T21:03:42+02:00">18-Jun-2009</abbr></p>
+						<div class="newsImage"></div>
+						<div>
+							<p>
+								The PHP development team would like to announce the immediate availability of PHP 
+								5.2.10. This release focuses on improving the stability of the PHP 5.2.x branch with 
+								over 100 bug fixes, one of which is security related. All users of PHP are encouraged 
+								to upgrade to this release.
+							</p>
+							<p>
+								<strong>Security Enhancements and Fixes in PHP 5.2.10:</strong>
+							</p>
+							<ul>
+								<li>Fixed bug #48378 (exif_read_data() segfaults on certain corrupted .jpeg files). (Pierre)</li>
+							</ul>
+							<p>
+								Further details about the PHP 5.2.10 release can be found in the 
+								<a href="http://php.net/releases/5_2_10.php">release announcement</a>, 
+								and the full list of changes are available in the 
+								<a href="http://php.net/ChangeLog-5.php#5.2.10">ChangeLog</a>.
+							</p>
+						</div>
+					</div><!-- .info -->
+
+ 
 				       <div class="info entry"><!-- .info -->
 					   <h3 class="summary entry-title">PHP 5.2.9-2 (Windows) released</h3>
 					   <p class="news-date"><abbr class="published newsdate" title="2009-04-07T21:03:42+02:00">07-Apr-2009</abbr></p>

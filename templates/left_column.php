@@ -60,14 +60,14 @@ if ((isset($mode) && $mode == 'snapshots' || $mode == 'qa')
 
                                 <span class="corners-bottom"><span></span></span>
                             </div><!-- .block -->
-                            <div class="block"><!-- .block -->
-                                <span class="corners-top"><span></span></span>
 
 <?php
 if (strpos($_SERVER['SCRIPT_FILENAME'], 'snapshots') !== FALSE)
 
 {
 ?>
+                            <div class="block"><!-- .block -->
+                                <span class="corners-top"><span></span></span>
                                <div class="info"><!-- .info -->
 
                                     <h3>Builds time (EST, Europe)</h3>
@@ -77,12 +77,12 @@ if (strpos($_SERVER['SCRIPT_FILENAME'], 'snapshots') !== FALSE)
 				    
 				    <p>PHP 5.2 two times per day</p>
                                 </div><!-- .info -->
+                               <span class="corners-bottom"><span></span></span>
+                            </div><!-- .block -->
 
 <?php
 }
 ?>
-                               <span class="corners-bottom"><span></span></span>
-                            </div><!-- .block -->
 
 <?php
 }
