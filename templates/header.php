@@ -4,8 +4,6 @@
         <title>PHP For Windows: <?php echo $title_page; ?></title>
 
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        
-        <!-- base href="http://windows.php.net/index.php" -->
 
         <link type="text/css" media="screen" rel="stylesheet" href="/styles/screen.css" />
         <link type="text/css" media="print" rel="stylesheet" href="/styles/print.css" />
@@ -13,13 +11,8 @@
         <!--[if lt IE 8]>
             <link type="text/css" rel="stylesheet" media="screen" href="/styles/ie.css" />
         <![endif]-->
-	<link rel="icon" href="http://windows.php.net/favicon.ico" type="image/x-icon" />
-        <link rel="search" type="application/opensearchdescription+xml" href="http://www.php.net/phpnetimprovedsearch.src" title="Add PHP.net search" />
-        <link rel="alternate" type="application/atom+xml" href="http://www.php.net/releases.atom" title="PHP Release feed" />
 
-        <link rel="alternate" type="application/atom+xml" title="PHP: Hypertext Preprocessor" href="http://windows.php.net/feed.atom" />
-        
-        <script type="text/javascript" src="/js/userprefs.js"></script>
+	<link rel="icon" href="http://windows.php.net/favicon.ico" type="image/x-icon" />
     </head>
     
     <body id="homepage">
