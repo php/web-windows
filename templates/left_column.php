@@ -28,12 +28,9 @@
                                     <a href="http://pecl.php.net">PECL extensions</a> for Windows is being worked on.
                                     The interface on the <a href="http://pecl.php.net">pecl website</a>
                                     will most likely be updated to offer Windows DLL download right from that website.<br />
-                                    In the meantime, you can try:
+                                    In the meantime, some extensions can be found 
+                                    <a href="http://downloads.php.net/pierre/">here</a>.
                                     </p>
-                                    <ul>
-                                      <li><a href="http://downloads.php.net/pierre/">Here</a></li>
-                                      <li><a href="http://pecl2.php.net/downloads/">Or here</a></li>
-                                    </ul>
 
                                 </div><!-- .info -->
 
