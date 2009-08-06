@@ -17,6 +17,28 @@
 
                                 <span class="corners-bottom"><span></span></span>
                             </div><!-- .block -->
+
+                            <div class="block"><!-- .block -->
+                                <span class="corners-top"><span></span></span>
+
+                                <div class="info"><!-- .info -->
+
+                                    <h3>PECL For Windows</h3>
+                                    <p>
+                                    <a href="http://pecl.php.net">PECL extensions</a> for Windows is being worked on.
+                                    The interface on the <a href="http://pecl.php.net">pecl website</a>
+                                    will most likely be updated to offer Windows DLL download right from that website.<br />
+                                    In the meantime, you can try:
+                                    </p>
+                                    <ul>
+                                      <li><a href="http://downloads.php.net/pierre/">Here</a></li>
+                                      <li><a href="http://pecl2.php.net/downloads/">Or here</a></li>
+                                    </ul>
+
+                                </div><!-- .info -->
+
+                                <span class="corners-bottom"><span></span></span>
+                            </div><!-- .block -->
 <?php
 if ((isset($mode) && $mode == 'snapshots' || $mode == 'qa')
  || strpos($_SERVER['SCRIPT_FILENAME'], 'snapshots') !== FALSE
