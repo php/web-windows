@@ -75,6 +75,12 @@ include TPL_PATH . 'left_column.php';
 								Windows Installer
 							</p>
 						</li>
+						<li>
+							<strong>Alex Schoenmaker</strong>
+							<p>
+								Sys Admin, web and snaps infrastructure
+							</p>
+						</li>
 					</ul>
 					<div style="clear: left;"></div>
 				   </p>
