@@ -39,8 +39,8 @@ include TPL_PATH . 'left_column.php';
 								<li>Fixed certificate validation inside php_openssl_apply_verification_policy. 
 								(Ryan Sleevi, Ilia)</li>
 								<li>Fixed sanity check for the color index in imagecolortransparent(). (Pierre)</li>
-								<li>Fixed sanity check for the color index in imagecolortransparent(). (Pierre)</li>
-								<li> Fixed bug <a href="http://bugs.php.net/44683">#44683</a> (popen crashes when 
+								<li>Added missing sanity checks around exif processing. (Ilia)</li>
+								<li>Fixed bug <a href="http://bugs.php.net/44683">#44683</a> (popen crashes when 
 										an invalid mode is passed). (Pierre)</li>
 								</ul>
 							</p>
