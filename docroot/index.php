@@ -55,9 +55,8 @@ include TPL_PATH . 'left_column.php';
 								<li>Fixed bug #48645 (mb_convert_encoding() doesn't understand hexadecimal 
 								html-entities).</li>
 								<li>Fixed bug #48619 (imap_search ALL segfaults).</li>
-								<li>Fixed bug #48619 (imap_search ALL segfaults).</li>
-								<li>Fixed bug #48619 (imap_search ALL segfaults).</li>
-								<li>Over 60 other bug fixes.</li>
+								<li>Fixed bug #48400 (imap crashes when closing stream opened with OP_PROTOTYPE flag).</li>
+								<li>Fixed bug #47351 (Memory leak in DateTime).</li>
 								<li>Over 60 other bug fixes.</li>
 								</ul>
 							</p>
