@@ -66,7 +66,7 @@ include TPL_PATH . 'left_column.php';
 							</p>
 							<p>
 								Further details about the PHP 5.2.11 release can be found in the
-								<a href="/releases/5_2_11.php">release announcement</a>, and the full list of changes 
+								<a href="http://www.php.net/releases/5_2_11.php">release announcement</a>, and the full list of changes 
 								are available in the <a href="/ChangeLog-5.php#5.2.11">ChangeLog</a>.
 							</p>
 						</div>
