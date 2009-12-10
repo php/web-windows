@@ -135,7 +135,7 @@ if (isset($versions[$major]['test_pack'])) {
 		<span class="md5sum">sha1: <?php echo $versions[$major][$minor]['installer']['sha1']; ?></span>
 		</li>
 <?php } ?>
-<?php if (isset($versions[$major][$minor]['webpi_installer'])) { ?>
+<?php if (isset($versions[$major][$minor]['webpi_installer']) && !($mode == 'qa' || $mode == 'snapshots')) { ?>
 		<li>
 			<a href="<?php echo $versions[$major][$minor]['webpi_installer']; ?>">Web Platform Installer (general installer for IIS only)</a><br />
 		</li>
