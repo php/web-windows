@@ -3,7 +3,7 @@
 
                 <div class="info">
                     <div id="copyright">
-                        <a href="http://www.php.net/copyright.php">Copyright &copy; 2001-2008 The PHP Group</a><br>All rights reserved.
+                        <a href="http://www.php.net/copyright.php">Copyright &copy; 2001-2010 The PHP Group</a><br>All rights reserved.
                     </div><!-- #copyright -->
 
                     <div id="footer-menu">
