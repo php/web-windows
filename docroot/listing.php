@@ -90,13 +90,13 @@ foreach ($major_order as $major) {
 	<div class="block">
 	<span class="corners-top"><span></span></span>
 	<div class="info entry"> 
-	<h3 id="php-<?php echo $major; ?>" name="php-<?php echo $major; ?>" class="summary entry-title">PHP <?php echo $major . (isset($versions[$major]['version']) ? ' (' . $versions[$major]['version'] . ')' : ''); ?></h1>
+	<h3 id="php-<?php echo $major; ?>" name="php-<?php echo $major; ?>" class="summary entry-title">PHP <?php echo $major . (isset($versions[$major]['version']) ? ' (' . $versions[$major]['version'] . ')' : ''); ?></h3>
 	<p class="news-date"></p>
 <?php
 	if (!isset($versions[$major])) {
 		echo "$major has no release.<br>";
 ?>
-</div></div>
+</div><span class="corners-bottom"><span></span></span></div>
 <?php
 		continue;
 	}

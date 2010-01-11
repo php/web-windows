@@ -37,7 +37,7 @@
                                 <span class="corners-bottom"><span></span></span>
                             </div><!-- .block -->
 <?php
-if ((isset($mode) && $mode == 'snapshots' || $mode == 'qa')
+if ((isset($mode) && ($mode == 'snapshots' || $mode == 'qa'))
  || strpos($_SERVER['SCRIPT_FILENAME'], 'snapshots') !== FALSE
  || strpos($_SERVER['SCRIPT_FILENAME'], 'qa') !== FALSE
  || strpos($_SERVER['SCRIPT_FILENAME'], 'download') == FALSE
@@ -61,10 +61,10 @@ if ((isset($mode) && $mode == 'snapshots' || $mode == 'qa')
 				    <p>VC9 Versions are compiled with the Visual Studio 2008 compiler and 
 				    have improvements in performance and stability. The VC9 versions 
 				    require you to have the <a href="http://www.microsoft.com/downloads/details.aspx?FamilyID=9B2DA534-3E03-4391-8A4D-074B9F2BC1BF">Microsoft 2008 C++ Runtime (x86) </a> or the <a href="http://www.microsoft.com/downloads/details.aspx?familyid=bd2a6171-e2d6-4230-b809-9a8d7548c1b6&displaylang=en">Microsoft 2008 C++ Runtime (x64) </a>  installed</p>
-				    <p>Do <b>NOT</b> use VC9 version with apache.org binaries</b>
+				    <p>Do <b>NOT</b> use VC9 version with apache.org binaries</p>
 	
 <?php
-if ((isset($mode) && $mode == 'snapshots' || $mode == 'qa')
+if ((isset($mode) && ($mode == 'snapshots' || $mode == 'qa'))
 || strpos($_SERVER['SCRIPT_FILENAME'], 'snapshots') !== FALSE
 || strpos($_SERVER['SCRIPT_FILENAME'], 'qa') !== FALSE)
 
