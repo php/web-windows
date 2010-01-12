@@ -740,6 +740,7 @@
 /* Footer
  *******************************/
 #footer {
+    clear:both;
     font-size: 1.1em;
     padding: 0 11px;
     background: url(../images/footer-back.gif) left bottom repeat-x #CECECE;
