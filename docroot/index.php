@@ -45,7 +45,7 @@ include TPL_PATH . 'left_column.php';
 						</ul>
 
 						<p>
-						Further details about the PHP 5.2.13 release can be found in the <a href="/releases/5_2_13.php">release announcement</a>, and the full list of changes are available in the <a href="/ChangeLog-5.php#5.2.13">ChangeLog</a>.
+						Further details about the PHP 5.2.13 release can be found in the <a href="http://www.php.net/releases/5_2_13.php">release announcement</a>, and the full list of changes are available in the <a href="http://www.php.net/ChangeLog-5.php#5.2.13">ChangeLog</a>.
 						</p>
 						<p>The libcURL library has been updated to 7.20.0, which fixes important bugs fixes as well as a security flaw, see the advisory <a href="http://curl.haxx.se/docs/adv_20100209.html">here</a> and the full changelog <a href="http://curl.haxx.se/changes.html">here</a>.</p>
 
