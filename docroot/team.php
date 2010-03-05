@@ -59,14 +59,12 @@ include TPL_PATH . 'left_column.php';
 						<li>
 							<strong>Kanwaljeet Singla</strong>
 							<p>
-								Developer
+								Windows Installer	
 							</p>
 						</li>
 						<li>
 							<strong>Venkat Raman Don</strong>
-							<p>
-								Developer, Quality Assurance
-							</p>
+							<p>QA Windows Installer</p>
 						</li>
 					</ul>
 					<ul style="float: left;">
