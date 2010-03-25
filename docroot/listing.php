@@ -55,10 +55,14 @@ $labels = array(
 );
 include TPL_PATH . 'header.php';
 include TPL_PATH . 'news_line.php';
-include TPL_PATH . 'left_column.php';
 ?>
             <li id="content">
                 <ul id="content-columns">
+<?php
+
+include TPL_PATH . 'left_column.php';
+
+?>
                     <li id="main-column">
 
                         <div class="content">

@@ -81,7 +81,8 @@ if ((isset($mode) && ($mode == 'snapshots' || $mode == 'qa'))
                             </div><!-- .block -->
 
 <?php
-if (strpos($_SERVER['SCRIPT_FILENAME'], 'snapshots') !== FALSE)
+if ((isset($mode) && $mode == 'snapshots') 
+|| strpos($_SERVER['SCRIPT_FILENAME'], 'snapshots') !== FALSE)
 
 {
 ?>
