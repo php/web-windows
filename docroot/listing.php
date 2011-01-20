@@ -69,7 +69,7 @@ include TPL_PATH . 'left_column.php';
                                         <option value="top" selected="true">Select an option to direct access...</option>
 <?php foreach ($major_order as $major) {?>
 	<optgroup label="php-<?php echo '-' . $major; ?>">
-<?php foreach ($minor_order[$major] as $minor) { if (!isset($versions[$major])) continue; ?>
+<?php foreach ($minor_order[$major] as $minor) { if (!isset($versions[$major]) || !isset($versions[$major][$minor])) continue; ?>
 		<option value="php-<?php echo $major . '-' . $minor; ?>"><?php echo $labels[$minor]; ?></option>
 <?php } ?>
 	</optgroup>
