@@ -93,8 +93,6 @@ if ((isset($mode) && $mode == 'snapshots')
                                     <h3>Builds time (EST, Europe)</h3>
                                     <p>PHP 5.3 is built every hour</p>
 				    
-				    <p>PHP 6.0 eight times per day</p>
-				    
 				    <p>PHP 5.2 two times per day</p>
                                 </div><!-- .info -->
                                <span class="corners-bottom"><span></span></span>
