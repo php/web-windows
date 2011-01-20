@@ -36,6 +36,23 @@
 
                                 <span class="corners-bottom"><span></span></span>
                             </div><!-- .block -->
+
+                            <div class="block"><!-- .block -->
+                                <span class="corners-top"><span></span></span>
+
+                                <div class="info"><!-- .info -->
+
+                                    <h3>Archives</h3>
+                                    <p>
+                                    Past releases are available from our <a href="http://windows.php.net/downloads/releases/archives/">archives</a>, older versions 
+                                    not found there can be found at the <a href="http://museum.php.net/">Museum</a>.
+                                    </p>
+
+                                </div><!-- .info -->
+
+                                <span class="corners-bottom"><span></span></span>
+                            </div><!-- .block -->
+
 <?php
 if ((isset($mode) && ($mode == 'snapshots' || $mode == 'qa'))
  || strpos($_SERVER['SCRIPT_FILENAME'], 'snapshots') !== FALSE
