@@ -21,7 +21,7 @@ switch ($mode) {
 $baseurl = '/' . $dir_to_parse . '/';
 
 $versions = generate_listing($dir_to_parse, $snaps);
-$major_order = array('5.3', '5.2', '6.0');
+$major_order = array('5.3', '5.2');
 $minor_order = array(
 		'5.2' => array(
 			'nts-VC6-x86',
@@ -34,14 +34,7 @@ $minor_order = array(
 			'ts-VC6-x86',
 			'nts-VC9-x64',
 			'ts-VC9-x64'
-		),
-		'6.0' => array(
-			'nts-VC9-x86',
-			'ts-VC9-x86',
-			'nts-VC6-x86',
-			'ts-VC6-x86',
-			'nts-VC9-x64',
-			'ts-VC9-x64')
+		)
 	);
 
 $labels = array(
