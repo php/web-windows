@@ -37,22 +37,6 @@
                                 <span class="corners-bottom"><span></span></span>
                             </div><!-- .block -->
 
-                            <div class="block"><!-- .block -->
-                                <span class="corners-top"><span></span></span>
-
-                                <div class="info"><!-- .info -->
-
-                                    <h3>Archives</h3>
-                                    <p>
-                                    Past releases are available from our <a href="http://windows.php.net/downloads/releases/archives/">archives</a>, older versions 
-                                    not found there can be found at the <a href="http://museum.php.net/">Museum</a>.
-                                    </p>
-
-                                </div><!-- .info -->
-
-                                <span class="corners-bottom"><span></span></span>
-                            </div><!-- .block -->
-
 <?php
 if ((isset($mode) && ($mode == 'snapshots' || $mode == 'qa'))
  || strpos($_SERVER['SCRIPT_FILENAME'], 'snapshots') !== FALSE
@@ -79,6 +63,9 @@ if ((isset($mode) && ($mode == 'snapshots' || $mode == 'qa'))
 				    have improvements in performance and stability. The VC9 versions 
 				    require you to have the <a href="http://www.microsoft.com/downloads/details.aspx?FamilyID=9B2DA534-3E03-4391-8A4D-074B9F2BC1BF">Microsoft 2008 C++ Runtime (x86) </a> or the <a href="http://www.microsoft.com/downloads/details.aspx?familyid=bd2a6171-e2d6-4230-b809-9a8d7548c1b6&displaylang=en">Microsoft 2008 C++ Runtime (x64) </a>  installed</p>
 				    <p>Do <b>NOT</b> use VC9 version with apache.org binaries</p>
+
+				    <p>VC9 versions of Apache can be fetched at <a href="http://apachelounge.com">Apache Lounge</a>. We use their binaries to build the Apache SAPIs.</p>
+
 	
 <?php
 if ((isset($mode) && ($mode == 'snapshots' || $mode == 'qa'))
@@ -96,6 +83,24 @@ if ((isset($mode) && ($mode == 'snapshots' || $mode == 'qa'))
 
                                 <span class="corners-bottom"><span></span></span>
                             </div><!-- .block -->
+
+                            <div class="block"><!-- .block -->
+                                <span class="corners-top"><span></span></span>
+
+                                <div class="info"><!-- .info -->
+
+                                    <h3>Archives</h3>
+                                    <p>
+                                    Past releases are available from our <a href="http://windows.php.net/downloads/releases/archives/">archives</a>, older versions 
+                                    not found there can be found at the <a href="http://museum.php.net/">Museum</a>.
+                                    </p>
+
+                                </div><!-- .info -->
+
+                                <span class="corners-bottom"><span></span></span>
+                            </div><!-- .block -->
+
+
 
 <?php
 if ((isset($mode) && $mode == 'snapshots') 
