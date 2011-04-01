@@ -46,6 +46,12 @@ $labels = array(
 			'ts-VC9-x64'  => 'VC9 x64 Thread Safe',
 
 );
+
+if ($mode == 'snapshots') {
+	unset($minor_order['5.2']);
+	unset($major_order[1]);
+}
+
 include TPL_PATH . 'header.php';
 include TPL_PATH . 'news_line.php';
 ?>
