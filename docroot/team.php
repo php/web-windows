@@ -1,7 +1,7 @@
 <?php
-include "config.php";
+include __DIR__ . '/../include/config.php';
+
 define('CUR_PATH', dirname(__FILE__) . DIRECTORY_SEPARATOR);
-//define('TPL_PATH', CUR_PATH . 'templates' . DIRECTORY_SEPARATOR);
 
 include TPL_PATH . 'header.php';
 include TPL_PATH . 'news_line.php';
