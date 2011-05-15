@@ -3,7 +3,7 @@
 include __DIR__ . '/../include/config.php';
 
 /* TODO: use exported branches list when available instead */
-$active_branches = array('5.3', 'trunk');
+$active_branches = array('5.3', '5.4', 'trunk');
 
 $base_dir = SNAPS_DIR;
 $data_path = DATA_DIR . '/status.json';
