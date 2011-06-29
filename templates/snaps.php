@@ -1,8 +1,12 @@
 <?php
 include __DIR__ . '/../include/tools.php';
 
-$major_order = array('5.3', 'trunk');
+$major_order = array('5.4', '5.3', 'trunk');
 $minor_order = array(
+		'5.4' => array(
+				'nts-windows-vc9-x86',
+				'ts-windows-vc9-x86'
+			),
 		'5.3' => array(
 				'nts-windows-vc9-x86',
 				'ts-windows-vc9-x86'
