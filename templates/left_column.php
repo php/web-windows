@@ -8,13 +8,11 @@
 
                                     <h3>PHP For Windows</h3>
                                     <p>
-					This site is dedicated to supporting PHP on Microsoft Windows. 
-					It also supports ports of PHP extensions or features as well as 
-					providing special builds for the various Windows architectures.
-					Note that the canonical release of PHP is the source distribution
-					and you are encouraged to install a compiler and build your own
-					binaries. Instructions can be found on the 
-					<a href="https://wiki.php.net/internals/windows/stepbystepbuild">Wiki</a>.
+                                    This site is dedicated to supporting PHP on Microsoft Windows. 
+                                    It also supports ports of PHP extensions or features as well as 
+                                    providing special builds for the various Windows architectures.
+                                    If you like to build your own PHP binaries, instructions can be found on the 
+                                    <a href="https://wiki.php.net/internals/windows/stepbystepbuild">Wiki</a>.
                                     </p>
 
                                 </div><!-- .info -->
