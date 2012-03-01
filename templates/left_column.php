@@ -10,7 +10,8 @@
                                     <p>
                                     This site is dedicated to supporting PHP on Microsoft Windows. 
                                     It also supports ports of PHP extensions or features as well as 
-                                    providing special builds for the various Windows architectures.
+                                    providing special builds for the various Windows architectures.</p>
+                                    <p>
                                     If you like to build your own PHP binaries, instructions can be found on the 
                                     <a href="https://wiki.php.net/internals/windows/stepbystepbuild">Wiki</a>.
                                     </p>
