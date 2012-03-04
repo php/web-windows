@@ -134,7 +134,7 @@ include TPL_PATH . 'news_line.php';
 
               <p>For a full list of changes in PHP 5.4.0, see the
               <a href=
-              "ttp://php.net/ChangeLog-5.php#5.4.0">ChangeLog</a>.</p>
+              "http://php.net/ChangeLog-5.php#5.4.0">ChangeLog</a>.</p>
             </div>
           </div><!-- .info -->
 
