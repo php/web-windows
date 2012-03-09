@@ -101,7 +101,7 @@ include TPL_PATH . 'news_line.php';
                 $var syntax was removed</li>
 
                 <li>The ini option <a href=
-                "">allow_call_time_pass_reference</a> was
+                "http://php.net/allow_call_time_pass_reference">allow_call_time_pass_reference</a> was
                 removed</li>
 
                 <li>The PHP <a href=
@@ -465,7 +465,7 @@ include TPL_PATH . 'news_line.php';
 
                       <p>The OpenSSL library has been updated to
                       0.9.8l, which fixes important bugs fixes (see
-                      the OpenSSL <a href="">website</a> for
+                      the OpenSSL <a href="http://openssl.org">website</a> for
                       details.</p>
                     </div>
                   </div><!-- .info -->
