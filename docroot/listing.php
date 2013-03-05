@@ -1,14 +1,16 @@
 <?php
-include 'config.php';
-include '../include/listing.php';
+
 $snaps = false;
 $mode = isset($_GET['mode']) ? $_GET['mode'] : 'releases';
+
 switch ($mode) {
 	case 'qa':
 		$dir_to_parse = 'downloads/qa';
 		$title_page = 'Binaries and sources QA Releases';
 		break;
 	case 'snapshots':
+		include 'listing2.php';
+		exit();
 		$dir_to_parse = 'downloads/snaps';
 		$title_page = 'Binaries and sources Snapshots';
 		$snaps = true;
@@ -18,10 +20,15 @@ switch ($mode) {
 		$dir_to_parse = 'downloads/releases';
 		$title_page = 'Binaries and sources Releases';
 }
+
+include __DIR__ . '/../include/config.php';
+include __DIR__ . '/../include/listing.php';
+
+
 $baseurl = '/' . $dir_to_parse . '/';
 
 $versions = generate_listing($dir_to_parse, $snaps);
-$major_order = array('5.3', '5.2');
+$major_order = array('5.5', '5.4', '5.3', '5.2');
 $minor_order = array(
 		'5.2' => array(
 			'nts-VC6-x86',
@@ -30,21 +37,38 @@ $minor_order = array(
 		'5.3' => array(
 			'nts-VC9-x86',
 			'ts-VC9-x86',
-			'nts-VC6-x86',
-			'ts-VC6-x86',
 			'nts-VC9-x64',
 			'ts-VC9-x64'
+		),
+		'5.4' => array(
+			'nts-VC9-x86',
+			'ts-VC9-x86',
+			'nts-VC9-x64',
+			'ts-VC9-x64'
+		),
+			'5.5' => array(
+			'nts-VC9-x86',
+			'ts-VC9-x86',
+			'nts-VC9-x64',
+			'ts-VC9-x64',
+			'nts-VC11-x86',
+			'ts-VC11-x86',
+			'nts-VC11-x64',
+			'ts-VC11-x64'
 		)
 	);
 
 $labels = array(
-			'nts-VC9-x86' => 'VC9 x86 Non Thread Safe',
-			'ts-VC9-x86'  => 'VC9 x86 Thread Safe',
 			'nts-VC6-x86' => 'VC6 x86 Non Thread Safe',
 			'ts-VC6-x86'  => 'VC6 x86 Thread Safe',
+			'nts-VC9-x86' => 'VC9 x86 Non Thread Safe',
+			'ts-VC9-x86'  => 'VC9 x86 Thread Safe',
+			'nts-VC11-x86' => 'VC11 x86 Non Thread Safe',
+			'ts-VC11-x86'  => 'VC11 x86 Thread Safe',
 			'nts-VC9-x64' => 'VC9 x64 Non Thread Safe',
 			'ts-VC9-x64'  => 'VC9 x64 Thread Safe',
-
+			'nts-VC11-x64' => 'VC11 x64 Non Thread Safe',
+			'ts-VC11-x64'  => 'VC11 x64 Thread Safe',
 );
 
 if ($mode == 'snapshots') {
