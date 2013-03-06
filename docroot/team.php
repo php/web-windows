@@ -43,9 +43,9 @@ include TPL_PATH . 'left_column.php';
 					</ul>
 					<ul style="float: left;">
 						<li>
-							<strong>Garrett Serack</strong>
+							<strong>Anatol Belski</strong>
 							<p>
-								PGO Builds &amp; Tools
+								Development and Q/A
 							</p>
 						</li>
 						<li>
@@ -57,9 +57,9 @@ include TPL_PATH . 'left_column.php';
 					</ul>
 					<ul style="float: left;">
 						<li>
-							<strong>Kanwaljeet Singla</strong>
+							<strong>Matt Ficken</strong>
 							<p>
-								Windows Installer	
+								Q/A and Automation
 							</p>
 						</li>
 						<li>
@@ -69,15 +69,37 @@ include TPL_PATH . 'left_column.php';
 					</ul>
 					<ul style="float: left;">
 						<li>
-							<strong>John Mertic</strong>
+							<strong>Stephen Zarkos</strong>
 							<p>
-								Windows Installer
+								Builds, PGO & Performance
 							</p>
 						</li>
 						<li>
 							<strong>Alex Schoenmaker</strong>
 							<p>
 								Sys Admin, web and snaps infrastructure
+							</p>
+						</li>
+					</ul>
+					<ul style="float: left;">
+						<li>
+							<strong>Garrett Serack</strong>
+							<p>
+								PGO Builds &amp; Tools
+							</p>
+						</li>
+						<li>
+							<strong>Kanwaljeet Singla</strong>
+							<p>
+								Windows Installer
+							</p>
+						</li>
+					</ul>
+					<ul style="float: left;">
+						<li>
+							<strong>John Mertic</strong>
+							<p>
+								Windows Installer
 							</p>
 						</li>
 					</ul>
