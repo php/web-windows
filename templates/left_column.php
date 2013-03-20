@@ -30,7 +30,8 @@
                                     <p>
                                     <a href="http://pecl.php.net">PECL extensions</a> for Windows is being worked on.
                                     The interface on the <a href="http://pecl.php.net">pecl website</a>
-                                    will most likely be updated to offer Windows DLL download right from that website.<br />
+                                    will most likely be updated to offer Windows DLL download right from that website.<br /><br />
+
                                     In the meantime, some extensions can be found 
                                     <a href="http://downloads.php.net/pierre/">here</a>.
                                     </p>
@@ -54,20 +55,28 @@ if ((isset($mode) && ($mode == 'snapshots' || $mode == 'qa'))
 
                                 <div class="info"><!-- .info -->
 
-                                    <h3>Which version do I choose?</h3>
-                                    <p>If you are using PHP with Apache 1 or Apache2 
-				    from apache.org you need to use the VC6 versions of PHP</p>
-				    
-				    <p>If you are using PHP with IIS you should use the VC9 versions of PHP</p>
-				    
-				    <p>VC6 Versions are compiled with the legacy Visual Studio 6 compiler</p>
-				    
-				    <p>VC9 Versions are compiled with the Visual Studio 2008 compiler and 
-				    have improvements in performance and stability. The VC9 versions 
-				    require you to have the <a href="http://www.microsoft.com/downloads/details.aspx?FamilyID=9B2DA534-3E03-4391-8A4D-074B9F2BC1BF">Microsoft 2008 C++ Runtime (x86) </a> or the <a href="http://www.microsoft.com/downloads/details.aspx?familyid=bd2a6171-e2d6-4230-b809-9a8d7548c1b6&displaylang=en">Microsoft 2008 C++ Runtime (x64) </a>  installed</p>
-				    <p>Do <b>NOT</b> use VC9 version with apache.org binaries</p>
+                                    <h3>Which version do I choose?</h3> <br/>
 
-				    <p>VC9 versions of Apache can be fetched at <a href="http://apachelounge.com">Apache Lounge</a>. We use their binaries to build the Apache SAPIs.</p>
+									<h4>IIS</h4>
+									<p>If you are using PHP with IIS you should use the Non-Thread Safe (NTS) versions of PHP.</p>
+
+									<h4>Apache</h4>
+									<p>Please use the Apache builds provided by <a href="http://apachelounge.com">Apache Lounge</a>.
+									They also provide VC11 builds of Apache for <a href="http://www.apachelounge.com/viewtopic.php?p=23836">x86 and x64</a>.
+									We use their binaries to build the Apache SAPIs.</p>
+
+                                    <p>If you are using PHP with Apache 1 or Apache2 from <strong>apache.org</strong> (not recommended) you need to use the older VC6 versions of PHP
+									compiled with the legacy Visual Studio 6 compiler. Do <b>NOT</b> use VC9+ versions of PHP with the apache.org binaries.</p>
+
+									<h4>VC9 and VC11</h4>
+									<p>More recent versions of PHP are built with VC9 or VC11 (Visual Studio 2008 and 2012 compiler respectively) and 
+									include improvements in performance and stability.</p>
+
+									<p>The VC9 builds require you to have the <i>Visual C++ Redistributable for Visual Studio 2008 SP1</i> <a href="http://www.microsoft.com/en-us/download/details.aspx?id=5582">x86</a> or <a href="http://www.microsoft.com/en-us/download/details.aspx?id=15336">x64</a> installed. </p>
+									<p>The VC11 builds require to have the <i>Visual C++ Redistributable for Visual Studio 2012</i> <a href="http://www.microsoft.com/en-us/download/details.aspx?id=30679">x86 or x64</a> installed.</p>
+
+
+				    
 
 	
 <?php
