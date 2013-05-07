@@ -75,9 +75,15 @@ if ((isset($mode) && ($mode == 'snapshots' || $mode == 'qa'))
 									<p>The VC9 builds require you to have the <i>Visual C++ Redistributable for Visual Studio 2008 SP1</i> <a href="http://www.microsoft.com/en-us/download/details.aspx?id=5582">x86</a> or <a href="http://www.microsoft.com/en-us/download/details.aspx?id=15336">x64</a> installed. </p>
 									<p>The VC11 builds require to have the <i>Visual C++ Redistributable for Visual Studio 2012</i> <a href="http://www.microsoft.com/en-us/download/details.aspx?id=30679">x86 or x64</a> installed.</p>
 
-
-				    
-
+									<h4>What is PGO?</h4>
+									<p><a href="http://msdn.microsoft.com/en-us/library/e7k32f4k%28v=vs.110%29.aspx" target="_blank">Profile Guided Optimization</a> is an optimization
+									feature available in Microsoft's Visual C++ compiler that allows you to optimize an output file based on profiling data collected during test runs of the application or module.<p>
+									<p><strong>Links:</strong></p>
+									<ul>
+										<li><a href="http://msdn.microsoft.com/en-us/library/e7k32f4k%28v=vs.110%29.aspx" target="_blank">PGO on MSDN</a></li>
+										<li><a href="http://blogs.msdn.com/b/vcblog/archive/2013/05/06/speeding-up-php-performance-for-your-application-using-profile-guided-optimization-pgo.aspx" target="_blank">Visual C++ Team Blog - PGO with PHP</a></li>
+										<li><a href="http://www.ksingla.net/2010/05/php-pgo-build-for-maximum-performance-on-windows/" target="_blank">PHP PGO build for maximum performance</a> (old)</li>
+									</ul>
 	
 <?php
 if ((isset($mode) && ($mode == 'snapshots' || $mode == 'qa'))
