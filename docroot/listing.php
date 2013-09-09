@@ -28,12 +28,8 @@ include __DIR__ . '/../include/listing.php';
 $baseurl = '/' . $dir_to_parse . '/';
 
 $versions = generate_listing($dir_to_parse, $snaps);
-$major_order = array('5.5', '5.4', '5.3', '5.2');
+$major_order = array('5.5', '5.4', '5.3');
 $minor_order = array(
-		'5.2' => array(
-			'nts-VC6-x86',
-			'ts-VC6-x86'
-		),
 		'5.3' => array(
 			'nts-VC9-x86',
 			'ts-VC9-x86',
@@ -59,8 +55,6 @@ $minor_order = array(
 	);
 
 $labels = array(
-			'nts-VC6-x86' => 'VC6 x86 Non Thread Safe',
-			'ts-VC6-x86'  => 'VC6 x86 Thread Safe',
 			'nts-VC9-x86' => 'VC9 x86 Non Thread Safe',
 			'ts-VC9-x86'  => 'VC9 x86 Thread Safe',
 			'nts-VC11-x86' => 'VC11 x86 Non Thread Safe',
@@ -72,7 +66,6 @@ $labels = array(
 );
 
 if ($mode == 'snapshots') {
-	unset($minor_order['5.2']);
 	unset($major_order[1]);
 }
 
