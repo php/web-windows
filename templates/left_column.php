@@ -32,7 +32,7 @@
                                     The interface on the <a href="http://pecl.php.net">pecl website</a>
                                     will most likely be updated to offer Windows DLL download right from that website.<br />
                                     In the meantime, some extensions can be found 
-                                    <a href="http://downloads.php.net/pierre/">here</a>.
+                                    <a href="http://windows.php.net/downloads/pecl/releases/">here</a>.
                                     </p>
 
                                 </div><!-- .info -->
