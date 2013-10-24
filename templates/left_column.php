@@ -34,7 +34,7 @@
 
                                     The PECL extension 
                                     <a href="http://windows.php.net/downloads/pecl/releases/">release</a> and
-                                    <a href="http://windows.php.net/downloads/pecl/snaps/">snapsnapshot</a> build directories are browsable
+                                    <a href="http://windows.php.net/downloads/pecl/snaps/">snapshot</a> build directories are browsable
 				    directly.
                                     </p>
 
