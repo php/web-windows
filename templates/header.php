@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
     <head>
         <title>PHP For Windows: <?php echo $title_page; ?></title>
@@ -44,7 +44,7 @@
                     <li><a href="http://windows.php.net">Home</a></li>
                     <li><a href="http://windows.php.net/download/">Downloads</a></li>
                     <li><a href="http://windows.php.net/qa/">QA Releases</a></li>
-                    <li><a href="http://windows.php.net/snapshots/">Snapshots</a></li>
+                    <li><a href="http://windows.php.net/snaps/">Snapshots</a></li>
                     <li><a href="http://windows.php.net/team/">Team</a></li>
                     <!-- <li><a href="http://windows.php.net/docs.php">Documentation</a></li> -->
                     <li class="last"><a href="http://www.php.net">Php.net site</a></li>
