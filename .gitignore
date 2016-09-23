@@ -1,1 +1,3 @@
 data/*.json
+logs/*.log
+logs/*/*.log
