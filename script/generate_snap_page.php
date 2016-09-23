@@ -44,21 +44,6 @@ function parse_meta($path)
 	return FALSE;
 }
 
-$path = "C:/domains/windows.php.net/docroot/downloads/snaps/php-5.6";
-$files = glob($path . "/*", GLOB_ONLYDIR);
-usort($files, function($a, $b) {
-    return filemtime($a) < filemtime($b);
-});
-
-$min_time = strtotime("- 1 week");
-foreach($files as $file){
-	if (filemtime($file) >= $min_time) {
-		echo 'revision: ' . basename($file) . " \t " . date('F d Y, H:i:s', filemtime($file)) . "\n";
-		parse_meta($file);
-		break;
-	}
-}
-
 $base_dir = SNAPS_DIR;
 $data_path = DATA_DIR . '/status.json';
 
