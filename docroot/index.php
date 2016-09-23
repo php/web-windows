@@ -36,7 +36,107 @@ include TPL_PATH . 'news_line.php';
         <div class="block">
           <!-- .block -->
 
-          <div class="info entry">
+ 		  <div class="info entry">
+			<!-- .info -->
+			<h3 class="summary entry-title">OpenSSL security update</h3>
+			
+			<p class="news-date"><abbr class="published newsdate"
+            title="2014-04-10T09:00:00+00:00">20-Mar-2015</abbr></p>
+			
+			<div>
+			<p>The <a href="http://openssl.org/news/secadv_20150319.txt">OpenSSL Security Advisory [19 Mar 2015]</a> announces the
+			availability of the OpenSSL 0.9.8zf and 1.0.1m which fix twelve security vulnerabilities. 
+			The latest PHP releases 5.4.39, 5.5.23 and 5.6.7 already contain the updated OpenSSL library.
+			All PHP users are strongly encouraged to upgrade to the corresponding patch versions.</p>
+			
+			<p>Alternatively, the updated OpenSSL dependency DLLs can be downloaded separately as replacement for the older PHP and Apache versions.
+				<ul>
+					<li><a href="http://windows.php.net/downloads/php-sdk/deps/vc9/x86/openssl-0.9.8zf-vc9-x86.zip">http://windows.php.net/downloads/php-sdk/deps/vc9/x86/openssl-0.9.8zf-vc9-x86.zip</a></li>
+					<li><a href="http://windows.php.net/downloads/php-sdk/deps/vc11/x86/openssl-1.0.1m-vc11-x86.zip">http://windows.php.net/downloads/php-sdk/deps/vc11/x86/openssl-1.0.1m-vc11-x86.zip</a></li>
+					<li><a href="http://windows.php.net/downloads/php-sdk/deps/vc11/x64/openssl-1.0.1m-vc11-x64.zip">http://windows.php.net/downloads/php-sdk/deps/vc11/x64/openssl-1.0.1m-vc11-x64.zip</a></li>
+				</ul>
+			</p>
+			</div>
+		  </div><!-- .info -->
+		  
+ 		  <div class="info entry">
+			<!-- .info -->
+			<h3 class="summary entry-title">OpenSSL security update</h3>
+			
+			<p class="news-date"><abbr class="published newsdate"
+            title="2014-04-10T09:00:00+00:00">10-Apr-2014</abbr></p>
+			
+			<div>
+			<p>The <a href="http://www.openssl.org/news/secadv_20140407.txt">OpenSSL Security Advisory [07 Apr 2014]</a> announces the
+			availability of the OpenSSL 1.0.1g which fixes CVE-2014-0160. In this regard the latest PHP release 5.5.11 was rebuilt with the OpenSSL 1.0.1g.
+			All PHP users are strongly encouraged to upgrade to PHP 5.5.11. If you already have downloaded this version before 10-Apr-2014, please redownload.
+			The existing private keys should be regenerated as soon as possible.</p>
+			
+			<p>Alternatively, the updated OpenSSL dependency DLLs can be downloaded separately as replacement for the older PHP versions. Though be aware that
+				this issue affects only OpenSSL 1.0.x and the DLL packages are only applicable to PHP 5.5 and upper.
+				<ul>
+					<li><a href="http://windows.php.net/downloads/php-sdk/deps/vc11/x86/openssl-1.0.1g-vc11-x86.zip">http://windows.php.net/downloads/php-sdk/deps/vc11/x86/openssl-1.0.1g-vc11-x86.zip</a></li>
+					<li><a href="http://windows.php.net/downloads/php-sdk/deps/vc11/x64/openssl-1.0.1g-vc11-x64.zip">http://windows.php.net/downloads/php-sdk/deps/vc11/x64/openssl-1.0.1g-vc11-x64.zip</a></li>
+				</ul>
+				
+				PHP 5.4 and lower is not affected by this issue. 
+			</p>
+			</div>
+		  </div><!-- .info -->
+		  
+ 		  <div class="info entry">
+			<!-- .info -->
+
+			<h3 class="summary entry-title">PHP 5.5.0 Release
+            Announcement</h3>
+
+            <p class="news-date"><abbr class="published newsdate"
+            title="2013-06-20T16:20:26+00:00">20-Jun-2013</abbr></p>
+
+			<div>
+				<p> The PHP development team is proud to announce the immediate availability of PHP 5.5.0.
+					This release includes a large number of new features and bug fixes.</p>
+
+				<p>
+					<b>The key features of PHP 5.5.0 include:</b>
+				</p>
+				<ul>
+					<li>Added <a href="http://php.net/generators">generators</a> and coroutines.</li>
+					<li>Added the <a href="http://php.net/exceptions">finally</a> keyword.</li>
+					<li>Added a <a href="http://php.net/password">simplified password hashing API</a>.</li>
+					<li>Added <a href="http://php.net/migration55.new-features#migration55.new-features.const-dereferencing">support for constant array/string dereferencing</a>.</li>
+					<li>Added scalar class name resolution via <a href="http://php.net/oop5.basic#language.oop5.basic.class.class">::class</a>.</li>
+					<li>Added <a href="http://php.net/migration55.new-features#migration55.new-features.empty">support for using empty() on the result of function calls and other expressions</a>.</li>
+					<li>Added <a href="http://php.net/migration55.new-features#migration55.new-features.non-scalar-iterator-keys">support for non-scalar Iterator keys in foreach</a>.</li>
+					<li>Added <a href="http://php.net/foreach#control-structures.foreach.list">support for list() constructs in foreach statements</a>.</li>
+					<li>Added the <a href="http://php.net/opcache">Zend OPcache</a> extension for opcode caching.</li>
+					<li>The GD library has been upgraded to version 2.1 adding new functions and improving existing functionality.</li>
+					<li>A lot more improvements and fixes.</li>
+				</ul>
+				<p>
+					<b>Changes that affect compatibility:</b>
+				</p>
+
+				<ul>
+					<li><a href="http://php.net/php_logo_guid">PHP logo GUIDs</a> have been removed.</li>
+					<li>Windows XP and 2003 support dropped.</li>
+					<li>Case insensitivity is no longer locale specific. All case insensitive matching for function, class and constant names is now performed in a locale independent manner according to ASCII rules.</li>
+				</ul>
+
+				<p>
+				For users upgrading from PHP 5.4,
+				<a href="http://php.net/migration55">a migration guide is available</a>
+				detailing the changes between 5.4 and 5.5.0.
+				</p>
+
+				<p>
+				For a full list of changes in PHP 5.5.0, see the <a href="http://php.net/ChangeLog-5.php#5.5.0">ChangeLog</a>.
+				</p>
+			</div>
+
+          </div><!-- .info -->
+
+		  <div class="info entry">
             <!-- .info -->
 
             <h3 class="summary entry-title">PHP 5.4.0 Release

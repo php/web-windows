@@ -78,9 +78,9 @@ function generate_listing($path, $snaps = false) {
 	$old_cwd = getcwd();
 	chdir($path);
 
-	$versions = glob('php-[56].*[0-9]-latest.zip');
+	$versions = glob('php-[567].*[0-9]-latest.zip');
 	if (empty($versions)) {
-		$versions = glob('php-[56].*[0-9].zip');
+		$versions = glob('php-[567].*[0-9].zip');
 	}
 
 	$releases = array();

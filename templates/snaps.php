@@ -1,28 +1,45 @@
 <?php
 include __DIR__ . '/../include/tools.php';
 
-$major_order = array('5.4', '5.3', 'trunk');
+$major_order = array('7.1', '7.0', '5.6', 'master');
 $minor_order = array(
-		'5.4' => array(
-				'nts-windows-vc9-x86',
-				'ts-windows-vc9-x86'
+		'master' => array(
+				'nts-windows-vc14-x64',
+				'ts-windows-vc14-x64',
+				'nts-windows-vc14-x86',
+				'ts-windows-vc14-x86'
 			),
-		'5.3' => array(
-				'nts-windows-vc9-x86',
-				'ts-windows-vc9-x86'
+		'7.1' => array(
+				'nts-windows-vc14-x64',
+				'ts-windows-vc14-x64',
+				'nts-windows-vc14-x86',
+				'ts-windows-vc14-x86'
+		),
+		'7.0' => array(
+				'nts-windows-vc14-x64',
+				'ts-windows-vc14-x64',
+				'nts-windows-vc14-x86',
+				'ts-windows-vc14-x86'
+		),
+		'5.6' => array(
+				'nts-windows-vc11-x64',
+				'ts-windows-vc11-x64',
+				'nts-windows-vc11-x86',
+				'ts-windows-vc11-x86'
 			),
-		'trunk' => array(
-				'nts-windows-vc9-x86',
-				'ts-windows-vc9-x86'
-			)
 	);
 
 $labels = array(
 			'nts-windows-vc9-x86' => 'VC9 x86 Non Thread Safe',
 			'ts-windows-vc9-x86'  => 'VC9 x86 Thread Safe',
-			'nts-windows-vc9-x64' => 'VC9 x64 Non Thread Safe',
-			'nts-windows-vc9-x64'  => 'VC9 x64 Thread Safe',
-
+			'nts-windows-vc11-x86' => 'VC11 x86 Non Thread Safe',
+			'ts-windows-vc11-x86'  => 'VC11 x86 Thread Safe',
+			'nts-windows-vc11-x64' => 'VC11 x64 Non Thread Safe',
+			'ts-windows-vc11-x64'  => 'VC11 x64 Thread Safe',
+			'nts-windows-vc14-x86' => 'VC14 x86 Non Thread Safe',
+			'ts-windows-vc14-x86'  => 'VC14 x86 Thread Safe',
+			'nts-windows-vc14-x64' => 'VC14 x64 Non Thread Safe',
+			'ts-windows-vc14-x64'  => 'VC14 x64 Thread Safe',
 );
 
 include TPL_PATH . 'header.php';
@@ -62,7 +79,7 @@ include TPL_PATH . 'left_column.php';
                             </div><!-- .adv-block -->
 
 <?php
-if ($_GET['id']) {
+if (isset($_GET["id"]) && $_GET['id']) {
 	echo "<pre>";
 	print_r($data);
 	echo "</pre>";
@@ -83,7 +100,7 @@ foreach ($major_order as $major) {
 		continue;
 	}
 ?>
-	<p>Revision: <?php echo $data[$major]['revision_last']; ?></p>
+	<p>Revision: <?php echo $data[$major]['revision_last']; ?> (<?php echo $data[$major]['build_time']; ?>)</p>
 <?php
 if (0) {
 ?>
@@ -102,7 +119,7 @@ if (0) {
 		<h4 id="php-<?php echo $major . '-' . $minor; ?>" name="php-<?php echo $major . '-' . $minor;?>"><?php echo $labels[$minor]; ?> </h4>
 		<p>
 		<ul>
-<?php if (isset($data[$major][$minor]['files'])) { ?>
+<?php if (isset($data[$major][$minor]['files']) && $data[$major][$minor]['files']['php']['size'] > 0) { ?>
 		<li>
 			<a href="<?php echo $data[$major][$minor]['files']['php']['url']; ?>">Zip</a>
 			[<?php echo bytes2string($data[$major][$minor]['files']['php']['size']); ?>]<br />
@@ -115,6 +132,9 @@ if (0) {
 			<a href="<?php echo $data[$major][$minor]['files']['devel']['url']; ?>">Development package (SDK to develop PHP extensions)</a>
 			[<?php echo bytes2string($data[$major][$minor]['files']['devel']['size']); ?>]<br />
 		</li>
+<?php } else { ?>
+Build missing or in progress.
+
 <?php } ?>
 		</ul> 
 

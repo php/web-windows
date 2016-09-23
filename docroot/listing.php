@@ -8,8 +8,13 @@ switch ($mode) {
 		$dir_to_parse = 'downloads/qa';
 		$title_page = 'Binaries and sources QA Releases';
 		break;
+	/* The snapshot page is currently gets generated. listing2.php seems 
+	to be quite outdated, so we just redirect to the correct snapshot page
+	instead. */
 	case 'snapshots':
-		include 'listing2.php';
+	case 'snaps':
+		header("Location: /snapshots/");
+		//include 'listing2.php';
 		exit();
 		$dir_to_parse = 'downloads/snaps';
 		$title_page = 'Binaries and sources Snapshots';
@@ -28,9 +33,9 @@ include __DIR__ . '/../include/listing.php';
 $baseurl = '/' . $dir_to_parse . '/';
 
 $versions = generate_listing($dir_to_parse, $snaps);
-$major_order = array('5.5', '5.4', '5.3');
+$major_order = array('7.1', '7.0', '5.6', '5.5', /*'5.4', '5.3'*/);
 $minor_order = array(
-		'5.3' => array(
+		/*'5.3' => array(
 			'nts-VC9-x86',
 			'ts-VC9-x86',
 			'nts-VC9-x64',
@@ -41,8 +46,8 @@ $minor_order = array(
 			'ts-VC9-x86',
 			'nts-VC9-x64',
 			'ts-VC9-x64'
-		),
-			'5.5' => array(
+		),*/
+		'5.5' => array(
 			'nts-VC9-x86',
 			'ts-VC9-x86',
 			'nts-VC9-x64',
@@ -51,21 +56,44 @@ $minor_order = array(
 			'ts-VC11-x86',
 			'nts-VC11-x64',
 			'ts-VC11-x64'
-		)
+		),
+		'5.6' => array(
+			'nts-VC11-x86',
+			'ts-VC11-x86',
+			'nts-VC11-x64',
+			'ts-VC11-x64'
+		),
+		'7.0' => array(
+			'nts-VC14-x86',
+			'ts-VC14-x86',
+			'nts-VC14-x64',
+			'ts-VC14-x64'
+		),
+		'7.1' => array(
+			'nts-VC14-x86',
+			'ts-VC14-x86',
+			'nts-VC14-x64',
+			'ts-VC14-x64'
+		),
 	);
 
 $labels = array(
 			'nts-VC9-x86' => 'VC9 x86 Non Thread Safe',
 			'ts-VC9-x86'  => 'VC9 x86 Thread Safe',
-			'nts-VC11-x86' => 'VC11 x86 Non Thread Safe',
-			'ts-VC11-x86'  => 'VC11 x86 Thread Safe',
 			'nts-VC9-x64' => 'VC9 x64 Non Thread Safe',
 			'ts-VC9-x64'  => 'VC9 x64 Thread Safe',
+			'nts-VC11-x86' => 'VC11 x86 Non Thread Safe',
+			'ts-VC11-x86'  => 'VC11 x86 Thread Safe',
 			'nts-VC11-x64' => 'VC11 x64 Non Thread Safe',
 			'ts-VC11-x64'  => 'VC11 x64 Thread Safe',
+			'nts-VC14-x86' => 'VC14 x86 Non Thread Safe',
+			'ts-VC14-x86'  => 'VC14 x86 Thread Safe',
+			'nts-VC14-x64' => 'VC14 x64 Non Thread Safe',
+			'ts-VC14-x64'  => 'VC14 x64 Thread Safe',
 );
 
 if ($mode == 'snapshots') {
+	unset($minor_order['5.2']);
 	unset($major_order[1]);
 }
 
@@ -141,6 +169,11 @@ if (isset($versions[$major]['test_pack'])) {
 		<span class="corners-top"><span></span></span>
 
 		<h4 id="php-<?php echo $major . '-' . $minor; ?>" name="php-<?php echo $major . '-' . $minor;?>"><?php echo $labels[$minor]; ?> (<?php echo $versions[$major][$minor]['mtime']; ?>)</h4>
+		<?php
+			if ((strcmp($major, '5.5') == 0 || strcmp($major, '5.6') == 0) && strstr($labels[$minor], 'x64')) {
+				echo '<strong>Note:</strong> x64 builds are currently <a href="#x64"><strong>experimental</strong></a>';
+			}
+		?>
 		<p>
 		<ul>
 		<li>
