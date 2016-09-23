@@ -1,3 +1,4 @@
 data/*.json
 logs/*.log
 logs/*/*.log
+docroot/snapshot.html
