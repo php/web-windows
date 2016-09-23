@@ -71,9 +71,9 @@ foreach ($active_branches as $branch_name) {
 		$json_file = $branch_dir . '/' . $branch_name . '.json';
 	}
 
-	echo $branch_dir . $json_file . "\n";
+	echo $branch_dir . "\n" . $json_file . "\n";
 	if (!file_exists($json_file)) {
-		echo "cannot read json data\n" . $branch_dir . '/php-' . $branch_name . '.json' . "\n";
+		echo "cannot read json data from $json_file\n";
 		continue;
 	} else {
 		echo "processing\n";
@@ -89,12 +89,26 @@ foreach ($active_branches as $branch_name) {
 	$meta = parse_meta($file);
 	$force = true;
 
-	$contents = file_get_contents($branch_dir . '/php-' . $branch_name . '.json');
+	$rev_last = $revision;
+	$rev_dir = $branch_dir . '/' . $rev_last;
+	$rev_url = $branch_url  . '/' . $rev_last;
+	
+	$contents = file_get_contents($json_file);
 	$new = json_decode($contents, true);
-	if ($force || ($new['revision_last'] != $data[$branch_name]['revision_last'])) {
+	//var_dump($new, $data[$branch_name]);
+	if ($force || substr($new['revision_last'], 0, 7) != substr($data[$branch_name]['revision_last'], 1)) {
 		echo "new revision\n";
 		$has_new_revision = true;
 		$data[$branch_name] = $new;
+		/* Check if there are possibly more builds than delivered in the $json_file. Scan the dir. */
+		$tmp = glob("$rev_dir/*.json");
+		foreach ($tmp as $n) {
+			$bld = basename($n, ".json");
+			/* Do not overwrite, just add what is missing. */
+			if (!in_array($bld, $data[$branch_name]["builds"])) {
+				$data[$branch_name]["builds"][] = $bld;
+			}
+		}
 	} else {
 		echo "no new revision\n";
 		echo "**********************\n\n";
@@ -102,15 +116,16 @@ foreach ($active_branches as $branch_name) {
 	}
 	$data[$branch_name]['revision_last'] = $revision;
 	$data[$branch_name]['build_time'] = date('F d Y, H:i:s', filemtime($file));
-	$rev_last = $revision;
-	$rev_dir = $branch_dir . '/' . $rev_last;
-	$rev_url = $branch_url  . '/' . $rev_last;
 
 	if (!isset($data[$branch_name]['builds'])) {
 		$data[$branch_name]['builds'] = $builds[$branch_name];
 	}
 	foreach ($data[$branch_name]['builds'] as $build_name) {
 		echo "**************** processing $build_name...\n";
+		if (!file_exists($rev_dir . '/' . $build_name . '.json')) {
+			$data[$branch_name][$build_name]['files'] = false;
+			continue;
+		}
 		$build_json = file_get_contents($rev_dir . '/' . $build_name . '.json');
 		echo $rev_dir . '/' . $build_name . '.json' . "\n";
 		$build = json_decode($build_json);
@@ -128,7 +143,7 @@ foreach ($active_branches as $branch_name) {
 			$files['devel']['url']	= $rev_url . '/php-devel-pack-' . $branch_name . '-' . $build_name . '-' . $rev_last . '.zip';
 			$files['devel']['size']	= filesize($rev_dir . '/php-devel-pack-' . $branch_name . '-' . $build_name . '-' . $rev_last . '.zip');
 		}
-		$data[$branch_name][$build_name]['files'] = $files;
+		$data[$branch_name][$build_name]['files'] = count($files) ? $files : false;
 	}
 	print_r($files); echo "\n";
 	print_r($rev_dir . '/php-' . $branch_name . '-' . $build_name . '-' . $rev_last . '.zip'); echo "\n";
