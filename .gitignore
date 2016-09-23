@@ -2,3 +2,10 @@ data/*.json
 logs/*.log
 logs/*/*.log
 docroot/snapshot.html
+docroot/downloads/pecl/
+docroot/downloads/php-sdk/
+docroot/downloads/pickle/
+docroot/downloads/qa/
+docroot/downloads/releases/
+docroot/downloads/snaps/
+
