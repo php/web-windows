@@ -95,14 +95,17 @@ foreach ($active_branches as $branch_name) {
 	
 	$contents = file_get_contents($json_file);
 	$new = json_decode($contents, true);
-	//var_dump($new, $data[$branch_name]);
+
+	/* Currently we always regenerate the snaps page completely. Alternatively, some more data might need
+		to be checked, for the case the script execution were caught at unlucky point where some build
+		upload is in the incomplete state. Both methods have their up and down sides. */
 	if ($force || substr($new['revision_last'], 0, 7) != substr($data[$branch_name]['revision_last'], 1)) {
 		echo "new revision\n";
 		$has_new_revision = true;
 		$data[$branch_name] = $new;
 		/* Check if there are possibly more builds than delivered in the $json_file. Scan the dir. */
-		$tmp = glob("$rev_dir/*.json");
-		foreach ($tmp as $n) {
+		$gon_in_rev_dir = glob("$rev_dir/*.json");
+		foreach ($got_in_rev_dir as $n) {
 			$bld = basename($n, ".json");
 			/* Do not overwrite, just add what is missing. */
 			if (!in_array($bld, $data[$branch_name]["builds"])) {
