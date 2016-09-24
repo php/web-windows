@@ -104,7 +104,7 @@ foreach ($active_branches as $branch_name) {
 		$has_new_revision = true;
 		$data[$branch_name] = $new;
 		/* Check if there are possibly more builds than delivered in the $json_file. Scan the dir. */
-		$gon_in_rev_dir = glob("$rev_dir/*.json");
+		$got_in_rev_dir = glob("$rev_dir/*.json");
 		foreach ($got_in_rev_dir as $n) {
 			$bld = basename($n, ".json");
 			/* Do not overwrite, just add what is missing. */
