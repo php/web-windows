@@ -7,10 +7,10 @@ $active_branches = array('master', '7.1', '7.0', '5.6');
 
 $builds = array(
 		'master' => array(
-				'nts-windows-vc14-x64',
-				'ts-windows-vc14-x64',
-				'nts-windows-vc14-x86',
-				'ts-windows-vc14-x86'
+				'nts-windows-vc15-x64',
+				'ts-windows-vc15-x64',
+				'nts-windows-vc15-x86',
+				'ts-windows-vc15-x86'
 			),
 		'7.1' => array(
 				'nts-windows-vc14-x64',
