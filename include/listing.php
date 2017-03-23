@@ -26,6 +26,22 @@ function processSha1Sums($path)
 }
 
 
+function processSha256Sums($path)
+{
+	if (!file_exists($snaps_dir . 'sha256sum.txt')) {
+		return array();
+	}
+	$sha256sums = file($snaps_dir . 'sha256sum.txt');
+	$res = array();
+	foreach ($sha256sums as $sha256){
+		list($sha256, $file) = preg_split("/\s+\*?/", $sha256);
+		$file = str_replace(array("\r","\n", $snaps_dir), array('','', ''), $file);
+		$res[strtolower(basename($file))] = $sha256;
+	}
+	return $res;
+}
+
+
 function parse_file_name($v)
 {
 	$v = str_replace(array('-Win32', '.zip'), array('', ''), $v);
@@ -85,6 +101,7 @@ function generate_listing($path, $snaps = false) {
 
 	$releases = array();
 	$sha1sums = processSha1Sums($path);
+	$sha256sums = processSha256Sums($path);
 	foreach ($versions as $file) {
 		if (0&& !$snap && strpos($file, '5.2.9-2')) {
 			continue;
@@ -115,7 +132,8 @@ function generate_listing($path, $snaps = false) {
 		$releases[$version_short][$key]['zip'] = array(
 				'path' => $file_ori,
 				'size' => bytes2string(filesize($file_ori)),
-				'sha1' => $sha1sums[strtolower($file_ori)]
+				'sha1' => $sha1sums[strtolower($file_ori)],
+				'sha256' => $sha256sums[strtolower($file_ori)]
 				);
 		$compile = $configure = $buildconf = false;
 		if ($snaps) {
@@ -145,21 +163,24 @@ function generate_listing($path, $snaps = false) {
 			$releases[$version_short][$key]['debug_pack'] = array(
 					'size' => bytes2string(filesize($debug_pack)),
 					'path' => $debug_pack,
-					'sha1' => $sha1sums[strtolower($debug_pack)]
+					'sha1' => $sha1sums[strtolower($debug_pack)],
+					'sha256' => $sha256sums[strtolower($debug_pack)]
 						);
 		}		
 		if (file_exists($installer)) {
 			$releases[$version_short][$key]['installer'] = array(
 					'size' => bytes2string(filesize($installer)),
 					'path' => $installer,
-					'sha1' => $sha1sums[strtolower($installer)]
+					'sha1' => $sha1sums[strtolower($installer)],
+					'sha256' => $sha256sums[strtolower($installer)]
 						);
 		}
 		if (file_exists($testpack)) {
 			$releases[$version_short]['test_pack'] = array(
 					'size' => bytes2string(filesize($testpack)),
 					'path' => $testpack,
-					'sha1' => $sha1sums[strtolower($testpack)]
+					'sha1' => $sha1sums[strtolower($testpack)],
+					'sha256' => $sha256sums[strtolower($testpack)]
 						);
 		}
 

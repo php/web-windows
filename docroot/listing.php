@@ -157,20 +157,23 @@ if (isset($versions[$major]['test_pack'])) {
 		<li>
 			<a href="<?php echo $baseurl . $versions[$major][$minor]['zip']['path']; ?>">Zip</a>
 		[<?php echo $versions[$major][$minor]['zip']['size']; ?>]<br />
-		<span class="md5sum">sha1: <?php echo $versions[$major][$minor]['zip']['sha1']; ?></span>
+<!--		<span class="md5sum">sha1: <?php echo $versions[$major][$minor]['zip']['sha1']; ?></span><br /> -->
+		<span class="md5sum">sha256: <?php echo $versions[$major][$minor]['zip']['sha256']; ?></span>
 		</li>
 <?php if (isset($versions[$major][$minor]['installer'])) { ?>
 		<li>
 			<a href="<?php echo $baseurl . $versions[$major][$minor]['installer']['path']; ?>">Installer</a>
 		[<?php echo $versions[$major][$minor]['installer']['size']; ?>]<br />
-		<span class="md5sum">sha1: <?php echo $versions[$major][$minor]['installer']['sha1']; ?></span>
+<!--		<span class="md5sum">sha1: <?php echo $versions[$major][$minor]['installer']['sha1']; ?></span><br/ > -->
+		<span class="md5sum">sha256: <?php echo $versions[$major][$minor]['installer']['sha256']; ?></span>
 		</li>
 <?php } ?>
 <?php if (isset($versions[$major][$minor]['debug_pack'])) { ?>
 		<li>
 			<a href="<?php echo $baseurl . $versions[$major][$minor]['debug_pack']['path']; ?>">Debug Pack</a>
 		[<?php echo $versions[$major][$minor]['debug_pack']['size']; ?>]<br />
-		<span class="md5sum">sha1: <?php echo $versions[$major][$minor]['debug_pack']['sha1']; ?></span>
+<!--		<span class="md5sum">sha1: <?php echo $versions[$major][$minor]['debug_pack']['sha1']; ?></span><br/ > -->
+		<span class="md5sum">sha256: <?php echo $versions[$major][$minor]['debug_pack']['sha256']; ?></span>
 		</li>
 <?php } ?>
 		</ul>
