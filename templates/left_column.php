@@ -72,11 +72,10 @@ if ((isset($mode) && ($mode == 'snapshots' || $mode == 'qa'))
 									
 									<p>With Apache you have to use the Thread Safe (TS) versions of PHP.</p>
 
-									<h4><u>VC9, VC11 & VC14</u></h4>
+									<h4><u>VC11 & VC14</u></h4>
 									<p>More recent versions of PHP are built with VC9, VC11 or VC14 (Visual Studio 2008, 2012 or 2015 compiler respectively) and 
 									include improvements in performance and stability.</p>
 
-									<p> - The VC9 builds require you to have the <i>Visual C++ Redistributable for Visual Studio 2008 SP1</i> <a href="http://www.microsoft.com/en-us/download/details.aspx?id=5582">x86</a> or <a href="http://www.microsoft.com/en-us/download/details.aspx?id=15336">x64</a> installed </p>
 									<p> - The VC11 builds require to have the <i>Visual C++ Redistributable for Visual Studio 2012</i> <a href="http://www.microsoft.com/en-us/download/details.aspx?id=30679">x86 or x64</a> installed</p>
 									<p> - The VC14 builds require to have the <i>Visual C++ Redistributable for Visual Studio 2015</i> <a href="http://www.microsoft.com/en-us/download/details.aspx?id=48145">x86 or x64</a> installed</p>
 
