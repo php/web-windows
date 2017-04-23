@@ -64,11 +64,11 @@ if ((isset($mode) && ($mode == 'snapshots' || $mode == 'qa'))
 
 									<h4><u>Apache</u></h4>
 									<p>Please use the Apache builds provided by <a href="http://apachelounge.com">Apache Lounge</a>.
-									They provide VC9, VC11 and VC14 builds of Apache for x86 and x64.
+									They provide VC11, VC14 and VC15 builds of Apache for x86 and x64.
 									We use their binaries to build the Apache SAPIs.</p>
 
                                     <p>If you are using PHP as module with Apache builds from <strong>apache.org</strong> (not recommended) you need to use the older VC6 versions of PHP
-									compiled with the legacy Visual Studio 6 compiler. Do <b>NOT</b> use VC9+ versions of PHP with the apache.org binaries.</p>
+									compiled with the legacy Visual Studio 6 compiler. Do <b>NOT</b> use VC11+ versions of PHP with the apache.org binaries.</p>
 									
 									<p>With Apache you have to use the Thread Safe (TS) versions of PHP.</p>
 
