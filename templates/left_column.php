@@ -96,7 +96,7 @@ if ((isset($mode) && ($mode == 'snapshots' || $mode == 'qa'))
 									</ul>
 
 									<a name="x64"> </a>
-									<h4><u>x86_64 Builds</u></h4>
+									<h4><u>amd64 (x86_64) Builds</u></h4>
 									<p> The x64 builds of <strong>PHP 5</strong> for Windows are <strong>experimental</strong>, and do not provide 64-bit integer or large file support.</p>
 									<p><strong>PHP 7 provides full 64-bit support.</strong> The x64 builds of PHP 7 support native 64-bit integers, LFS, 64-bit memory_limit and much more.</p>
 
