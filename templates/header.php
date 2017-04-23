@@ -9,7 +9,7 @@
         <link type="text/css" media="print" rel="stylesheet" href="/styles/print.css" />
         <link type="text/css" media="handfield" rel="stylesheet" href="/styles/handfield.css" />
 
-  <link rel="icon" href="http://windows.php.net/favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="http://windows.php.net/favicon.ico" type="image/x-icon" />
     </head>
 
     <body id="homepage">
@@ -27,7 +27,6 @@
                     <li><a href="http://windows.php.net/qa/">QA Releases</a></li>
                     <li><a href="http://windows.php.net/snapshots/">Snapshots</a></li>
                     <li><a href="http://windows.php.net/team/">Team</a></li>
-                    <!-- <li><a href="http://windows.php.net/docs.php">Documentation</a></li> -->
-                    <li class="last"><a href="http://www.php.net">Php.net site</a></li>
+                    <li class="last"><a href="http://www.php.net">PHP.net site</a></li>
                 </ul>
             </li><!-- .main-menu-->
