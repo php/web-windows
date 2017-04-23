@@ -2,27 +2,12 @@
 include __DIR__ . '/../include/config.php';
 
 define('CUR_PATH', dirname(__FILE__) . DIRECTORY_SEPARATOR);
-//define('TPL_PATH', CUR_PATH . 'templates' . DIRECTORY_SEPARATOR);
 
 include TPL_PATH . 'header.php';
 
 include TPL_PATH . 'news_line.php';
 
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
-
-<html>
-<head>
-  <meta name="generator" content=
-  "HTML Tidy for Windows (vers 25 March 2009), see www.w3.org">
-
-  <title></title>
-</head>
-
-<body>
-  <ul>
-    <li id="content"></li>
-  </ul>
 
   <ul id="content-columns">
     <?php
@@ -955,11 +940,9 @@ include TPL_PATH . 'news_line.php';
       </div>
     </li><!-- .main-column -->
   </ul><!-- .content-columns -->
-  <!-- .content -->
+
   <?php
 
   include TPL_PATH . 'footer.php';
 
   ?>
-</body>
-</html>
