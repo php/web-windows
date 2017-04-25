@@ -6,6 +6,8 @@ define('CUR_PATH', dirname(__FILE__) . DIRECTORY_SEPARATOR);
 $title_page = 'Home';
 
 
+$title_page = 'Home';
+
 include TPL_PATH . 'header.php';
 
 include TPL_PATH . 'news_line.php';
