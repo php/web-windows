@@ -774,43 +774,8 @@
 
 #footer .info {
 	line-height:1.4;
-	padding:18px 12px;
-}
-
-#copyright {
-    float:left;
-}
-
-#footer-menu {
-	   text-align:right;
-}
-
-#footer-menu ul {
-    display:inline;
-    color: #6280B2;
-}
-
-#footer-menu ul li {
-	 display:inline;
-  border-right:1px solid #6280B2;
-	 padding: 0 1%;
-}
-
-#footer-menu ul .last {
-    border:0;
-    padding-right:0;
-}
-
-#footer-menu ul .first {
-    padding-left:0;
-}
-
-#footer-menu small {
-	color:#7C7C7C;
-}
-
-#footer-menu small a {
-	color:#000;
+	padding:10px 0;
+	text-align: center;
 }
 
 /* Manual tweaks
