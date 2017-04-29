@@ -5,6 +5,13 @@ define('CUR_PATH', dirname(__FILE__) . DIRECTORY_SEPARATOR);
 
 $title_page = 'Home';
 
+function news_date($in) {
+    $time = strtotime($in);
+    $human_readable = date('d M Y', $time);
+    $for_tools = date(DATE_W3C, $time);
+    echo "<p class='news-date'><time datetime='{$for_tools}'>{$human_readable}</time></p>";
+}
+
 
 include TPL_PATH . 'header.php';
 
@@ -27,10 +34,7 @@ include TPL_PATH . 'news_line.php';
  		  <div class="info entry">
 			<!-- .info -->
 			<h3 class="summary entry-title">OpenSSL security update</h3>
-			
-			<p class="news-date"><abbr class="published newsdate"
-            title="2014-04-10T09:00:00+00:00">20-Mar-2015</abbr></p>
-			
+      <?php news_date('20-Mar-2015') ?>
 			<div>
 			<p>The <a href="http://openssl.org/news/secadv_20150319.txt">OpenSSL Security Advisory [19 Mar 2015]</a> announces the
 			availability of the OpenSSL 0.9.8zf and 1.0.1m which fix twelve security vulnerabilities. 
@@ -50,10 +54,7 @@ include TPL_PATH . 'news_line.php';
  		  <div class="info entry">
 			<!-- .info -->
 			<h3 class="summary entry-title">OpenSSL security update</h3>
-			
-			<p class="news-date"><abbr class="published newsdate"
-            title="2014-04-10T09:00:00+00:00">10-Apr-2014</abbr></p>
-			
+			<?php news_date('10-Apr-2014') ?>
 			<div>
 			<p>The <a href="http://www.openssl.org/news/secadv_20140407.txt">OpenSSL Security Advisory [07 Apr 2014]</a> announces the
 			availability of the OpenSSL 1.0.1g which fixes CVE-2014-0160. In this regard the latest PHP release 5.5.11 was rebuilt with the OpenSSL 1.0.1g.
@@ -77,9 +78,7 @@ include TPL_PATH . 'news_line.php';
 
 			<h3 class="summary entry-title">PHP 5.5.0 Release
             Announcement</h3>
-
-            <p class="news-date"><abbr class="published newsdate"
-            title="2013-06-20T16:20:26+00:00">20-Jun-2013</abbr></p>
+      <?php news_date('20-Jun-2013') ?>
 
 			<div>
 				<p> The PHP development team is proud to announce the immediate availability of PHP 5.5.0.
@@ -129,9 +128,7 @@ include TPL_PATH . 'news_line.php';
 
             <h3 class="summary entry-title">PHP 5.4.0 Release
             Announcement</h3>
-
-            <p class="news-date"><abbr class="published newsdate"
-            title="2009-03-10T21:03:42+02:00">1-Mar-2012</abbr></p>
+            <?php news_date('1-Mar-2012') ?>
 
             <div class="newsImage"></div>
 
@@ -231,10 +228,7 @@ include TPL_PATH . 'news_line.php';
 
             <h3 class="summary entry-title">PHP 5.3.6
             Released!</h3>
-
-            <p class="news-date"><abbr class="published newsdate"
-            title=
-            "2011-03-17T13:43:21+00:00">[17-Mar-2011]</abbr></p>
+            <?php news_date('17-Mar-2011') ?>
 
             <div class="newsImage"></div>
 
@@ -353,10 +347,7 @@ include TPL_PATH . 'news_line.php';
 
                     <h3 class="summary entry-title">PHP 5.3.2
                     released</h3>
-
-                    <p class="news-date"><abbr class=
-                    "published newsdate" title=
-                    "2010-03-04T19:00:11+00:00">04-Mar-2010</abbr></p>
+                    <?php news_date('04-Mar-2010') ?>
 
                     <div class="newsImage"></div>
 
@@ -451,10 +442,7 @@ include TPL_PATH . 'news_line.php';
 
                     <h3 class="summary entry-title">PHP 5.2.13
                     released</h3>
-
-                    <p class="news-date"><abbr class=
-                    "published newsdate" title=
-                    "2010-02-25T17:00:11+00:00">25-Feb-2010</abbr></p>
+                    <?php news_date('25-Feb-2010') ?>
 
                     <div class="newsImage"></div>
 
@@ -505,10 +493,7 @@ include TPL_PATH . 'news_line.php';
 
                     <h3 class="summary entry-title">PHP 5.3.1
                     released</h3>
-
-                    <p class="news-date"><abbr class=
-                    "published newsdate" title=
-                    "2009-11-19T17:41:11+00:00">19-Nov-2009</abbr></p>
+                    <?php news_date('19-Nov-2009') ?>
 
                     <div class="newsImage"></div>
 
@@ -563,10 +548,7 @@ include TPL_PATH . 'news_line.php';
 
                     <h3 class="summary entry-title">PHP 5.2.11
                     released</h3>
-
-                    <p class="news-date"><abbr class=
-                    "published newsdate" title=
-                    "2009-09-17T14:00:00+02:00">17-Sept-2009</abbr></p>
+                    <?php news_date('17-Sept-2009') ?>
 
                     <div class="newsImage"></div>
 
@@ -653,10 +635,7 @@ include TPL_PATH . 'news_line.php';
 
                     <h3 class="summary entry-title">PHP 5.3.0
                     released</h3>
-
-                    <p class="news-date"><abbr class=
-                    "published newsdate" title=
-                    "2009-06-30T11:47:17+02:00">30-Jun-2009</abbr></p>
+                    <?php news_date('30-Jun-2009') ?>
 
                     <div class="newsImage"></div>
 
@@ -708,10 +687,7 @@ include TPL_PATH . 'news_line.php';
 
                     <h3 class="summary entry-title">PHP 5.2.10
                     released</h3>
-
-                    <p class="news-date"><abbr class=
-                    "published newsdate" title=
-                    "2009-04-07T21:03:42+02:00">18-Jun-2009</abbr></p>
+                    <?php news_date('18-Jun-2009') ?>
 
                     <div class="newsImage"></div>
 
@@ -747,10 +723,7 @@ include TPL_PATH . 'news_line.php';
 
                     <h3 class="summary entry-title">PHP 5.2.9-2
                     (Windows) released</h3>
-
-                    <p class="news-date"><abbr class=
-                    "published newsdate" title=
-                    "2009-04-07T21:03:42+02:00">07-Apr-2009</abbr></p>
+                    <?php news_date('07-Apr-2009') ?>
 
                     <div class="newsImage"></div>
 
@@ -786,10 +759,7 @@ include TPL_PATH . 'news_line.php';
 
                     <h3 class="summary entry-title">PHP 5.2.9-1
                     (Windows) released</h3>
-
-                    <p class="news-date"><abbr class=
-                    "published newsdate" title=
-                    "2009-03-10T21:03:42+02:00">10-Mar-2009</abbr></p>
+                    <?php news_date('10-Mar-2009s') ?>
 
                     <div class="newsImage"></div>
 
@@ -821,10 +791,7 @@ include TPL_PATH . 'news_line.php';
 
                     <h3 class="summary entry-title">PHP 5.2.9
                     released</h3>
-
-                    <p class="news-date"><abbr class=
-                    "published newsdate" title=
-                    "2009-02-26T21:03:42+02:00">26-Feb-2009</abbr></p>
+                    <?php news_date('26-Feb-2009') ?>
 
                     <div class="newsImage"></div>
 
@@ -852,10 +819,7 @@ include TPL_PATH . 'news_line.php';
 
                     <h3 class="summary entry-title">PHP 5.2.9RC3
                     released</h3>
-
-                    <p class="news-date"><abbr class=
-                    "published newsdate" title=
-                    "2009-02-19T21:03:42+02:00">19-Feb-2009</abbr></p>
+                    <?php news_date('19-Feb-2009') ?>
 
                     <div class="newsImage"></div>
 
@@ -871,10 +835,7 @@ include TPL_PATH . 'news_line.php';
                     <h3 class="summary entry-title">Installer and
                     non thread safe builds available for the
                     snapshots</h3>
-
-                    <p class="news-date"><abbr class=
-                    "published newsdate" title=
-                    "2008-10-23T11:03:42+02:00">23-Oct-2008</abbr></p>
+                    <?php news_date('23-Oct-2008') ?>
 
                     <div class="newsImage"></div>
 
@@ -890,10 +851,7 @@ include TPL_PATH . 'news_line.php';
 
                     <h3 class="summary entry-title">Snapshots are
                     now online</h3>
-
-                    <p class="news-date"><abbr class=
-                    "published newsdate" title=
-                    "2008-10-81T13:03:42+02:00">08-Oct-2008</abbr></p>
+                    <?php news_date('08-Oct-2008') ?>
 
                     <div class="newsImage"></div>
 
@@ -913,10 +871,7 @@ include TPL_PATH . 'news_line.php';
 
                     <h3 class="summary entry-title">New website for
                     PHP Windows</h3>
-
-                    <p class="news-date"><abbr class=
-                    "published newsdate" title=
-                    "2008-08-01">01-Sep-2008</abbr></p>
+                    <?php news_date('01-Sep-2008') ?>
 
                     <div class="newsImage"></div>
 
