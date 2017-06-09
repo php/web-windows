@@ -74,6 +74,10 @@ $labels = array(
 			'ts-VC14-x86'  => 'VC14 x86 Thread Safe',
 			'nts-VC14-x64' => 'VC14 x64 Non Thread Safe',
 			'ts-VC14-x64'  => 'VC14 x64 Thread Safe',
+			'nts-VC15-x86' => 'VC15 x86 Non Thread Safe',
+			'ts-VC15-x86'  => 'VC15 x86 Thread Safe',
+			'nts-VC15-x64' => 'VC15 x64 Non Thread Safe',
+			'ts-VC15-x64'  => 'VC15 x64 Thread Safe',
 );
 
 if ($mode == 'snapshots') {
