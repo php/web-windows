@@ -77,7 +77,7 @@ if ((isset($mode) && ($mode == 'snapshots' || $mode == 'qa'))
 									include improvements in performance and stability.</p>
 
 									<p> - The VC11 builds require to have the <i>Visual C++ Redistributable for Visual Studio 2012</i> <a href="http://www.microsoft.com/en-us/download/details.aspx?id=30679">x86 or x64</a> installed</p>
-									<p> - The VC14 builds require to have the <i>Visual C++ Redistributable for Visual Studio 2015</i> <a href="http://www.microsoft.com/en-us/download/details.aspx?id=48145">x86 or x64</a> installed</p>
+									<p> - The VC14 builds require to have the <i>Visual C++ Redistributable for Visual Studio 2015</i> <a href="https://www.microsoft.com/en-us/download/details.aspx?id=52685">x86 or x64</a> installed</p>
 									<p> - The VC15 builds require to have the <i>Visual C++ Redistributable for Visual Studio 2017</i> <a href="https://go.microsoft.com/fwlink/?LinkId=746572">x64</a> or <a href="https://go.microsoft.com/fwlink/?LinkId=746571">x86</a> installed</p>
 
 									<h4><u>TS and NTS</u></h4>
