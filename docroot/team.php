@@ -31,13 +31,13 @@ include TPL_PATH . 'left_column.php';
 						<li>
 							<strong>Pierre Joye</strong>
 							<p>
-								Team Leader, Developer
+								Runtime Development
 							</p>
 						</li>
 						<li>
 							<strong>Kalle Sommer Nielsen</strong>
 							<p>
-								Developer
+								Runtime Development
 							</p>
 						</li>
 					</ul>
@@ -45,77 +45,33 @@ include TPL_PATH . 'left_column.php';
 						<li>
 							<strong>Anatol Belski</strong>
 							<p>
-								Development and Q/A
+								Runtime Development &amp; Quality Assurance
 							</p>
 						</li>
-						<li>
-							<strong>Robert Richards</strong>
-							<p>
-								Developer
-							</p>
-						</li>
-					</ul>
-					<ul style="float: left;">
 						<li>
 							<strong>Matt Ficken</strong>
 							<p>
-								Q/A and Automation
+								Quality Assurance &amp; Build Automation
 							</p>
-						</li>
-						<li>
-							<strong>Venkat Raman Don</strong>
-							<p>QA Windows Installer</p>
 						</li>
 					</ul>
 					<ul style="float: left;">
 						<li>
 							<strong>Stephen Zarkos</strong>
 							<p>
-								Builds, PGO & Performance
+								Build Automation, PGO &amp; Performance
 							</p>
 						</li>
 						<li>
 							<strong>Alex Schoenmaker</strong>
 							<p>
-								Sys Admin, web and snaps infrastructure
-							</p>
-						</li>
-					</ul>
-					<ul style="float: left;">
-						<li>
-							<strong>Garrett Serack</strong>
-							<p>
-								PGO Builds &amp; Tools
-							</p>
-						</li>
-						<li>
-							<strong>Kanwaljeet Singla</strong>
-							<p>
-								Windows Installer
-							</p>
-						</li>
-					</ul>
-					<ul style="float: left;">
-						<li>
-							<strong>John Mertic</strong>
-							<p>
-								Windows Installer
+								Sysadmin &amp; Web and Snaps infrastructure
 							</p>
 						</li>
 					</ul>
 					<div style="clear: left;"></div>
 				   </p>
                                </div><!-- .info -->
- 
-                               <div class="info entry"><!-- .info -->
-                                   <h3 class="summary entry-title">Contributors</h3>
-                                   <p>
-					<ul>
-						<li>Elizabeth Marie Smith</li>
-					</ul>
-				   </p>
-                               </div><!-- .info -->
-                                
                                 <span class="corners-bottom"><span></span></span>
                             </div><!-- .block -->
                         </div> <!-- .content -->
