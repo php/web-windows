@@ -13,8 +13,7 @@ $path_to_news_file = __DIR__ . '/../docroot/news.php';
 // Get RSS
 // ----------------------------------------------------------------------------
 
-$buffer = '';
-$feed = file_get_contents($news_feed_url);
+$feed = @file_get_contents($news_feed_url);
 $xml = @simplexml_load_string($feed);
 if (!$xml) {
     exit('Error: Could not load Atom/Rss feed' . PHP_EOL);
@@ -25,6 +24,7 @@ if (!$xml) {
 // ----------------------------------------------------------------------------
 
 $i = 0;
+$buffer = '';
 foreach ($xml as $node) {
     if ($i >= $max_news_feed_items) {
         break;
@@ -74,7 +74,6 @@ foreach ($xml as $node) {
 // ----------------------------------------------------------------------------
 
 if (!empty($buffer)) {
-    // Write html to file
     file_put_contents($path_to_news_file, $buffer);
     exit("Ok!" . PHP_EOL);
 } else {
