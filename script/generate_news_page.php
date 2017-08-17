@@ -17,7 +17,7 @@ $buffer = '';
 $feed = file_get_contents($news_feed_url);
 $xml = @simplexml_load_string($feed);
 if (!$xml) {
-    exit('Error: Could load Atom/Rss feed' . PHP_EOL);
+    exit('Error: Could not load Atom/Rss feed' . PHP_EOL);
 }
 
 // ----------------------------------------------------------------------------
@@ -70,7 +70,7 @@ foreach ($xml as $node) {
 }
 
 // ----------------------------------------------------------------------------
-// Write new to file
+// Write news to file
 // ----------------------------------------------------------------------------
 
 if (!empty($buffer)) {
