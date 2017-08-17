@@ -29,8 +29,16 @@ foreach ($xml as $node) {
     if ($i >= $max_news_feed_items) {
         break;
     }
+
     // Example: <category term="releases" label="New PHP release"/>
-    if (!in_array($node->category['term'], $news_feed_categories)) {
+    $found_category = false;
+    foreach ($node->category as $category) {
+        if (in_array($category['term'], $news_feed_categories)) {
+            $found_category = true;
+            break;
+        }
+    }
+    if (!$found_category) {
         continue;
     }
 
