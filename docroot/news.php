@@ -221,36 +221,6 @@
         
 <div class="info entry">
     <!-- .info -->
-    <h3 class='summary entry-title'>PHP 7.1.6 Released</h3>
-    <p class='news-date'><time datetime='2017-06-08T19:40:06+00:00'>08 Jun 2017</time></p>
-    <div>
-        
-     <p>The PHP development team announces the immediate availability of PHP 7.2.0 Alpha 2.
-     This release contains fixes and improvements relative to Alpha 1.
-     All users of PHP are encouraged to test this version carefully,
-     and report any bugs and incompatibilities in the
-     <a href="https://bugs.php.net/">bug tracking system</a>.</p>
-
-     <p><strong>THIS IS A DEVELOPMENT PREVIEW - DO NOT USE IT IN PRODUCTION!</strong></p>
-
-     <p>For information on new features and other changes, you can read the
-     <a href="https://github.com/php/php-src/blob/php-7.2.0alpha2/NEWS">NEWS</a> file,
-     or the <a href="https://github.com/php/php-src/blob/php-7.2.0alpha2/UPGRADING">UPGRADING</a> file
-     for a complete list of upgrading notes. These files can also be found in the release archive.</p>
-
-     <p>For source downloads of PHP 7.2.0 Alpha 2 please visit the <a href="https://downloads.php.net/~pollita/">download</a> page,
-     Windows sources and binaries can be found on <a href="http://windows.php.net/qa/">windows.php.net/qa/</a>.</p>
-
-     <p>The third and final alpha will be released on the 6th of July. You can also read the full list of planned releases on our
-     <a href="https://wiki.php.net/todo/php72#timetable">wiki</a>.</p>
-
-     <p>Thank you for helping us make PHP better.</p>
-        </div>
-</div><!-- .info -->
-
-        
-<div class="info entry">
-    <!-- .info -->
     <h3 class='summary entry-title'>PHP 7.2.0 Alpha 1 Released</h3>
     <p class='news-date'><time datetime='2017-06-08T17:03:24+00:00'>08 Jun 2017</time></p>
     <div>
@@ -275,6 +245,26 @@
      <a href="https://wiki.php.net/todo/php72#timetable">wiki</a>.</p>
 
      <p>Thank you for helping us make PHP better.</p>
+        </div>
+</div><!-- .info -->
+
+        
+<div class="info entry">
+    <!-- .info -->
+    <h3 class='summary entry-title'>PHP 7.0.20 Released</h3>
+    <p class='news-date'><time datetime='2017-06-08T12:00:00+00:00'>08 Jun 2017</time></p>
+    <div>
+        
+      <p>The PHP development team announces the immediate availability of PHP
+      7.0.20. Several bugs have been fixed.
+     
+      All PHP 7.0 users are encouraged to upgrade to this version.
+      </p>
+     
+      <p>For source downloads of PHP 7.0.20 please visit our <a href="http://www.php.net/downloads.php">downloads page</a>,
+      Windows source and binaries can be found on <a href="http://windows.php.net/download/">windows.php.net/download/</a>.
+      The list of changes is recorded in the <a href="http://www.php.net/ChangeLog-7.php#7.0.20">ChangeLog</a>.
+      </p>
         </div>
 </div><!-- .info -->
 
