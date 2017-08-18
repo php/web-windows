@@ -4,9 +4,16 @@
 // Config
 // ----------------------------------------------------------------------------
 
+/** @var string $news_feed_url */
 $news_feed_url = 'http://php.net/feed.atom';
+
+/** @var array $news_feed_categories */
 $news_feed_categories = ['releases'];
+
+/** @var int $max_news_feed_items */
 $max_news_feed_items = 10;
+
+/** @var string $path_to_news_file */
 $path_to_news_file = __DIR__ . '/../docroot/news.php';
 
 // ----------------------------------------------------------------------------
@@ -16,7 +23,7 @@ $path_to_news_file = __DIR__ . '/../docroot/news.php';
 $feed = @file_get_contents($news_feed_url);
 $xml = @simplexml_load_string($feed);
 if (!$xml) {
-    exit('Error: Could not load Atom/Rss feed' . PHP_EOL);
+    die('Error: Could not load Atom/Rss feed' . PHP_EOL);
 }
 
 // ----------------------------------------------------------------------------
@@ -33,7 +40,7 @@ foreach ($xml as $node) {
     // Example: <category term="releases" label="New PHP release"/>
     $found_category = false;
     foreach ($node->category as $category) {
-        if (in_array($category['term'], $news_feed_categories)) {
+        if (isset($category['term']) && in_array($category['term'], $news_feed_categories)) {
             $found_category = true;
             break;
         }
@@ -81,10 +88,9 @@ foreach ($xml as $node) {
 // Write news to file
 // ----------------------------------------------------------------------------
 
-if (!empty($buffer)) {
-    file_put_contents($path_to_news_file, $buffer);
-    exit("Ok!" . PHP_EOL);
-} else {
-    exit("Error: No news?" . PHP_EOL);
+if (empty($buffer)) {
+    die("Error: No news?" . PHP_EOL);
 }
 
+file_put_contents($path_to_news_file, $buffer);
+echo "Ok!" . PHP_EOL;
