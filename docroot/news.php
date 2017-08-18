@@ -1,7 +1,7 @@
 
 <div class="info entry">
     <!-- .info -->
-    <h3 class="summary entry-title">PHP 7.1.8 Released</h3>
+    <h3 class='summary entry-title'>PHP 7.1.8 Released</h3>
     <p class='news-date'><time datetime='2017-08-03T14:35:42+00:00'>03 Aug 2017</time></p>
     <div>
         
@@ -21,7 +21,7 @@
         
 <div class="info entry">
     <!-- .info -->
-    <h3 class="summary entry-title">PHP 7.2.0 Beta 2 Released</h3>
+    <h3 class='summary entry-title'>PHP 7.2.0 Beta 2 Released</h3>
     <p class='news-date'><time datetime='2017-08-03T12:48:35+00:00'>03 Aug 2017</time></p>
     <div>
         
@@ -61,7 +61,7 @@
         
 <div class="info entry">
     <!-- .info -->
-    <h3 class="summary entry-title">PHP 7.0.22 Released</h3>
+    <h3 class='summary entry-title'>PHP 7.0.22 Released</h3>
     <p class='news-date'><time datetime='2017-08-03T12:00:00+00:00'>03 Aug 2017</time></p>
     <div>
         
@@ -81,7 +81,7 @@
         
 <div class="info entry">
     <!-- .info -->
-    <h3 class="summary entry-title">PHP 7.2.0 Beta 1 Released</h3>
+    <h3 class='summary entry-title'>PHP 7.2.0 Beta 1 Released</h3>
     <p class='news-date'><time datetime='2017-07-20T12:00:00+00:00'>20 Jul 2017</time></p>
     <div>
         
@@ -131,7 +131,7 @@
         
 <div class="info entry">
     <!-- .info -->
-    <h3 class="summary entry-title">PHP 5.6.31 Released</h3>
+    <h3 class='summary entry-title'>PHP 5.6.31 Released</h3>
     <p class='news-date'><time datetime='2017-07-06T22:03:21+00:00'>06 Jul 2017</time></p>
     <div>
         
@@ -151,7 +151,7 @@
         
 <div class="info entry">
     <!-- .info -->
-    <h3 class="summary entry-title">PHP 7.1.7 Released</h3>
+    <h3 class='summary entry-title'>PHP 7.1.7 Released</h3>
     <p class='news-date'><time datetime='2017-07-06T17:35:10+00:00'>06 Jul 2017</time></p>
     <div>
         
@@ -171,7 +171,7 @@
         
 <div class="info entry">
     <!-- .info -->
-    <h3 class="summary entry-title">PHP 7.0.21 Released</h3>
+    <h3 class='summary entry-title'>PHP 7.0.21 Released</h3>
     <p class='news-date'><time datetime='2017-07-06T12:00:00+00:00'>06 Jul 2017</time></p>
     <div>
         
@@ -191,7 +191,7 @@
         
 <div class="info entry">
     <!-- .info -->
-    <h3 class="summary entry-title">PHP 7.2.0 Alpha 2 Released</h3>
+    <h3 class='summary entry-title'>PHP 7.2.0 Alpha 2 Released</h3>
     <p class='news-date'><time datetime='2017-06-22T11:00:00+00:00'>22 Jun 2017</time></p>
     <div>
         
@@ -221,7 +221,7 @@
         
 <div class="info entry">
     <!-- .info -->
-    <h3 class="summary entry-title">PHP 7.1.6 Released</h3>
+    <h3 class='summary entry-title'>PHP 7.1.6 Released</h3>
     <p class='news-date'><time datetime='2017-06-08T19:40:06+00:00'>08 Jun 2017</time></p>
     <div>
         
@@ -251,7 +251,7 @@
         
 <div class="info entry">
     <!-- .info -->
-    <h3 class="summary entry-title">PHP 7.2.0 Alpha 1 Released</h3>
+    <h3 class='summary entry-title'>PHP 7.2.0 Alpha 1 Released</h3>
     <p class='news-date'><time datetime='2017-06-08T17:03:24+00:00'>08 Jun 2017</time></p>
     <div>
         

@@ -4,6 +4,8 @@
 // Config
 // ----------------------------------------------------------------------------
 
+error_reporting(E_ALL ^ E_NOTICE ^ E_WARNING);
+
 /** @var string $news_feed_url */
 $news_feed_url = 'http://php.net/feed.atom';
 
@@ -20,8 +22,8 @@ $path_to_news_file = __DIR__ . '/../docroot/news.php';
 // Get RSS
 // ----------------------------------------------------------------------------
 
-$feed = @file_get_contents($news_feed_url);
-$xml = @simplexml_load_string($feed);
+$feed = file_get_contents($news_feed_url);
+$xml = simplexml_load_string($feed);
 if (!$xml) {
     die('Error: Could not load Atom/Rss feed' . PHP_EOL);
 }
@@ -51,7 +53,7 @@ foreach ($xml as $node) {
 
     // Get title, date, and HTML
     if ($node->title) {
-        $title = '<h3 class="summary entry-title">' . $node->title . '</h3>';
+        $title = "<h3 class='summary entry-title'>{$node->title}</h3>";
     }
     if ($node->published) {
         $time = strtotime($node->published);
@@ -92,5 +94,9 @@ if (empty($buffer)) {
     die("Error: No news?" . PHP_EOL);
 }
 
-file_put_contents($path_to_news_file, $buffer);
+$bytes = file_put_contents($path_to_news_file, $buffer);
+if ($bytes === false) {
+    die("Error: Could not write to: {$path_to_news_file}" . PHP_EOL);
+}
+
 echo "Ok!" . PHP_EOL;
