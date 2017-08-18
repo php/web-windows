@@ -82,9 +82,9 @@ foreach ($xml as $node) {
 
         <?php
         $buffer .= ob_get_clean();
-        unset($title, $date, $info);
         ++$i;
     }
+    unset($title, $date, $info);
 }
 
 // ----------------------------------------------------------------------------
