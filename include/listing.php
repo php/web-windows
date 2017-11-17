@@ -103,9 +103,6 @@ function generate_listing($path, $snaps = false) {
 	$sha1sums = processSha1Sums($path);
 	$sha256sums = processSha256Sums($path);
 	foreach ($versions as $file) {
-		if (0&& !$snap && strpos($file, '5.2.9-2')) {
-			continue;
-		}
 		$file_ori = $file;
 		if ($snaps) {
 			$file = readlink($file);
