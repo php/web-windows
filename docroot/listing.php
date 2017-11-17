@@ -62,10 +62,6 @@ $minor_order = array(
 	);
 
 $labels = array(
-			'nts-VC9-x86' => 'VC9 x86 Non Thread Safe',
-			'ts-VC9-x86'  => 'VC9 x86 Thread Safe',
-			'nts-VC9-x64' => 'VC9 x64 Non Thread Safe',
-			'ts-VC9-x64'  => 'VC9 x64 Thread Safe',
 			'nts-VC11-x86' => 'VC11 x86 Non Thread Safe',
 			'ts-VC11-x86'  => 'VC11 x86 Thread Safe',
 			'nts-VC11-x64' => 'VC11 x64 Non Thread Safe',
