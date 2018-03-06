@@ -10,7 +10,7 @@ $builds = array(
 				'nts-windows-vc15-x64',
 				'ts-windows-vc15-x64',
 				'nts-windows-vc15-x86',
-				'ts-windows-vc15-x86'
+				'ts-windows-vc15-x86',
 				'nts-windows-vc15-x86-avx',
 				'ts-windows-vc15-x86-avx'
 		),
