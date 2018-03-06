@@ -9,24 +9,24 @@
         <link type="text/css" media="print" rel="stylesheet" href="/styles/print.css" />
         <link type="text/css" media="handfield" rel="stylesheet" href="/styles/handfield.css" />
 
-        <link rel="icon" href="http://windows.php.net/favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="https://windows.php.net/favicon.ico" type="image/x-icon" />
     </head>
 
     <body id="homepage">
         <ul id="root">
             <li id="header">
                 <div class="content">
-                    <h1><a href="http://windows.php.net/index.php">PHP: Hypertext Preprocessor</a></h1>
+                    <h1><a href="https://windows.php.net/index.php">PHP: Hypertext Preprocessor</a></h1>
                 </div><!-- .content -->
             </li><!-- .header-->
 
             <li id="main-menu">
                 <ul id="top-navigation">
-                    <li><a href="http://windows.php.net">Home</a></li>
-                    <li><a href="http://windows.php.net/download/">Downloads</a></li>
-                    <li><a href="http://windows.php.net/qa/">QA Releases</a></li>
-                    <li><a href="http://windows.php.net/snapshots/">Snapshots</a></li>
-                    <li><a href="http://windows.php.net/team/">Team</a></li>
+                    <li><a href="https://windows.php.net">Home</a></li>
+                    <li><a href="https://windows.php.net/download/">Downloads</a></li>
+                    <li><a href="https://windows.php.net/qa/">QA Releases</a></li>
+                    <li><a href="https://windows.php.net/snapshots/">Snapshots</a></li>
+                    <li><a href="https://windows.php.net/team/">Team</a></li>
                     <li class="last"><a href="http://www.php.net">PHP.net site</a></li>
                 </ul>
             </li><!-- .main-menu-->

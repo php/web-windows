@@ -43,9 +43,9 @@ include TPL_PATH . 'news_line.php';
 			
 			<p>Alternatively, the updated OpenSSL dependency DLLs can be downloaded separately as replacement for the older PHP and Apache versions.
 				<ul>
-					<li><a href="http://windows.php.net/downloads/php-sdk/deps/vc9/x86/openssl-0.9.8zf-vc9-x86.zip">http://windows.php.net/downloads/php-sdk/deps/vc9/x86/openssl-0.9.8zf-vc9-x86.zip</a></li>
-					<li><a href="http://windows.php.net/downloads/php-sdk/deps/vc11/x86/openssl-1.0.1m-vc11-x86.zip">http://windows.php.net/downloads/php-sdk/deps/vc11/x86/openssl-1.0.1m-vc11-x86.zip</a></li>
-					<li><a href="http://windows.php.net/downloads/php-sdk/deps/vc11/x64/openssl-1.0.1m-vc11-x64.zip">http://windows.php.net/downloads/php-sdk/deps/vc11/x64/openssl-1.0.1m-vc11-x64.zip</a></li>
+					<li><a href="https://windows.php.net/downloads/php-sdk/deps/vc9/x86/openssl-0.9.8zf-vc9-x86.zip">https://windows.php.net/downloads/php-sdk/deps/vc9/x86/openssl-0.9.8zf-vc9-x86.zip</a></li>
+					<li><a href="https://windows.php.net/downloads/php-sdk/deps/vc11/x86/openssl-1.0.1m-vc11-x86.zip">https://windows.php.net/downloads/php-sdk/deps/vc11/x86/openssl-1.0.1m-vc11-x86.zip</a></li>
+					<li><a href="https://windows.php.net/downloads/php-sdk/deps/vc11/x64/openssl-1.0.1m-vc11-x64.zip">https://windows.php.net/downloads/php-sdk/deps/vc11/x64/openssl-1.0.1m-vc11-x64.zip</a></li>
 				</ul>
 			</p>
 			</div>
@@ -64,8 +64,8 @@ include TPL_PATH . 'news_line.php';
 			<p>Alternatively, the updated OpenSSL dependency DLLs can be downloaded separately as replacement for the older PHP versions. Though be aware that
 				this issue affects only OpenSSL 1.0.x and the DLL packages are only applicable to PHP 5.5 and upper.
 				<ul>
-					<li><a href="http://windows.php.net/downloads/php-sdk/deps/vc11/x86/openssl-1.0.1g-vc11-x86.zip">http://windows.php.net/downloads/php-sdk/deps/vc11/x86/openssl-1.0.1g-vc11-x86.zip</a></li>
-					<li><a href="http://windows.php.net/downloads/php-sdk/deps/vc11/x64/openssl-1.0.1g-vc11-x64.zip">http://windows.php.net/downloads/php-sdk/deps/vc11/x64/openssl-1.0.1g-vc11-x64.zip</a></li>
+					<li><a href="https://windows.php.net/downloads/php-sdk/deps/vc11/x86/openssl-1.0.1g-vc11-x86.zip">https://windows.php.net/downloads/php-sdk/deps/vc11/x86/openssl-1.0.1g-vc11-x86.zip</a></li>
+					<li><a href="https://windows.php.net/downloads/php-sdk/deps/vc11/x64/openssl-1.0.1g-vc11-x64.zip">https://windows.php.net/downloads/php-sdk/deps/vc11/x64/openssl-1.0.1g-vc11-x64.zip</a></li>
 				</ul>
 				
 				PHP 5.4 and lower is not affected by this issue. 
@@ -433,7 +433,7 @@ include TPL_PATH . 'news_line.php';
                       source downloads please visit our <a href=
                       "/downloads.php">downloads page</a>, Windows
                       binaries can be found on <a href=
-                      "http://windows.php.net/download/">windows.php.net/download/</a>.</p>
+                      "https://windows.php.net/download/">windows.php.net/download/</a>.</p>
                     </div>
                   </div><!-- .info -->
 
@@ -889,7 +889,7 @@ include TPL_PATH . 'news_line.php';
                 </div><!-- .block -->
 
                 <p class="t-center"><!--
-                                <a href="http://windows.php.net/archive/index.php"><strong>News Archive</strong></a>
+                                <a href="https://windows.php.net/archive/index.php"><strong>News Archive</strong></a>
                                 --></p>
               </div><!-- .content -->
             </div>
