@@ -24,7 +24,7 @@ pre.header {
 }
 
 pre.header DIV.logo-header {
-    background: url(http://windows.php.net/images/header-corners.jpg) repeat-x 0 -232px;
+    background: url(https://windows.php.net/images/header-corners.jpg) repeat-x 0 -232px;
 	height: 116px;
 	clear:both;
 }
@@ -37,7 +37,7 @@ pre.header DIV.logo-header .content {
 }
 
 pre.header DIV.logo-header h1 a {
-	background:url(http://windows.php.net/images/header-logo-win.jpg) left top no-repeat;
+	background:url(https://windows.php.net/images/header-logo-win.jpg) left top no-repeat;
 	float:left;
 	width:434px;
 	height:76px;
@@ -54,7 +54,7 @@ pre.header #main-menu {
 }
 
 pre.header #main-menu {
-    background-image: url(http://windows.php.net/images/menu-corners-back.gif);
+    background-image: url(https://windows.php.net/images/menu-corners-back.gif);
     clear:both;
 }
 

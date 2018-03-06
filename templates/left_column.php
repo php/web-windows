@@ -33,8 +33,8 @@
 				    <br /><br />
 
                                     The PECL extension 
-                                    <a href="http://windows.php.net/downloads/pecl/releases/">release</a> and
-                                    <a href="http://windows.php.net/downloads/pecl/snaps/">snapshot</a> build directories are browsable
+                                    <a href="https://windows.php.net/downloads/pecl/releases/">release</a> and
+                                    <a href="https://windows.php.net/downloads/pecl/snaps/">snapshot</a> build directories are browsable
 				    directly.
                                     </p>
 
@@ -129,7 +129,7 @@ if ((isset($mode) && ($mode == 'snapshots' || $mode == 'qa'))
 
                                     <h3>Archives</h3>
                                     <p>
-                                    Past releases are available from our <a href="http://windows.php.net/downloads/releases/archives/">archives</a>, older versions 
+                                    Past releases are available from our <a href="https://windows.php.net/downloads/releases/archives/">archives</a>, older versions 
                                     not found there can be found at the <a href="http://museum.php.net/">Museum</a>.
                                     </p>
 
