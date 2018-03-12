@@ -52,8 +52,8 @@ $labels = array(
 			'ts-windows-vc15-x86'  => 'VC15 x86 Thread Safe',
 			'nts-windows-vc15-x64' => 'VC15 x64 Non Thread Safe',
 			'ts-windows-vc15-x64'  => 'VC15 x64 Thread Safe',
-			'nts-windows-vc15-x64-avx' => 'VC15 x64 Non Thread Safe, Native AVX',
-			'ts-windows-vc15-x64-avx'  => 'VC15 x64 Thread Safe, Native AVX',
+			'nts-windows-vc15-x64-avx' => 'VC15 x64 AVX Non Thread Safe',
+			'ts-windows-vc15-x64-avx'  => 'VC15 x64 AVX Thread Safe',
 );
 
 include TPL_PATH . 'header.php';
