@@ -131,7 +131,7 @@ if (0) {
 		<span class="corners-top"><span></span></span>
 
 		<h4 id="php-<?php echo $major . '-' . $minor; ?>" name="php-<?php echo $major . '-' . $minor;?>"><?php echo $labels[$minor]; ?> </h4>
-		<?php if (substr($minor, strlen($minor)-3) == 'avx') echo "<p><b>WARNING!</b> These builds require a CPU with the AVX instruction set.</p>"; ?>
+		<?php if (substr($minor, strlen($minor)-3) == 'avx') echo "<p><b>WARNING!</b> These builds are experimental and require a CPU with the AVX instruction set.</p>"; ?>
 		<p>
 		<ul>
 <?php if (isset($data[$major][$minor]['files']) && $data[$major][$minor]['files']['php']['size'] > 0) { ?>
