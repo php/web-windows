@@ -1,1 +1,1 @@
-c:\PHP5.6\php.exe -d error_reporting=E_ALL c:\domains\windows.php.net\script\generate_snap_page.php
+c:\PHP7.2\php.exe -d error_reporting=E_ALL c:\domains\windows.php.net\script\generate_snap_page.php
