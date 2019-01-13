@@ -116,6 +116,15 @@ include TPL_PATH . 'left_column.php';
 				   </p>
                                </div><!-- .info -->
                                 
+                               <div class="info entry"><!-- .info -->
+                                   <h3 class="summary entry-title">Contact</h3>
+                                   <p>
+					<ul>
+						<li>#winphp-dev on freenode</li>
+					</ul>
+				   </p>
+                               </div><!-- .info -->
+
                                 <span class="corners-bottom"><span></span></span>
                             </div><!-- .block -->
                         </div> <!-- .content -->
