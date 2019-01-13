@@ -204,7 +204,70 @@ function generate_listing($path, $snaps = false) {
 	file_put_contents($tmp_name, $cache_content);
 	rename($tmp_name, 'cache.info');
 	chdir($old_cwd);
+
+	generate_web_config($releases);
+
 	return $releases;
+}
+
+function transform_fname_to_latest($fname_real, $ver, $cur_ver)
+{
+	$ret = implode($ver, explode($cur_ver, $fname_real));
+	$ret = str_replace(".zip", "-latest.zip", $ret);
+
+	return $ret;
+}
+
+function get_redirection_conf_piece($tpl, $fname_real, $ver, $cur_ver)
+{
+	$search = array("REAL_FILENAME", "FAKE_FILENAME");
+	$fname_fake = transform_fname_to_latest($fname_real, $ver, $cur_ver);
+	$ret = str_replace($search, array($fname_real, $fname_fake), $tpl);
+
+	return $ret . "\n\t\t";
+}
+
+function generate_web_config(array $releases = array())
+{
+	$config_tpl = file_get_contents(TPL_PATH . "/web.config.tpl");
+	$redirect_tpl = trim(file_get_contents(TPL_PATH . "/web.config.redirect.tpl"));
+
+	/* Handle releases. */
+	if (empty($releases)) {
+		$cache = DOCROOT . "/downloads/releases/cache.info";
+		if (!file_exists($cache)) {
+			return false;
+		}
+		include $cache;
+	}
+
+	$tmp = "";
+	foreach ($releases as $version => $release) {
+
+		$cur_ver = $release["version"];
+		unset($release["version"]);
+
+		$tmp .= "\t\t\t<!--  redirect to latest downloads php-$version -->\n\t\t";
+
+		$tmp .= get_redirection_conf_piece($redirect_tpl, $release["source"]["path"], $version, $cur_ver);
+		unset($release["source"]);
+		
+		foreach ($release as $flavour) {
+			$tmp .= get_redirection_conf_piece($redirect_tpl, $flavour["zip"]["path"], $version, $cur_ver);
+			$tmp .= get_redirection_conf_piece($redirect_tpl, $flavour["debug_pack"]["path"], $version, $cur_ver);
+		}
+	}
+
+	$config_content = str_replace("RELEASES_REDIRECT_TO_LATEST_PLACEHOLDER", $tmp, $config_tpl);
+
+
+	/* Save generated web.config. */
+	$config_path = DOCROOT . "/web.config";
+	if (!file_put_contents($config_path, $config_content, LOCK_EX)) {
+		return false;
+	}
+
+	return true;
 }
 
 /*
