@@ -273,7 +273,7 @@ function generate_web_config(array $releases = array())
 
 function generate_latest_html_piece($fname, $ts, $size, $ver, $cur_ver)
 {
-	$tpl = " DATETIME     SIZE <a href=\"/downloads/releases/latest/FNAME\">FNAME</a><br>\n";
+	$tpl = " DATETIME     SIZE <a href=\"/downloads/releases/latest/FNAME\">FNAME</a>\n";
 
 	$fn = transform_fname_to_latest($fname, $ver, $cur_ver);
 
