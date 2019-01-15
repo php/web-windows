@@ -206,6 +206,7 @@ function generate_listing($path, $snaps = false) {
 	chdir($old_cwd);
 
 	generate_web_config($releases);
+	generate_latest_releases_html($releases);
 
 	return $releases;
 }
@@ -230,7 +231,7 @@ function get_redirection_conf_piece($tpl, $fname_real, $ver, $cur_ver)
 function generate_web_config(array $releases = array())
 {
 	$config_tpl = file_get_contents(TPL_PATH . "/web.config.tpl");
-	$redirect_tpl = trim(file_get_contents(TPL_PATH . "/web.config.redirect.tpl"));
+	$redirect_tpl = trim(file_get_contents(TPL_PATH . "/web.config.rewrite.tpl"));
 
 	/* Handle releases. */
 	if (empty($releases)) {
@@ -263,7 +264,68 @@ function generate_web_config(array $releases = array())
 
 	/* Save generated web.config. */
 	$config_path = DOCROOT . "/web.config";
-	if (!file_put_contents($config_path, $config_content, LOCK_EX)) {
+	if (strlen($config_content) !== file_put_contents($config_path, $config_content, LOCK_EX)) {
+		return false;
+	}
+
+	return true;
+}
+
+function generate_latest_html_piece($fname, $ts, $size, $ver, $cur_ver)
+{
+	$tpl = " DATETIME     SIZE <a href=\"/downloads/releases/latest/FNAME\">FNAME</a><br>\n";
+
+	$fn = transform_fname_to_latest($fname, $ver, $cur_ver);
+
+	return str_replace(
+		array("DATETIME", "SIZE", "FNAME"),
+		array(date("m/d/Y h:i A", $ts), (int)$size, $fn),
+		$tpl
+	);
+}
+
+function generate_latest_releases_html(array $releases = array())
+{
+	$index_html_tpl = trim(file_get_contents(TPL_PATH . "/releases_latest.tpl"));
+	$index_html_path = DOCROOT . "/downloads/releases/latest/index.html";
+
+	/* Handle releases. */
+	if (empty($releases)) {
+		$cache = DOCROOT . "/downloads/releases/cache.info";
+		if (!file_exists($cache)) {
+			return false;
+		}
+		include $cache;
+	}
+
+	$tmp = "";
+	foreach ($releases as $version => $release) {
+		$cur_ver = $release["version"];
+		unset($release["version"]);
+
+		$src_path = DOCROOT . "/downloads/releases/" . $release["source"]["path"];
+		$src_mtime = isset($release["source"]["mtime"]) ? strtotime($release["source"]["mtime"]) : filemtime($src_path);
+		$src_size = isset($release["source"]["size"]) ? ((float)$release["source"]["size"]*1024*1024) : filesize($src_path);
+		$tmp .= generate_latest_html_piece($release["source"]["path"], $src_mtime, $src_size, $version, $cur_ver);
+		unset($release["source"]);
+
+		foreach ($release as $flavour) {
+			$mtime = strtotime($flavour["mtime"]);
+
+			$tmp .= generate_latest_html_piece($flavour["zip"]["path"], $mtime, (float)$flavour["zip"]["size"]*1024*1024, $version, $cur_ver);
+			$tmp .= generate_latest_html_piece($flavour["debug_pack"]["path"], $mtime, (float)$flavour["debug_pack"]["size"]*1024*1024, $version, $cur_ver);
+		}
+	}
+
+	$index_html_content = str_replace("RELEASES_LIST_PLACEHOLDER", $tmp, $index_html_tpl);
+
+	if (!is_dir(dirname($index_html_path))) {
+		if (!mkdir(dirname($index_html_path))) {
+			return false;
+		}
+	}
+
+	if (strlen($index_html_content) !== file_put_contents($index_html_path, $index_html_content, LOCK_EX)) {
 		return false;
 	}
 
