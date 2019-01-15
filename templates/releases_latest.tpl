@@ -2,4 +2,4 @@
 <pre>
 <A HREF="/downloads/releases/">[To Parent Directory]</A><br><br>
 RELEASES_LIST_PLACEHOLDER
-<hr></body></html>
+</pre><hr></body></html>
