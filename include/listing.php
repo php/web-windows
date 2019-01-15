@@ -228,6 +228,7 @@ function get_redirection_conf_piece($tpl, $fname_real, $ver, $cur_ver)
 	return $ret . "\n\t\t";
 }
 
+/* TODO add the test pack and the dev package to the cache and include them into the generated content. */
 function generate_web_config(array $releases = array())
 {
 	$config_tpl = file_get_contents(TPL_PATH . "/web.config.tpl");
@@ -284,6 +285,7 @@ function generate_latest_html_piece($fname, $ts, $size, $ver, $cur_ver)
 	);
 }
 
+/* TODO add the test pack and the dev package to the cache and include them into the generated content. */
 function generate_latest_releases_html(array $releases = array())
 {
 	$index_html_tpl = trim(file_get_contents(TPL_PATH . "/releases_latest.tpl"));
@@ -303,6 +305,7 @@ function generate_latest_releases_html(array $releases = array())
 		$cur_ver = $release["version"];
 		unset($release["version"]);
 
+		/* TODO Src date and size should be cached but it's currently absent. */
 		$src_path = DOCROOT . "/downloads/releases/" . $release["source"]["path"];
 		$src_mtime = isset($release["source"]["mtime"]) ? strtotime($release["source"]["mtime"]) : filemtime($src_path);
 		$src_size = isset($release["source"]["size"]) ? ((float)$release["source"]["size"]*1024*1024) : filesize($src_path);
