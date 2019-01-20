@@ -101,7 +101,7 @@ if ((isset($mode) && ($mode == 'snapshots' || $mode == 'qa'))
 									<p><strong>PHP 7 provides full 64-bit support.</strong> The x64 builds of PHP 7 support native 64-bit integers, LFS, 64-bit memory_limit and much more.</p>
 
 									<a name="long_path"></a>
-									<h4><u>Long and mulibyte path</u></h4>
+									<h4><u>Long and multibyte path</u></h4>
 									<p><strong>PHP 7.1+ supports long and UTF-8 paths.</strong> See the <a href="http://php.net/manual/en/migration71.windows-support.php">manual</a> for details.</p>
 
 									<br/>
