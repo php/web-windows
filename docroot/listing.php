@@ -1,12 +1,16 @@
 <?php
 
-$snaps = false;
+include __DIR__ . '/../include/config.php';
+
 $mode = isset($_GET['mode']) ? $_GET['mode'] : 'releases';
+
+$nmode = MODE_RELEASE;
 
 switch ($mode) {
 	case 'qa':
 		$dir_to_parse = 'downloads/qa';
 		$title_page = 'Binaries and sources QA Releases';
+		$nmode = MODE_QA;
 		break;
 	/* The snapshot page is currently gets generated. listing2.php seems 
 	to be quite outdated, so we just redirect to the correct snapshot page
@@ -18,7 +22,7 @@ switch ($mode) {
 		exit();
 		$dir_to_parse = 'downloads/snaps';
 		$title_page = 'Binaries and sources Snapshots';
-		$snaps = true;
+		$nmode = MODE_SNAP;
 		break;
 	case 'releases':
 	default:
@@ -26,13 +30,12 @@ switch ($mode) {
 		$title_page = 'Binaries and sources Releases';
 }
 
-include __DIR__ . '/../include/config.php';
 include __DIR__ . '/../include/listing.php';
 
 
 $baseurl = '/' . $dir_to_parse . '/';
 
-$versions = generate_listing($dir_to_parse, $snaps);
+$versions = generate_listing($dir_to_parse, $nmode);
 $major_order = array('7.3', '7.2', '7.1', '7.0', '5.6');
 $minor_order = array(
 		'5.6' => array(

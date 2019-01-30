@@ -8,3 +8,7 @@ define('LIB_DIR', APP_PATH . '/include/');
 define('TPL_PATH', APP_PATH . '/templates/');
 define('DOCROOT', APP_PATH . '/docroot');
 define('SNAPS_URL', '/downloads/snaps/');
+
+define('MODE_RELEASE', 0);
+define('MODE_SNAP', 1);
+define('MODE_QA', 2);

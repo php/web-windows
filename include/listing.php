@@ -85,7 +85,7 @@ function parse_file_name($v)
 			);
 }
 
-function generate_listing($path, $snaps = false) {
+function generate_listing($path, $nmode) {
 	if (file_exists($path . '/cache.info')) {
 		include $path . '/cache.info';
 		return $releases;
@@ -104,7 +104,7 @@ function generate_listing($path, $snaps = false) {
 	$sha256sums = processSha256Sums($path);
 	foreach ($versions as $file) {
 		$file_ori = $file;
-		if ($snaps) {
+		if (MODE_SNAP === $nmode) {
 			$file = readlink($file);
 		}
 		$datetime_str = substr($file, strlen($file) - 16, 12);
@@ -133,7 +133,7 @@ function generate_listing($path, $snaps = false) {
 				'sha256' => $sha256sums[strtolower($file_ori)]
 				);
 		$compile = $configure = $buildconf = false;
-		if ($snaps) {
+		if (MODE_SNAP === $nmode) {
 			$debug_pack = 'php-debug-pack-' . $elms['version_short'] . ($elms['nts'] ? '-' . $elms['nts'] : '') . '-win32' . ($elms['ts'] ? '-' . $elms['vc'] . '-' . $elms['arch'] . '-latest' : '') . '.zip';
 			$installer =  'php-' . $elms['version_short'] . ($elms['nts'] ? '-' . $elms['nts'] : '') . '-win32' . ($elms['ts'] ? '-' . $elms['vc'] . '-' . $elms['arch'] . '-latest' : '') . '.msi';
 			$testpack = 'php-test-pack-' . $elms['version_short'] . '-latest.zip';
@@ -182,7 +182,7 @@ function generate_listing($path, $snaps = false) {
 		}
 
 
-		if ($snaps) {
+		if (MODE_SNAP === $nmode) {
 			if ($buildconf) {
 				$releases[$version_short][$key]['buildconf'] = $buildconf;
 			}
@@ -205,8 +205,10 @@ function generate_listing($path, $snaps = false) {
 	rename($tmp_name, 'cache.info');
 	chdir($old_cwd);
 
-	generate_web_config($releases);
-	generate_latest_releases_html($releases);
+	if (MODE_RELEASE === $nmode) {
+		generate_web_config($releases);
+		generate_latest_releases_html($releases);
+	}
 
 	return $releases;
 }
