@@ -90,9 +90,9 @@ function generate_listing($path, $nmode) {
 	flock($lck, LOCK_EX);
 
 	if (file_exists($path . '/cache.info')) {
+		include $path . '/cache.info';
 		flock($lck, LOCK_UN);
 		fclose($lck);
-		include $path . '/cache.info';
 		return $releases;
 	}
 
