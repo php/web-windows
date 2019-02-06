@@ -86,7 +86,12 @@ function parse_file_name($v)
 }
 
 function generate_listing($path, $nmode) {
+	$lck = fopen(DATA_DIR . DIRECTORY_SEPARATOR . "site_generate_listing.lock", "wb");
+	flock($lck, LOCK_EX);
+
 	if (file_exists($path . '/cache.info')) {
+		flock($lck, LOCK_UN);
+		fclose($lck);
 		include $path . '/cache.info';
 		return $releases;
 	}
@@ -209,6 +214,9 @@ function generate_listing($path, $nmode) {
 		generate_web_config($releases);
 		generate_latest_releases_html($releases);
 	}
+
+	flock($lck, LOCK_UN);
+	fclose($lck);
 
 	return $releases;
 }
