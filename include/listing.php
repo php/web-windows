@@ -231,6 +231,12 @@ function transform_fname_to_latest($fname_real, $ver, $cur_ver)
 
 function get_redirection_conf_piece($tpl, $fname_real, $ver, $cur_ver)
 {
+	$real_fname_path = DOCROOT . $fname_real;
+	if (".zip" != substr($fname_real, strlen($fname_real)-4) || !is_file($real_fname_path)) {
+		/* This might be something invalid like a partially uploaded file or wrong path, don't generate anything. */
+		return "";
+	}
+
 	$search = array("REAL_FILENAME", "FAKE_FILENAME");
 	$fname_fake = transform_fname_to_latest($fname_real, $ver, $cur_ver);
 	$ret = str_replace($search, array($fname_real, $fname_fake), $tpl);
