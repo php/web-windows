@@ -91,7 +91,7 @@ if ((isset($mode) && ($mode == 'snapshots' || $mode == 'qa'))
 									<p><strong>Links:</strong></p>
 									<ul>
 										<li><a href="http://msdn.microsoft.com/en-us/library/e7k32f4k%28v=vs.110%29.aspx" target="_blank">PGO on MSDN</a></li>
-										<li><a href="http://blogs.msdn.com/b/vcblog/archive/2013/05/06/speeding-up-php-performance-for-your-application-using-profile-guided-optimization-pgo.aspx" target="_blank">Visual C++ Team Blog - PGO with PHP</a></li>
+										<li><a href="https://devblogs.microsoft.com/cppblog/speed-up-windows-php-performance-using-profile-guided-optimization-pgo/" target="_blank">Visual C++ Team Blog - PGO with PHP</a></li>
 										<li><a href="http://www.ksingla.net/2010/05/php-pgo-build-for-maximum-performance-on-windows/" target="_blank">PHP PGO build for maximum performance</a> (old)</li>
 									</ul>
 
