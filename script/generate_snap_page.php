@@ -3,7 +3,7 @@
 include __DIR__ . '/../include/config.php';
 
 /* TODO: use exported branches list when available instead */
-$active_branches = array('master', '7.4', '7.3', '7.2', '7.1', '7.0', '5.6');
+$active_branches = array('master', '7.4', '7.3', '7.2', '7.1');
 
 $builds = array(
 		'master' => array(
@@ -41,18 +41,6 @@ $builds = array(
 				'nts-windows-vc14-x86',
 				'ts-windows-vc14-x86'
 		),
-		'7.0' => array(
-				'nts-windows-vc14-x64',
-				'ts-windows-vc14-x64',
-				'nts-windows-vc14-x86',
-				'ts-windows-vc14-x86'
-		),
-		'5.6' => array(
-				'nts-windows-vc11-x64',
-				'ts-windows-vc11-x64',
-				'nts-windows-vc11-x86',
-				'ts-windows-vc11-x86'
-			),
 	);
 
 function parse_meta($path)

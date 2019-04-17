@@ -1,7 +1,7 @@
 <?php
 include __DIR__ . '/../include/tools.php';
 
-$major_order = array('7.4', '7.3', '7.2', '7.1', '7.0', '5.6', 'master');
+$major_order = array('7.4', '7.3', '7.2', '7.1', '7.0');
 $minor_order = array(
 		'master' => array(
 				'nts-windows-vc15-x64',
@@ -38,18 +38,6 @@ $minor_order = array(
 				'nts-windows-vc14-x86',
 				'ts-windows-vc14-x86'
 		),
-		'7.0' => array(
-				'nts-windows-vc14-x64',
-				'ts-windows-vc14-x64',
-				'nts-windows-vc14-x86',
-				'ts-windows-vc14-x86'
-		),
-		'5.6' => array(
-				'nts-windows-vc11-x64',
-				'ts-windows-vc11-x64',
-				'nts-windows-vc11-x86',
-				'ts-windows-vc11-x86'
-			),
 	);
 
 $labels = array(
