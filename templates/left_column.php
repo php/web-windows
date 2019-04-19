@@ -64,16 +64,15 @@ if ((isset($mode) && ($mode == 'snapshots' || $mode == 'qa'))
 
 									<h4><u>Apache</u></h4>
 									<p>Please use the Apache builds provided by <a href="http://apachelounge.com">Apache Lounge</a>.
-									They provide VC11, VC14 and VC15 builds of Apache for x86 and x64.
+									They provide VC14 and VC15 builds of Apache for x86 and x64.
 									We use their binaries to build the Apache SAPIs.</p>
 
 									<p>With Apache you have to use the Thread Safe (TS) versions of PHP.</p>
 
-									<h4><u>VC11, VC14 &amp; VC15</u></h4>
-									<p>More recent versions of PHP are built with VC11, VC14 or VC15 (Visual Studio 2012, 2015 or 2017 compiler respectively) and 
+									<h4><u>VC14 &amp; VC15</u></h4>
+									<p>More recent versions of PHP are built with VC14 or VC15 (Visual Studio 2015 or 2017 compiler respectively) and 
 									include improvements in performance and stability.</p>
 
-									<p> - The VC11 builds require to have the <i>Visual C++ Redistributable for Visual Studio 2012</i> <a href="http://www.microsoft.com/en-us/download/details.aspx?id=30679">x86 or x64</a> installed</p>
 									<p> - The VC14 builds require to have the <i>Visual C++ Redistributable for Visual Studio 2015</i> <a href="https://www.microsoft.com/en-us/download/details.aspx?id=53840">x86 or x64</a> installed</p>
 									<p> - The VC15 builds require to have the <i>Visual C++ Redistributable for Visual Studio 2017</i> <a href="https://aka.ms/vs/15/release/VC_redist.x64.exe">x64</a> or <a href="https://aka.ms/vs/15/release/VC_redist.x86.exe">x86</a> installed</p>
 
