@@ -24,10 +24,10 @@ include TPL_PATH . 'left_column.php';
                             <div class="block"><!-- .block -->
                                <span class="corners-top"><span></span></span>
  
-                               <div class="info entry"><!-- this is our team players ;) -->
+                               <div class="info entry"><!-- this are our team players ;) -->
                                    <h3 class="summary entry-title">Development Team</h3>
-                                   <p>
-					<ul style="float: left;">
+                                   <p></p>
+					<ul class="flex">
 						<li>
 							<strong>Pierre Joye</strong>
 							<p>
@@ -40,8 +40,6 @@ include TPL_PATH . 'left_column.php';
 								Developer
 							</p>
 						</li>
-					</ul>
-					<ul style="float: left;">
 						<li>
 							<strong>Anatol Belski</strong>
 							<p>
@@ -54,20 +52,10 @@ include TPL_PATH . 'left_column.php';
 								Developer
 							</p>
 						</li>
-					</ul>
-					<ul style="float: left;">
-						<li>
-							<strong>Matt Ficken</strong>
-							<p>
-								Q/A and Automation
-							</p>
-						</li>
 						<li>
 							<strong>Venkat Raman Don</strong>
 							<p>QA Windows Installer</p>
 						</li>
-					</ul>
-					<ul style="float: left;">
 						<li>
 							<strong>Stephen Zarkos</strong>
 							<p>
@@ -80,8 +68,6 @@ include TPL_PATH . 'left_column.php';
 								Sys Admin, web and snaps infrastructure
 							</p>
 						</li>
-					</ul>
-					<ul style="float: left;">
 						<li>
 							<strong>Garrett Serack</strong>
 							<p>
@@ -94,8 +80,6 @@ include TPL_PATH . 'left_column.php';
 								Windows Installer
 							</p>
 						</li>
-					</ul>
-					<ul style="float: left;">
 						<li>
 							<strong>John Mertic</strong>
 							<p>
@@ -103,26 +87,35 @@ include TPL_PATH . 'left_column.php';
 							</p>
 						</li>
 					</ul>
-					<div style="clear: left;"></div>
-				   </p>
                                </div><!-- .info -->
  
-                               <div class="info entry"><!-- .info -->
+                               <div class="info entry"><!-- this are our former team players ;) -->
+                                   <h3 class="summary entry-title">Former Team Members</h3>
+                                   <p></p>
+					<ul class="flex">
+						<li>
+							<strong>Matt Ficken</strong>
+							<p>
+								Q/A and Automation
+							</p>
+						</li>
+					</ul>
+                                </div><!-- .info -->
+
+ <div class="info entry"><!-- .info -->
                                    <h3 class="summary entry-title">Contributors</h3>
-                                   <p>
-					<ul>
+                                   <p></p>
+					<ul class="flex">
 						<li>Elizabeth Marie Smith</li>
 					</ul>
-				   </p>
                                </div><!-- .info -->
                                 
                                <div class="info entry"><!-- .info -->
                                    <h3 class="summary entry-title">Contact</h3>
-                                   <p>
-					<ul>
+                                   <p></p>
+					<ul class="flex">
 						<li>#winphp-dev on freenode</li>
 					</ul>
-				   </p>
                                </div><!-- .info -->
 
                                 <span class="corners-bottom"><span></span></span>

@@ -441,6 +441,16 @@
 	line-height:2;
 }
 
+.content .info ul.flex {
+	display:flex;
+	flex-wrap:wrap;
+}
+
+.content .info ul.flex li {
+  flex-basis:12em;
+  margin-right:2em;
+}
+
 .content .info .simple {
 	list-style:none;
 	list-style-image:none;
