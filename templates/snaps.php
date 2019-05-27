@@ -1,7 +1,7 @@
 <?php
 include __DIR__ . '/../include/tools.php';
 
-$major_order = array('7.4', '7.3', '7.2', '7.1');
+$major_order = array('7.4', '7.3', '7.2', '7.1', 'master');
 $minor_order = array(
 		'master' => array(
 				'nts-windows-vc15-x64',
