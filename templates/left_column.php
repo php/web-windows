@@ -64,7 +64,7 @@ if ((isset($mode) && ($mode == 'snapshots' || $mode == 'qa'))
 
 									<h4><u>Apache</u></h4>
 									<p>Please use the Apache builds provided by <a href="http://apachelounge.com">Apache Lounge</a>.
-									They provide VC14 and VC15 builds of Apache for x86 and x64.
+									They provide VC14, VC15 and VS16 builds of Apache for x86 and x64.
 									We use their binaries to build the Apache SAPIs.</p>
 
 									<p>With Apache you have to use the Thread Safe (TS) versions of PHP.</p>
