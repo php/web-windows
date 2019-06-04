@@ -69,12 +69,11 @@ if ((isset($mode) && ($mode == 'snapshots' || $mode == 'qa'))
 
 									<p>With Apache you have to use the Thread Safe (TS) versions of PHP.</p>
 
-									<h4><u>VC14 &amp; VC15</u></h4>
-									<p>More recent versions of PHP are built with VC14 or VC15 (Visual Studio 2015 or 2017 compiler respectively) and 
+									<h4><u>VC14, VC15 &amp;: VS16</u></h4>
+									<p>More recent versions of PHP are built with VC14, VC15 or VS16 (Visual Studio 2015, 2017 or 2019 compiler respectively) and 
 									include improvements in performance and stability.</p>
 
-									<p> - The VC14 builds require to have the <i>Visual C++ Redistributable for Visual Studio 2015</i> <a href="https://www.microsoft.com/en-us/download/details.aspx?id=53840">x86 or x64</a> installed</p>
-									<p> - The VC15 builds require to have the <i>Visual C++ Redistributable for Visual Studio 2017</i> <a href="https://aka.ms/vs/15/release/VC_redist.x64.exe">x64</a> or <a href="https://aka.ms/vs/15/release/VC_redist.x86.exe">x86</a> installed</p>
+									<p> - The VC14, VC15 and VS16 builds require to have the <i>Visual C++ Redistributable for Visual Studio 2015-2019</i> <a href="https://aka.ms/vs/16/release/VC_redist.x64.exe">x64</a> or <a href="https://aka.ms/vs/16/release/VC_redist.x86.exe">x86</a> installed</p>
 
 									<h4><u>TS and NTS</u></h4>
 									<p><strong>TS</strong> refers to multithread capable builds. <strong>NTS</strong> refers to single thread only builds. Use case for <strong>TS</strong> binaries involves interaction with
