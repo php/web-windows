@@ -57,10 +57,10 @@ $minor_order = array(
 			'ts-VC15-x86'
 		),
 		'7.4' => array(
-			'nts-VC15-x64',
-			'ts-VC15-x64',
-			'nts-VC15-x86',
-			'ts-VC15-x86'
+			'nts-vs16-x64',
+			'ts-vs16-x64',
+			'nts-vs16-x86',
+			'ts-vs16-x86'
 		),
 	);
 
@@ -73,6 +73,10 @@ $labels = array(
 			'ts-VC15-x86'  => 'VC15 x86 Thread Safe',
 			'nts-VC15-x64' => 'VC15 x64 Non Thread Safe',
 			'ts-VC15-x64'  => 'VC15 x64 Thread Safe',
+			'nts-vs16-x86' => 'VS16 x86 Non Thread Safe',
+			'ts-vs16-x86'  => 'VS16 x86 Thread Safe',
+			'nts-vs16-x64' => 'VS16 x64 Non Thread Safe',
+			'ts-vs16-x64'  => 'VS16 x64 Thread Safe',
 );
 
 if ($mode == 'snapshots') {
