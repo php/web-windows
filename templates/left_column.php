@@ -69,7 +69,7 @@ if ((isset($mode) && ($mode == 'snapshots' || $mode == 'qa'))
 
 									<p>With Apache you have to use the Thread Safe (TS) versions of PHP.</p>
 
-									<h4><u>VC14, VC15 &amp;: VS16</u></h4>
+									<h4><u>VC14, VC15 &amp; VS16</u></h4>
 									<p>More recent versions of PHP are built with VC14, VC15 or VS16 (Visual Studio 2015, 2017 or 2019 compiler respectively) and 
 									include improvements in performance and stability.</p>
 
