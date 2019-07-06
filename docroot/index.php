@@ -942,10 +942,6 @@ include TPL_PATH . 'news_line.php';
                                 <a href="https://windows.php.net/archive/index.php"><strong>News Archive</strong></a>
                                 --></p>
               </div><!-- .content -->
-            </div>
-          </div>
-        </div>
-      </div>
     </li><!-- .main-column -->
   </ul><!-- .content-columns -->
 
