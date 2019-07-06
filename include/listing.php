@@ -329,6 +329,11 @@ function generate_latest_releases_html(array $releases = array())
 		$src_size = isset($release["source"]["size"]) ? ((float)$release["source"]["size"]*1024*1024) : filesize($src_path);
 		$tmp .= generate_latest_html_piece($release["source"]["path"], $src_mtime, $src_size, $version, $cur_ver);
 		unset($release["source"]);
+		$test_pack_path = DOCROOT . "/downloads/releases/" . $release["test_pack"]["path"];
+		$test_pack_mtime = isset($release["test_pack"]["mtime"]) ? strtotime($release["test_pack"]["mtime"]) : filemtime($test_pack_path);
+		$test_pack_size = isset($release["test_pack"]["size"]) ? ((float)$release["test_pack"]["size"]*1024*1024) : filesize($test_pack_path);
+		$tmp .= generate_latest_html_piece($release["test_pack"]["path"], $test_pack_mtime, $test_pack_size, $version, $cur_ver);
+		unset($release["test_pack"]);
 
 		foreach ($release as $flavour) {
 			$mtime = strtotime($flavour["mtime"]);
@@ -336,7 +341,6 @@ function generate_latest_releases_html(array $releases = array())
 			$tmp .= generate_latest_html_piece($flavour["zip"]["path"], $mtime, (float)$flavour["zip"]["size"]*1024*1024, $version, $cur_ver);
 			$tmp .= generate_latest_html_piece($flavour["debug_pack"]["path"], $mtime, (float)$flavour["debug_pack"]["size"]*1024*1024, $version, $cur_ver);
 			$tmp .= generate_latest_html_piece($flavour["devel_pack"]["path"], $mtime, (float)$flavour["devel_pack"]["size"]*1024*1024, $version, $cur_ver);
-			$tmp .= generate_latest_html_piece($flavour["test_pack"]["path"], $mtime, (float)$flavour["test_pack"]["size"]*1024*1024, $version, $cur_ver);
 		}
 	}
 
