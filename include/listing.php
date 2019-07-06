@@ -299,7 +299,7 @@ function generate_latest_html_piece($fname, $ts, $size, $ver, $cur_ver)
 
 	return str_replace(
 		array("DATETIME", "SIZE", "FNAME"),
-		array(date("m/d/Y h:i A", $ts), (int)$size, $fn),
+		array(date("m/d/Y h:i A", $ts), str_pad((int)$size, 8, ' ', STR_PAD_LEFT), $fn),
 		$tpl
 	);
 }
