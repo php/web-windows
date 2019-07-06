@@ -270,12 +270,13 @@ function generate_web_config(array $releases = array())
 
 		$tmp .= get_redirection_conf_piece($redirect_tpl, $release["source"]["path"], $version, $cur_ver);
 		unset($release["source"]);
-		
+		$tmp .= get_redirection_conf_piece($redirect_tpl, $release["test_pack"]["path"], $version, $cur_ver);
+		unset($release["test_pack"]);
+
 		foreach ($release as $flavour) {
 			$tmp .= get_redirection_conf_piece($redirect_tpl, $flavour["zip"]["path"], $version, $cur_ver);
 			$tmp .= get_redirection_conf_piece($redirect_tpl, $flavour["debug_pack"]["path"], $version, $cur_ver);
 			$tmp .= get_redirection_conf_piece($redirect_tpl, $flavour["devel_pack"]["path"], $version, $cur_ver);
-			$tmp .= get_redirection_conf_piece($redirect_tpl, $flavour["test_pack"]["path"], $version, $cur_ver);
 		}
 	}
 
