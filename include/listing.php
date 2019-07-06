@@ -148,7 +148,9 @@ function generate_listing($path, $nmode) {
 			$buildconf  = 'buildconf-'. $elms['version_short'] . '-' . $elms['vc'] . '-' . $elms['arch'] . '-' . ($elms['nts'] ? $elms['nts'] . '-' : '') . $snap_time_suffix . '.log'; 
 		} else {
 			$debug_pack = 'php-debug-pack-' . $elms['version'] . ($elms['nts'] ? '-' . $elms['nts'] : '') . '-Win32-' . $elms['vc'] . '-' . $elms['arch'] . ($elms['ts'] ? '-' . $elms['ts'] : '') . '.zip';
+			$devel_pack = 'php-devel-pack-' . $elms['version'] . ($elms['nts'] ? '-' . $elms['nts'] : '') . '-Win32-' . $elms['vc'] . '-' . $elms['arch'] . ($elms['ts'] ? '-' . $elms['ts'] : '') . '.zip';
 			$installer =  'php-' . $elms['version'] . ($elms['nts'] ? '-' . $elms['nts'] : '') . '-Win32-' . $elms['vc'] . '-' . $elms['arch'] . ($elms['ts'] ? '-' . $elms['ts'] : '') . '.msi';
+			$testpack = 'php-test-pack-' . $elms['version'] . '.zip';
 			$source = 'php-' . $elms['version'] . '-src.zip';
 		}
 		if (file_exists($source)) {
@@ -165,6 +167,14 @@ function generate_listing($path, $nmode) {
 					'sha256' => $sha256sums[strtolower($debug_pack)]
 						);
 		}		
+		if (file_exists($devel_pack)) {
+			$releases[$version_short][$key]['devel_pack'] = array(
+					'size' => bytes2string(filesize($devel_pack)),
+					'path' => $devel_pack,
+					'sha1' => $sha1sums[strtolower($devel_pack)],
+					'sha256' => $sha256sums[strtolower($devel_pack)]
+						);
+		}
 		if (file_exists($installer)) {
 			$releases[$version_short][$key]['installer'] = array(
 					'size' => bytes2string(filesize($installer)),
@@ -236,7 +246,6 @@ function get_redirection_conf_piece($tpl, $fname_real, $ver, $cur_ver)
 	return $ret . "\n\t\t";
 }
 
-/* TODO add the test pack and the dev package to the cache and include them into the generated content. */
 function generate_web_config(array $releases = array())
 {
 	$config_tpl = file_get_contents(TPL_PATH . "/web.config.tpl");
@@ -265,6 +274,8 @@ function generate_web_config(array $releases = array())
 		foreach ($release as $flavour) {
 			$tmp .= get_redirection_conf_piece($redirect_tpl, $flavour["zip"]["path"], $version, $cur_ver);
 			$tmp .= get_redirection_conf_piece($redirect_tpl, $flavour["debug_pack"]["path"], $version, $cur_ver);
+			$tmp .= get_redirection_conf_piece($redirect_tpl, $flavour["devel_pack"]["path"], $version, $cur_ver);
+			$tmp .= get_redirection_conf_piece($redirect_tpl, $flavour["test_pack"]["path"], $version, $cur_ver);
 		}
 	}
 
@@ -293,7 +304,6 @@ function generate_latest_html_piece($fname, $ts, $size, $ver, $cur_ver)
 	);
 }
 
-/* TODO add the test pack and the dev package to the cache and include them into the generated content. */
 function generate_latest_releases_html(array $releases = array())
 {
 	$index_html_tpl = trim(file_get_contents(TPL_PATH . "/releases_latest.tpl"));
@@ -325,6 +335,8 @@ function generate_latest_releases_html(array $releases = array())
 
 			$tmp .= generate_latest_html_piece($flavour["zip"]["path"], $mtime, (float)$flavour["zip"]["size"]*1024*1024, $version, $cur_ver);
 			$tmp .= generate_latest_html_piece($flavour["debug_pack"]["path"], $mtime, (float)$flavour["debug_pack"]["size"]*1024*1024, $version, $cur_ver);
+			$tmp .= generate_latest_html_piece($flavour["devel_pack"]["path"], $mtime, (float)$flavour["devel_pack"]["size"]*1024*1024, $version, $cur_ver);
+			$tmp .= generate_latest_html_piece($flavour["test_pack"]["path"], $mtime, (float)$flavour["test_pack"]["size"]*1024*1024, $version, $cur_ver);
 		}
 	}
 

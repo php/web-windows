@@ -179,6 +179,14 @@ if (isset($versions[$major]['test_pack'])) {
 		<span class="md5sum">sha256: <?php echo $versions[$major][$minor]['debug_pack']['sha256']; ?></span>
 		</li>
 <?php } ?>
+<?php if (isset($versions[$major][$minor]['devel_pack'])) { ?>
+		<li>
+			<a href="<?php echo $baseurl . $versions[$major][$minor]['devel_pack']['path']; ?>">Debug Pack</a>
+		[<?php echo $versions[$major][$minor]['devel_pack']['size']; ?>]<br />
+<!--		<span class="md5sum">sha1: <?php echo $versions[$major][$minor]['devel_pack']['sha1']; ?></span><br/ > -->
+		<span class="md5sum">sha256: <?php echo $versions[$major][$minor]['devel_pack']['sha256']; ?></span>
+		</li>
+<?php } ?>
 		</ul>
 <?php
 	if ($mode == 'snapshots') {
