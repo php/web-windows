@@ -40,7 +40,7 @@ include TPL_PATH . 'news_line.php';
       <div class="content">
         <div class="block">
           <!-- .block -->
-          <?php show_latest_news(); ?>
+          <?php show_latest_news(10); ?>
         </div><!-- .block -->
                 <p class="t-center"><!--
                                 <a href="https://windows.php.net/archive/index.php"><strong>News Archive</strong></a>
