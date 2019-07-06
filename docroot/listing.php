@@ -80,7 +80,6 @@ $labels = array(
 );
 
 if ($mode == 'snapshots') {
-	unset($minor_order['5.2']);
 	unset($major_order[1]);
 }
 

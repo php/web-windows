@@ -146,13 +146,9 @@ function generate_listing($path, $nmode) {
 			$configure  = 'configure-' . $elms['version_short'] . '-' . $elms['vc'] . '-' . $elms['arch'] . '-' . ($elms['nts'] ? $elms['nts'] . '-' : '') .  $snap_time_suffix . '.log';
 			$compile    = 'compile-' . $elms['version_short'] . '-' . $elms['vc'] . '-' . $elms['arch'] . '-' . ($elms['nts'] ? $elms['nts'] . '-' : '') . $snap_time_suffix . '.log';
 			$buildconf  = 'buildconf-'. $elms['version_short'] . '-' . $elms['vc'] . '-' . $elms['arch'] . '-' . ($elms['nts'] ? $elms['nts'] . '-' : '') . $snap_time_suffix . '.log'; 
-		} elseif ($version_short != '5.2') {
+		} else {
 			$debug_pack = 'php-debug-pack-' . $elms['version'] . ($elms['nts'] ? '-' . $elms['nts'] : '') . '-Win32-' . $elms['vc'] . '-' . $elms['arch'] . ($elms['ts'] ? '-' . $elms['ts'] : '') . '.zip';
 			$installer =  'php-' . $elms['version'] . ($elms['nts'] ? '-' . $elms['nts'] : '') . '-Win32-' . $elms['vc'] . '-' . $elms['arch'] . ($elms['ts'] ? '-' . $elms['ts'] : '') . '.msi';
-			$source = 'php-' . $elms['version'] . '-src.zip';
-		} else {
-			$debug_pack = 'php-debug-pack-' . $elms['version'] . ($elms['nts'] ? '-' . $elms['nts'] : '') . '-Win32-' . $elms['vc'] . '-' . $elms['arch'] . '.zip';
-			$installer =  'php-' . $elms['version'] . ($elms['nts'] ? '-' . $elms['nts'] : '') . '-Win32-' .   $elms['vc'] . '-' . $elms['arch'] . '.msi';
 			$source = 'php-' . $elms['version'] . '-src.zip';
 		}
 		if (file_exists($source)) {
@@ -196,10 +192,6 @@ function generate_listing($path, $nmode) {
 			}
 			if ($configure) {
 				$releases[$version_short][$key]['configure'] = $configure;
-			}
-		} else {
-			if ($version_short == '5.2' && strpos($key, 'nts') !== false) {
-				$releases[$version_short][$key]['webpi_installer'] = 'http://www.microsoft.com/web/gallery/install.aspx?appsxml=www.microsoft.com%2Fweb%2Fwebpi%2F2.0%2FWebProductList.xml%3Bwww.microsoft.com%2Fweb%2Fwebpi%2F2.0%2FWebProductList.xml%3Bwww.microsoft.com%2Fweb%2Fwebpi%2F2.0%2FWebProductList.xml&appid=201%3B202%3B203';
 			}
 		}
 	}
