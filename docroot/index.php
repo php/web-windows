@@ -292,13 +292,6 @@ include TPL_PATH . 'news_line.php';
 
             <div class="newsImage"></div>
 
-            <div>
-              <div class="block">
-                <!-- .block -->
-
-                <div class="info entry">
-                  <!-- .info -->
-
                   <div>
                     <p>The PHP development team would like to
                     announce the immediate availability of PHP
@@ -398,9 +391,6 @@ include TPL_PATH . 'news_line.php';
                     page</a>.</p>
                   </div>
                 </div><!-- .info -->
-
-                <div class="block">
-                  <!-- .block -->
 
                   <div class="info entry">
                     <!-- .info -->
