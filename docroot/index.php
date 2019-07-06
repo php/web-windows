@@ -5,6 +5,15 @@ define('CUR_PATH', dirname(__FILE__) . DIRECTORY_SEPARATOR);
 
 $title_page = 'Home';
 
+function show_latest_news($count = PHP_INT_MAX) {
+    $news = glob(NEWS_DIR . '*.php');
+    rsort($news);
+    $news = array_slice($news, 0, $count);
+    foreach ($news as $entry) {
+        include $entry;
+    }
+}
+
 function news_date($in) {
     $time = strtotime($in);
     $human_readable = date('d M Y', $time);
@@ -31,29 +40,7 @@ include TPL_PATH . 'news_line.php';
       <div class="content">
         <div class="block">
           <!-- .block -->
-          <?php include NEWS_DIR . '2019-06-04-1.php'; ?>
-          <?php include NEWS_DIR . '2018-12-26-1.php'; ?>
-          <?php include NEWS_DIR . '2018-03-12-1.php'; ?>
-          <?php include NEWS_DIR . '2018-03-08-1.php'; ?>
-          <?php include NEWS_DIR . '2015-03-20-1.php'; ?>
-          <?php include NEWS_DIR . '2014-04-10-1.php'; ?>
-          <?php include NEWS_DIR . '2013-06-20-1.php'; ?>
-          <?php include NEWS_DIR . '2012-03-01-1.php'; ?>
-          <?php include NEWS_DIR . '2011-03-17-1.php'; ?>
-          <?php include NEWS_DIR . '2010-03-04-1.php'; ?>
-          <?php include NEWS_DIR . '2010-02-25-1.php'; ?>
-          <?php include NEWS_DIR . '2009-11-19-1.php'; ?>
-          <?php include NEWS_DIR . '2009-09-17-1.php'; ?>
-          <?php include NEWS_DIR . '2009-06-30-1.php'; ?>
-          <?php include NEWS_DIR . '2009-06-18-1.php'; ?>
-          <?php include NEWS_DIR . '2009-04-07-1.php'; ?>
-          <?php include NEWS_DIR . '2009-03-10-1.php'; ?>
-          <?php include NEWS_DIR . '2009-02-26-1.php'; ?>
-          <?php include NEWS_DIR . '2009-02-19-1.php'; ?>
-          <?php include NEWS_DIR . '2008-10-23-1.php'; ?>
-          <?php include NEWS_DIR . '2008-10-08-1.php'; ?>
-          <?php include NEWS_DIR . '2008-09-01-1.php'; ?>
-
+          <?php show_latest_news(); ?>
         </div><!-- .block -->
                 <p class="t-center"><!--
                                 <a href="https://windows.php.net/archive/index.php"><strong>News Archive</strong></a>
