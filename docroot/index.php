@@ -19,6 +19,7 @@ include TPL_PATH . 'news_line.php';
 
 ?>
 
+<li id="content">
   <ul id="content-columns">
     <?php
 
