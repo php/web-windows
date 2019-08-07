@@ -138,7 +138,7 @@ function generate_listing($path, $nmode)
         $releases[$version_short][$key]['zip'] = array(
             'path' => $file_ori,
             'size' => bytes2string(filesize($file_ori)),
-            'sha1' => $sha1sums[strtolower($file_ori)],
+            'sha1' => $sha1sums[strtolower($file_ori)] ?? null,
             'sha256' => $sha256sums[strtolower($file_ori)]
         );
         $compile = $configure = $buildconf = false;
@@ -167,7 +167,7 @@ function generate_listing($path, $nmode)
             $releases[$version_short][$key]['debug_pack'] = array(
                 'size' => bytes2string(filesize($debug_pack)),
                 'path' => $debug_pack,
-                'sha1' => $sha1sums[strtolower($debug_pack)],
+                'sha1' => $sha1sums[strtolower($debug_pack)] ?? null,
                 'sha256' => $sha256sums[strtolower($debug_pack)]
             );
         }
@@ -175,7 +175,7 @@ function generate_listing($path, $nmode)
             $releases[$version_short][$key]['devel_pack'] = array(
                 'size' => bytes2string(filesize($devel_pack)),
                 'path' => $devel_pack,
-                'sha1' => $sha1sums[strtolower($devel_pack)],
+                'sha1' => $sha1sums[strtolower($devel_pack)] ?? null,
                 'sha256' => $sha256sums[strtolower($devel_pack)]
             );
         }
@@ -183,7 +183,7 @@ function generate_listing($path, $nmode)
             $releases[$version_short][$key]['installer'] = array(
                 'size' => bytes2string(filesize($installer)),
                 'path' => $installer,
-                'sha1' => $sha1sums[strtolower($installer)],
+                'sha1' => $sha1sums[strtolower($installer)] ?? null,
                 'sha256' => $sha256sums[strtolower($installer)]
             );
         }
@@ -191,7 +191,7 @@ function generate_listing($path, $nmode)
             $releases[$version_short]['test_pack'] = array(
                 'size' => bytes2string(filesize($testpack)),
                 'path' => $testpack,
-                'sha1' => $sha1sums[strtolower($testpack)],
+                'sha1' => $sha1sums[strtolower($testpack)] ?? null,
                 'sha256' => $sha256sums[strtolower($testpack)]
             );
         }
