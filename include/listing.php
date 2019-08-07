@@ -20,6 +20,10 @@ function processSha1Sums($snaps_dir)
     $sha1sums = file($snaps_dir . '/sha1sum.txt');
     $res = array();
     foreach ($sha1sums as $sha1) {
+        if (false === strpos($sha1, '  ')) {
+            continue;
+        }
+
         list($sha1, $file) = explode('  ', $sha1);
         $file = str_replace(array("\r", "\n", $snaps_dir), array('', '', ''), $file);
         $res[strtolower(basename($file))] = $sha1;
