@@ -86,7 +86,7 @@ function parse_file_name($v)
 }
 
 function generate_listing($path, $nmode) {
-	$lck = fopen(DATA_DIR . DIRECTORY_SEPARATOR . "site_generate_listing.lock", "wb");
+	$lck = fopen(DATA_DIR . DIRECTORY_SEPARATOR . 'site_generate_listing.lock', 'wb');
 	flock($lck, LOCK_EX);
 
 	if (file_exists($path . '/cache.info')) {
@@ -113,7 +113,7 @@ function generate_listing($path, $nmode) {
 			$file = readlink($file);
 		}
 		$datetime_str = substr($file, strlen($file) - 16, 12);
-		if (!preg_match("/([0-9]{4})([0-9]{2})([0-9]{2})([0-9]{2})([0-9]{2})/", $datetime_str, $m)) {
+		if (!preg_match('/([0-9]{4})([0-9]{2})([0-9]{2})([0-9]{2})([0-9]{2})/', $datetime_str, $m)) {
 			$mtime = date('Y-M-d H:i:s', filemtime($file));
 		} else {
 			$snap_time = date_create();
@@ -226,7 +226,7 @@ function generate_listing($path, $nmode) {
 function transform_fname_to_latest($fname_real, $ver, $cur_ver)
 {
 	$ret = implode($ver, explode($cur_ver, $fname_real));
-	$ret = str_replace(".zip", "-latest.zip", $ret);
+	$ret = str_replace('.zip', '-latest.zip', $ret);
 
 	return $ret;
 }
@@ -234,12 +234,12 @@ function transform_fname_to_latest($fname_real, $ver, $cur_ver)
 function get_redirection_conf_piece($tpl, $fname_real, $ver, $cur_ver)
 {
 	$real_fname_path = RELEASES_DIR . $fname_real;
-	if (".zip" != substr($fname_real, strlen($fname_real)-4) || !is_file($real_fname_path)) {
+	if ('.zip' != substr($fname_real, strlen($fname_real)-4) || !is_file($real_fname_path)) {
 		/* This might be something invalid like a partially uploaded file or wrong path, don't generate anything. */
-		return "";
+		return '';
 	}
 
-	$search = array("REAL_FILENAME", "FAKE_FILENAME");
+	$search = array('REAL_FILENAME', 'FAKE_FILENAME');
 	$fname_fake = transform_fname_to_latest($fname_real, $ver, $cur_ver);
 	$ret = str_replace($search, array($fname_real, $fname_fake), $tpl);
 
@@ -248,43 +248,43 @@ function get_redirection_conf_piece($tpl, $fname_real, $ver, $cur_ver)
 
 function generate_web_config(array $releases = array())
 {
-	$config_tpl = file_get_contents(TPL_PATH . "/web.config.tpl");
-	$redirect_tpl = trim(file_get_contents(TPL_PATH . "/web.config.rewrite.tpl"));
+	$config_tpl = file_get_contents(TPL_PATH . '/web.config.tpl');
+	$redirect_tpl = trim(file_get_contents(TPL_PATH . '/web.config.rewrite.tpl'));
 
 	/* Handle releases. */
 	if (empty($releases)) {
-		$cache = DOCROOT . "/downloads/releases/cache.info";
+		$cache = DOCROOT . '/downloads/releases/cache.info';
 		if (!file_exists($cache)) {
 			return false;
 		}
 		include $cache;
 	}
 
-	$tmp = "";
+	$tmp = '';
 	foreach ($releases as $version => $release) {
 
-		$cur_ver = $release["version"];
-		unset($release["version"]);
+		$cur_ver = $release['version'];
+		unset($release['version']);
 
 		$tmp .= "\t\t\t<!--  redirect to latest downloads php-$version -->\n\t\t";
 
-		$tmp .= get_redirection_conf_piece($redirect_tpl, $release["source"]["path"], $version, $cur_ver);
-		unset($release["source"]);
-		$tmp .= get_redirection_conf_piece($redirect_tpl, $release["test_pack"]["path"], $version, $cur_ver);
-		unset($release["test_pack"]);
+		$tmp .= get_redirection_conf_piece($redirect_tpl, $release['source']['path'], $version, $cur_ver);
+		unset($release['source']);
+		$tmp .= get_redirection_conf_piece($redirect_tpl, $release['test_pack']['path'], $version, $cur_ver);
+		unset($release['test_pack']);
 
 		foreach ($release as $flavour) {
-			$tmp .= get_redirection_conf_piece($redirect_tpl, $flavour["zip"]["path"], $version, $cur_ver);
-			$tmp .= get_redirection_conf_piece($redirect_tpl, $flavour["debug_pack"]["path"], $version, $cur_ver);
-			$tmp .= get_redirection_conf_piece($redirect_tpl, $flavour["devel_pack"]["path"], $version, $cur_ver);
+			$tmp .= get_redirection_conf_piece($redirect_tpl, $flavour['zip']['path'], $version, $cur_ver);
+			$tmp .= get_redirection_conf_piece($redirect_tpl, $flavour['debug_pack']['path'], $version, $cur_ver);
+			$tmp .= get_redirection_conf_piece($redirect_tpl, $flavour['devel_pack']['path'], $version, $cur_ver);
 		}
 	}
 
-	$config_content = str_replace("RELEASES_REDIRECT_TO_LATEST_PLACEHOLDER", $tmp, $config_tpl);
+	$config_content = str_replace('RELEASES_REDIRECT_TO_LATEST_PLACEHOLDER', $tmp, $config_tpl);
 
 
 	/* Save generated web.config. */
-	$config_path = DOCROOT . "/web.config";
+	$config_path = DOCROOT . '/web.config';
 	if (strlen($config_content) !== file_put_contents($config_path, $config_content, LOCK_EX)) {
 		return false;
 	}
@@ -299,53 +299,53 @@ function generate_latest_html_piece($fname, $ts, $size, $ver, $cur_ver)
 	$fn = transform_fname_to_latest($fname, $ver, $cur_ver);
 
 	return str_replace(
-		array("DATETIME", "SIZE", "FNAME"),
-		array(date("m/d/Y h:i A", $ts), str_pad((int)$size, 8, ' ', STR_PAD_LEFT), $fn),
+		array('DATETIME', 'SIZE', 'FNAME'),
+		array(date('m/d/Y h:i A', $ts), str_pad((int)$size, 8, ' ', STR_PAD_LEFT), $fn),
 		$tpl
 	);
 }
 
 function generate_latest_releases_html(array $releases = array())
 {
-	$index_html_tpl = trim(file_get_contents(TPL_PATH . "/releases_latest.tpl"));
-	$index_html_path = DOCROOT . "/downloads/releases/latest/index.html";
+	$index_html_tpl = trim(file_get_contents(TPL_PATH . '/releases_latest.tpl'));
+	$index_html_path = DOCROOT . '/downloads/releases/latest/index.html';
 
 	/* Handle releases. */
 	if (empty($releases)) {
-		$cache = DOCROOT . "/downloads/releases/cache.info";
+		$cache = DOCROOT . '/downloads/releases/cache.info';
 		if (!file_exists($cache)) {
 			return false;
 		}
 		include $cache;
 	}
 
-	$tmp = "";
+	$tmp = '';
 	foreach ($releases as $version => $release) {
-		$cur_ver = $release["version"];
-		unset($release["version"]);
+		$cur_ver = $release['version'];
+		unset($release['version']);
 
 		/* TODO Src date and size should be cached but it's currently absent. */
-		$src_path = DOCROOT . "/downloads/releases/" . $release["source"]["path"];
-		$src_mtime = isset($release["source"]["mtime"]) ? strtotime($release["source"]["mtime"]) : filemtime($src_path);
-		$src_size = isset($release["source"]["size"]) ? ((float)$release["source"]["size"]*1024*1024) : filesize($src_path);
-		$tmp .= generate_latest_html_piece($release["source"]["path"], $src_mtime, $src_size, $version, $cur_ver);
-		unset($release["source"]);
-		$test_pack_path = DOCROOT . "/downloads/releases/" . $release["test_pack"]["path"];
-		$test_pack_mtime = isset($release["test_pack"]["mtime"]) ? strtotime($release["test_pack"]["mtime"]) : filemtime($test_pack_path);
-		$test_pack_size = isset($release["test_pack"]["size"]) ? ((float)$release["test_pack"]["size"]*1024*1024) : filesize($test_pack_path);
-		$tmp .= generate_latest_html_piece($release["test_pack"]["path"], $test_pack_mtime, $test_pack_size, $version, $cur_ver);
-		unset($release["test_pack"]);
+		$src_path = DOCROOT . '/downloads/releases/' . $release['source']['path'];
+		$src_mtime = isset($release['source']['mtime']) ? strtotime($release['source']['mtime']) : filemtime($src_path);
+		$src_size = isset($release['source']['size']) ? ((float)$release['source']['size']*1024*1024) : filesize($src_path);
+		$tmp .= generate_latest_html_piece($release['source']['path'], $src_mtime, $src_size, $version, $cur_ver);
+		unset($release['source']);
+		$test_pack_path = DOCROOT . '/downloads/releases/' . $release['test_pack']['path'];
+		$test_pack_mtime = isset($release['test_pack']['mtime']) ? strtotime($release['test_pack']['mtime']) : filemtime($test_pack_path);
+		$test_pack_size = isset($release['test_pack']['size']) ? ((float)$release['test_pack']['size']*1024*1024) : filesize($test_pack_path);
+		$tmp .= generate_latest_html_piece($release['test_pack']['path'], $test_pack_mtime, $test_pack_size, $version, $cur_ver);
+		unset($release['test_pack']);
 
 		foreach ($release as $flavour) {
-			$mtime = strtotime($flavour["mtime"]);
+			$mtime = strtotime($flavour['mtime']);
 
-			$tmp .= generate_latest_html_piece($flavour["zip"]["path"], $mtime, (float)$flavour["zip"]["size"]*1024*1024, $version, $cur_ver);
-			$tmp .= generate_latest_html_piece($flavour["debug_pack"]["path"], $mtime, (float)$flavour["debug_pack"]["size"]*1024*1024, $version, $cur_ver);
-			$tmp .= generate_latest_html_piece($flavour["devel_pack"]["path"], $mtime, (float)$flavour["devel_pack"]["size"]*1024*1024, $version, $cur_ver);
+			$tmp .= generate_latest_html_piece($flavour['zip']['path'], $mtime, (float)$flavour['zip']['size']*1024*1024, $version, $cur_ver);
+			$tmp .= generate_latest_html_piece($flavour['debug_pack']['path'], $mtime, (float)$flavour['debug_pack']['size']*1024*1024, $version, $cur_ver);
+			$tmp .= generate_latest_html_piece($flavour['devel_pack']['path'], $mtime, (float)$flavour['devel_pack']['size']*1024*1024, $version, $cur_ver);
 		}
 	}
 
-	$index_html_content = str_replace("RELEASES_LIST_PLACEHOLDER", $tmp, $index_html_tpl);
+	$index_html_content = str_replace('RELEASES_LIST_PLACEHOLDER', $tmp, $index_html_tpl);
 
 	if (!is_dir(dirname($index_html_path))) {
 		if (!mkdir(dirname($index_html_path))) {
