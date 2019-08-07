@@ -25,7 +25,7 @@ function processSha1Sums($snaps_dir)
         }
 
         list($sha1, $file) = explode('  ', $sha1);
-        $file = str_replace(array("\r", "\n", $snaps_dir), array('', '', ''), $file);
+        $file = str_replace(array("\r", "\n", $snaps_dir), '', $file);
         $res[strtolower(basename($file))] = $sha1;
     }
     return $res;
