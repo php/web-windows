@@ -140,6 +140,7 @@ function generate_listing($path, $nmode)
         $releases[$version_short][$key]['mtime'] = $mtime;
         $releases[$version_short][$key]['zip'] = array(
             'path' => $file_ori,
+            'link' => generate_download_link($file_ori, $nmode),
             'size' => bytes2string(filesize($file_ori)),
             'sha1' => $sha1sums[strtolower($file_ori)] ?? null,
             'sha256' => $sha256sums[strtolower($file_ori)]
@@ -163,6 +164,7 @@ function generate_listing($path, $nmode)
         if (file_exists($source)) {
             $releases[$version_short]['source'] = array(
                 'path' => $source,
+                'link' => generate_download_link($source, $nmode),
                 'size' => bytes2string(filesize($source))
             );
         }
@@ -170,6 +172,7 @@ function generate_listing($path, $nmode)
             $releases[$version_short][$key]['debug_pack'] = array(
                 'size' => bytes2string(filesize($debug_pack)),
                 'path' => $debug_pack,
+                'link' => generate_download_link($debug_pack, $nmode),
                 'sha1' => $sha1sums[strtolower($debug_pack)] ?? null,
                 'sha256' => $sha256sums[strtolower($debug_pack)]
             );
@@ -178,6 +181,7 @@ function generate_listing($path, $nmode)
             $releases[$version_short][$key]['devel_pack'] = array(
                 'size' => bytes2string(filesize($devel_pack)),
                 'path' => $devel_pack,
+                'link' => generate_download_link($devel_pack, $nmode),
                 'sha1' => $sha1sums[strtolower($devel_pack)] ?? null,
                 'sha256' => $sha256sums[strtolower($devel_pack)]
             );
@@ -186,6 +190,7 @@ function generate_listing($path, $nmode)
             $releases[$version_short][$key]['installer'] = array(
                 'size' => bytes2string(filesize($installer)),
                 'path' => $installer,
+                'link' => generate_download_link($installer, $nmode),
                 'sha1' => $sha1sums[strtolower($installer)] ?? null,
                 'sha256' => $sha256sums[strtolower($installer)]
             );
@@ -194,6 +199,7 @@ function generate_listing($path, $nmode)
             $releases[$version_short]['test_pack'] = array(
                 'size' => bytes2string(filesize($testpack)),
                 'path' => $testpack,
+                'link' => generate_download_link($testpack, $nmode),
                 'sha1' => $sha1sums[strtolower($testpack)] ?? null,
                 'sha256' => $sha256sums[strtolower($testpack)]
             );
@@ -363,6 +369,29 @@ function generate_latest_releases_html(array $releases = array())
     }
 
     return true;
+}
+
+function generate_download_link(string $filename, int $mode) : string
+{
+    switch ($mode) {
+        case MODE_RELEASE:
+            $path = 'releases/';
+            break;
+
+        case MODE_SNAP:
+            $path = 'snaps/';
+            break;
+
+        case MODE_QA:
+            $path = 'qa/';
+            break;
+
+        default:
+            $message = sprintf('Provided mode "%s" is not supported.', $mode);
+            throw new InvalidArgumentException($message);
+    }
+
+    return 'https://windows.php.net/downloads/' . $path . $filename;
 }
 
 /*
