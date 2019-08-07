@@ -94,6 +94,9 @@ function generate_listing($path, $nmode)
     $lck = fopen(DATA_DIR . DIRECTORY_SEPARATOR . 'site_generate_listing.lock', 'wb');
     flock($lck, LOCK_EX);
 
+    // Setting path absolute to support execution from command line
+    $path = DOCROOT . $path;
+
     if (file_exists($path . '/cache.info')) {
         include $path . '/cache.info';
         flock($lck, LOCK_UN);
@@ -110,8 +113,8 @@ function generate_listing($path, $nmode)
     }
 
     $releases = array();
-    $sha1sums = processSha1Sums(DOCROOT . $path);
-    $sha256sums = processSha256Sums(DOCROOT . $path);
+    $sha1sums = processSha1Sums($path);
+    $sha256sums = processSha256Sums($path);
     foreach ($versions as $file) {
         $file_ori = $file;
         if (MODE_SNAP === $nmode) {
