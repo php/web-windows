@@ -104,7 +104,7 @@ foreach ($active_branches as $branch_name) {
 	$rev_last = $revision;
 	$rev_dir = $branch_dir . '/' . $rev_last;
 	$rev_url = $branch_url  . '/' . $rev_last;
-	
+
 	$contents = file_get_contents($json_file);
 	$new = json_decode($contents, true);
 
@@ -173,4 +173,4 @@ include __DIR__ . '/../templates/snaps.php';
 $snaps = ob_get_contents();
 ob_end_clean();
 
-file_put_contents(DOCROOT . '/snapshot.html', $snaps);
+file_put_contents(DOCROOT . 'snapshot.html', $snaps);

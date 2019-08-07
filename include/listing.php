@@ -14,10 +14,10 @@ function bytes2string($size, $precision = 2)
 
 function processSha1Sums($snaps_dir)
 {
-    if (!file_exists($snaps_dir . 'sha1sum.txt')) {
+    if (!file_exists($snaps_dir . '/sha1sum.txt')) {
         return array();
     }
-    $sha1sums = file($snaps_dir . 'sha1sum.txt');
+    $sha1sums = file($snaps_dir . '/sha1sum.txt');
     $res = array();
     foreach ($sha1sums as $sha1) {
         list($sha1, $file) = explode('  ', $sha1);
@@ -29,10 +29,10 @@ function processSha1Sums($snaps_dir)
 
 function processSha256Sums($snaps_dir)
 {
-    if (!file_exists($snaps_dir . 'sha256sum.txt')) {
+    if (!file_exists($snaps_dir . '/sha256sum.txt')) {
         return array();
     }
-    $sha256sums = file($snaps_dir . 'sha256sum.txt');
+    $sha256sums = file($snaps_dir . '/sha256sum.txt');
     $res = array();
     foreach ($sha256sums as $sha256) {
         list($sha256, $file) = preg_split("/\s+\*?/", $sha256);
@@ -106,8 +106,8 @@ function generate_listing($path, $nmode)
     }
 
     $releases = array();
-    $sha1sums = processSha1Sums($path);
-    $sha256sums = processSha256Sums($path);
+    $sha1sums = processSha1Sums(DOCROOT . $path);
+    $sha256sums = processSha256Sums(DOCROOT . $path);
     foreach ($versions as $file) {
         $file_ori = $file;
         if (MODE_SNAP === $nmode) {
@@ -252,7 +252,7 @@ function generate_web_config(array $releases = array())
 
     /* Handle releases. */
     if (empty($releases)) {
-        $cache = DOCROOT . '/downloads/releases/cache.info';
+        $cache = DOCROOT . 'downloads/releases/cache.info';
         if (!file_exists($cache)) {
             return false;
         }
@@ -280,9 +280,9 @@ function generate_web_config(array $releases = array())
     }
 
     $config_content = str_replace('RELEASES_REDIRECT_TO_LATEST_PLACEHOLDER', $tmp, $config_tpl);
-    
+
     /* Save generated web.config. */
-    $config_path = DOCROOT . '/web.config';
+    $config_path = DOCROOT . 'web.config';
     if (strlen($config_content) !== file_put_contents($config_path, $config_content, LOCK_EX)) {
         return false;
     }
@@ -306,11 +306,11 @@ function generate_latest_html_piece($fname, $ts, $size, $ver, $cur_ver)
 function generate_latest_releases_html(array $releases = array())
 {
     $index_html_tpl = trim(file_get_contents(TPL_PATH . '/releases_latest.tpl'));
-    $index_html_path = DOCROOT . '/downloads/releases/latest/index.html';
+    $index_html_path = DOCROOT . 'downloads/releases/latest/index.html';
 
     /* Handle releases. */
     if (empty($releases)) {
-        $cache = DOCROOT . '/downloads/releases/cache.info';
+        $cache = DOCROOT . 'downloads/releases/cache.info';
         if (!file_exists($cache)) {
             return false;
         }
@@ -323,12 +323,12 @@ function generate_latest_releases_html(array $releases = array())
         unset($release['version']);
 
 		/* TODO Src date and size should be cached but it's currently absent. */
-		$src_path = DOCROOT . '/downloads/releases/' . $release['source']['path'];
+		$src_path = DOCROOT . 'downloads/releases/' . $release['source']['path'];
 		$src_mtime = isset($release['source']['mtime']) ? strtotime($release['source']['mtime']) : filemtime($src_path);
 		$src_size = isset($release['source']['size']) ? ((float)$release['source']['size']*1024*1024) : filesize($src_path);
 		$tmp .= generate_latest_html_piece($release['source']['path'], $src_mtime, $src_size, $version, $cur_ver);
 		unset($release['source']);
-		$test_pack_path = DOCROOT . '/downloads/releases/' . $release['test_pack']['path'];
+		$test_pack_path = DOCROOT . 'downloads/releases/' . $release['test_pack']['path'];
 		$test_pack_mtime = isset($release['test_pack']['mtime']) ? strtotime($release['test_pack']['mtime']) : filemtime($test_pack_path);
 		$test_pack_size = isset($release['test_pack']['size']) ? ((float)$release['test_pack']['size']*1024*1024) : filesize($test_pack_path);
 		$tmp .= generate_latest_html_piece($release['test_pack']['path'], $test_pack_mtime, $test_pack_size, $version, $cur_ver);
