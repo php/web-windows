@@ -9,7 +9,6 @@ $releases = generate_listing('downloads/releases', MODE_RELEASE, 'c');
  * Change date format to ISO 8601
  * Altering date format in generate_listing() could break third-party scrapers
  */
-$timezone = new DateTimeZone('-07:00');
 foreach ($releases as &$release) {
     foreach ($release as &$flavour) {
         if (! is_array($flavour) || ! isset($flavour['mtime'])) {
@@ -17,7 +16,7 @@ foreach ($releases as &$release) {
         }
 
         try {
-            $date = new DateTimeImmutable($flavour['mtime'], $timezone);
+            $date = new DateTimeImmutable($flavour['mtime']);
             $flavour['mtime'] = $date->format('c');
         } catch (Exception $exception) {
             printf(
