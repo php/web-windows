@@ -10,7 +10,7 @@ function bytes2string($size, $precision = 2) {
 }
 
 
-function processSha1Sums($snaps_dir)
+function processSha1Sums($path)
 {
 	if (!file_exists($snaps_dir . 'sha1sum.txt')) {
 		return array();
@@ -26,7 +26,7 @@ function processSha1Sums($snaps_dir)
 }
 
 
-function processSha256Sums($snaps_dir)
+function processSha256Sums($path)
 {
 	if (!file_exists($snaps_dir . 'sha256sum.txt')) {
 		return array();
@@ -145,7 +145,7 @@ function generate_listing($path, $nmode) {
 			$source     = 'php-' . $elms['version_short'] . '/php-' . $elms['version_short'] . '-src-latest.zip';
 			$configure  = 'configure-' . $elms['version_short'] . '-' . $elms['vc'] . '-' . $elms['arch'] . '-' . ($elms['nts'] ? $elms['nts'] . '-' : '') .  $snap_time_suffix . '.log';
 			$compile    = 'compile-' . $elms['version_short'] . '-' . $elms['vc'] . '-' . $elms['arch'] . '-' . ($elms['nts'] ? $elms['nts'] . '-' : '') . $snap_time_suffix . '.log';
-			$buildconf  = 'buildconf-'. $elms['version_short'] . '-' . $elms['vc'] . '-' . $elms['arch'] . '-' . ($elms['nts'] ? $elms['nts'] . '-' : '') . $snap_time_suffix . '.log';
+			$buildconf  = 'buildconf-'. $elms['version_short'] . '-' . $elms['vc'] . '-' . $elms['arch'] . '-' . ($elms['nts'] ? $elms['nts'] . '-' : '') . $snap_time_suffix . '.log'; 
 		} else {
 			$debug_pack = 'php-debug-pack-' . $elms['version'] . ($elms['nts'] ? '-' . $elms['nts'] : '') . '-Win32-' . $elms['vc'] . '-' . $elms['arch'] . ($elms['ts'] ? '-' . $elms['ts'] : '') . '.zip';
 			$devel_pack = 'php-devel-pack-' . $elms['version'] . ($elms['nts'] ? '-' . $elms['nts'] : '') . '-Win32-' . $elms['vc'] . '-' . $elms['arch'] . ($elms['ts'] ? '-' . $elms['ts'] : '') . '.zip';
@@ -166,7 +166,7 @@ function generate_listing($path, $nmode) {
 					'sha1' => $sha1sums[strtolower($debug_pack)],
 					'sha256' => $sha256sums[strtolower($debug_pack)]
 						);
-		}
+		}		
 		if (file_exists($devel_pack)) {
 			$releases[$version_short][$key]['devel_pack'] = array(
 					'size' => bytes2string(filesize($devel_pack)),
