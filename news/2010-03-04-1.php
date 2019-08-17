@@ -85,10 +85,8 @@
 
     <p>For a full list of changes in PHP 5.3.2,
     see the <a href=
-    "/ChangeLog-5.php#5.3.2">ChangeLog</a>. For
-    source downloads please visit our <a href=
-    "/downloads.php">downloads page</a>, Windows
-    binaries can be found on <a href=
-    "https://windows.php.net/download/">windows.php.net/download/</a>.</p>
+    "https://php.net/ChangeLog-5.php#5.3.2">ChangeLog</a>. For
+    Windows source and binaries downloads please visit our <a href=
+    "https://windows.php.net/download/">downloads page</a>.</p>
   </div>
 </div><!-- .info -->
