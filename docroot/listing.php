@@ -57,10 +57,10 @@ $minor_order = array(
 			'ts-VC15-x86'
 		),
 		'7.4' => array(
-			'nts-vs16-x64',
-			'ts-vs16-x64',
-			'nts-vs16-x86',
-			'ts-vs16-x86'
+			'nts-vc15-x64',
+			'ts-vc15-x64',
+			'nts-vc15-x86',
+			'ts-vc15-x86'
 		),
 	);
 
