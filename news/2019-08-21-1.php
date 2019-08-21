@@ -1,4 +1,4 @@
-<div class="info entry">
+<div class="info entry" id="news-2019-08-21-1">
   <!-- .info -->
   <h3 class="summary entry-title">PHP 7.4 builds use Visual Studio 2017</h3>
   <?php news_date('21-Aug-2019') ?>
