@@ -12,12 +12,12 @@ $minor_order = array(
 				'ts-windows-vs16-x64-avx',
 		),
 		'7.4' => array(
-				'nts-windows-vs16-x64',
-				'ts-windows-vs16-x64',
-				'nts-windows-vs16-x86',
-				'ts-windows-vs16-x86',
-				'nts-windows-vs16-x64-avx',
-				'ts-windows-vs16-x64-avx'
+				'nts-windows-vc15-x64',
+				'ts-windows-vc15-x64',
+				'nts-windows-vc15-x86',
+				'ts-windows-vc15-x86',
+				'nts-windows-vc15-x64-avx',
+				'ts-windows-vc15-x64-avx'
 		),
 		'7.3' => array(
 				'nts-windows-vc15-x64',
