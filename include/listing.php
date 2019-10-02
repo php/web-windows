@@ -42,6 +42,36 @@ function processSha256Sums($path)
 }
 
 
+function generate_releases_json(array $releases)
+{
+	/*
+	* Change date format to ISO 8601
+	* Altering date format in generate_listing() could break third-party scrapers
+	*/
+	foreach ($releases as &$release) {
+		foreach ($release as &$flavour) {
+			if (! is_array($flavour) || ! isset($flavour['mtime'])) {
+				continue;
+			}
+
+			try {
+				$date = new DateTimeImmutable($flavour['mtime']);
+				$flavour['mtime'] = $date->format('c');
+			} catch (Exception $exception) {
+				return false;
+			}
+		}
+		unset($flavour);
+	}
+	unset($release);
+
+	return 0 !== file_put_contents(
+		RELEASES_DIR . 'releases.json',
+		json_encode($releases, JSON_PRETTY_PRINT)
+	);
+}
+
+
 function parse_file_name($v)
 {
 	$v = str_replace(array('-Win32', '.zip'), array('', ''), $v);
@@ -145,7 +175,7 @@ function generate_listing($path, $nmode) {
 			$source     = 'php-' . $elms['version_short'] . '/php-' . $elms['version_short'] . '-src-latest.zip';
 			$configure  = 'configure-' . $elms['version_short'] . '-' . $elms['vc'] . '-' . $elms['arch'] . '-' . ($elms['nts'] ? $elms['nts'] . '-' : '') .  $snap_time_suffix . '.log';
 			$compile    = 'compile-' . $elms['version_short'] . '-' . $elms['vc'] . '-' . $elms['arch'] . '-' . ($elms['nts'] ? $elms['nts'] . '-' : '') . $snap_time_suffix . '.log';
-			$buildconf  = 'buildconf-'. $elms['version_short'] . '-' . $elms['vc'] . '-' . $elms['arch'] . '-' . ($elms['nts'] ? $elms['nts'] . '-' : '') . $snap_time_suffix . '.log'; 
+			$buildconf  = 'buildconf-'. $elms['version_short'] . '-' . $elms['vc'] . '-' . $elms['arch'] . '-' . ($elms['nts'] ? $elms['nts'] . '-' : '') . $snap_time_suffix . '.log';
 		} else {
 			$debug_pack = 'php-debug-pack-' . $elms['version'] . ($elms['nts'] ? '-' . $elms['nts'] : '') . '-Win32-' . $elms['vc'] . '-' . $elms['arch'] . ($elms['ts'] ? '-' . $elms['ts'] : '') . '.zip';
 			$devel_pack = 'php-devel-pack-' . $elms['version'] . ($elms['nts'] ? '-' . $elms['nts'] : '') . '-Win32-' . $elms['vc'] . '-' . $elms['arch'] . ($elms['ts'] ? '-' . $elms['ts'] : '') . '.zip';
@@ -166,7 +196,7 @@ function generate_listing($path, $nmode) {
 					'sha1' => $sha1sums[strtolower($debug_pack)],
 					'sha256' => $sha256sums[strtolower($debug_pack)]
 						);
-		}		
+		}
 		if (file_exists($devel_pack)) {
 			$releases[$version_short][$key]['devel_pack'] = array(
 					'size' => bytes2string(filesize($devel_pack)),
@@ -215,6 +245,7 @@ function generate_listing($path, $nmode) {
 	if (MODE_RELEASE === $nmode) {
 		generate_web_config($releases);
 		generate_latest_releases_html($releases);
+		generate_releases_json($releases);
 	}
 
 	flock($lck, LOCK_UN);
