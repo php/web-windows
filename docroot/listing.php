@@ -117,6 +117,9 @@ include TPL_PATH . 'left_column.php';
 <?php } ?>
 
                                     </select>
+<?php if ($mode == 'releases'):?>
+                                    <br><br><a href="https://windows.php.net/downloads/releases/archives/">Past releases</a>
+<?php endif?>
                                 </div><!-- .info -->
                                 
                                 <span class="corners-bottom"><span></span></span>
