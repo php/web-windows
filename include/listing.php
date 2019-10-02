@@ -42,6 +42,36 @@ function processSha256Sums($path)
 }
 
 
+function generate_releases_json(array $releases)
+{
+	/*
+	* Change date format to ISO 8601
+	* Altering date format in generate_listing() could break third-party scrapers
+	*/
+	foreach ($releases as &$release) {
+		foreach ($release as &$flavour) {
+			if (! is_array($flavour) || ! isset($flavour['mtime'])) {
+				continue;
+			}
+
+			try {
+				$date = new DateTimeImmutable($flavour['mtime']);
+				$flavour['mtime'] = $date->format('c');
+			} catch (Exception $exception) {
+				return false;
+			}
+		}
+		unset($flavour);
+	}
+	unset($release);
+
+	return 0 !== file_put_contents(
+		RELEASES_DIR . 'releases.json',
+		json_encode($releases, JSON_PRETTY_PRINT)
+	);
+}
+
+
 function parse_file_name($v)
 {
 	$v = str_replace(array('-Win32', '.zip'), array('', ''), $v);
@@ -215,6 +245,7 @@ function generate_listing($path, $nmode) {
 	if (MODE_RELEASE === $nmode) {
 		generate_web_config($releases);
 		generate_latest_releases_html($releases);
+		generate_releases_json($releases);
 	}
 
 	flock($lck, LOCK_UN);
