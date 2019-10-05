@@ -47,25 +47,40 @@ include TPL_PATH . 'left_column.php';
 							</p>
 						</li>
 						<li>
-							<strong>Robert Richards</strong>
-							<p>
-								Developer
-							</p>
-						</li>
-						<li>
-							<strong>Venkat Raman Don</strong>
-							<p>QA Windows Installer</p>
-						</li>
-						<li>
 							<strong>Stephen Zarkos</strong>
 							<p>
-								Builds, PGO & Performance
+								Builds, PGO &amp; Performance
 							</p>
 						</li>
 						<li>
 							<strong>Alex Schoenmaker</strong>
 							<p>
 								Sys Admin, web and snaps infrastructure
+							</p>
+						</li>
+						<li>
+							<strong>Christoph M. Becker</strong>
+							<p>
+								Development and Q/A
+							</p>
+						</li>
+					</ul>
+                               </div><!-- .info -->
+ 
+                               <div class="info entry"><!-- this are our former team players ;) -->
+                                   <h3 class="summary entry-title">Former Team Members</h3>
+                                   <p></p>
+					<ul class="flex">
+						<li>
+							<strong>Matt Ficken</strong>
+							<p>
+								Q/A and Automation
+							</p>
+						</li>
+						<li>
+							<strong>John Mertic</strong>
+							<p>
+								Windows Installer
 							</p>
 						</li>
 						<li>
@@ -81,22 +96,13 @@ include TPL_PATH . 'left_column.php';
 							</p>
 						</li>
 						<li>
-							<strong>John Mertic</strong>
-							<p>
-								Windows Installer
-							</p>
+							<strong>Venkat Raman Don</strong>
+							<p>QA Windows Installer</p>
 						</li>
-					</ul>
-                               </div><!-- .info -->
- 
-                               <div class="info entry"><!-- this are our former team players ;) -->
-                                   <h3 class="summary entry-title">Former Team Members</h3>
-                                   <p></p>
-					<ul class="flex">
 						<li>
-							<strong>Matt Ficken</strong>
+							<strong>Robert Richards</strong>
 							<p>
-								Q/A and Automation
+								Developer
 							</p>
 						</li>
 					</ul>
