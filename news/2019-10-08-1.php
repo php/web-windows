@@ -1,7 +1,7 @@
-<div class="info entry" id="news-2019-10-01-1">
+<div class="info entry" id="news-2019-10-08-1">
   <!-- .info -->
   <h3 class="summary entry-title">OpenSSL default config path changed</h3>
-  <?php news_date('01-Oct-2019') ?>
+  <?php news_date('08-Oct-2019') ?>
   <div>
     <p>
       As of PHP 7.4.0, the OpenSSL default config path changes from
