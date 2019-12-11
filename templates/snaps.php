@@ -1,7 +1,7 @@
 <?php
 include __DIR__ . '/../include/tools.php';
 
-$major_order = array('7.4', '7.3', '7.2', '7.1', 'master');
+$major_order = array('7.4', '7.3', '7.2', 'master');
 $minor_order = array(
 		'master' => array(
 				'nts-windows-vs16-x64',
@@ -33,19 +33,9 @@ $minor_order = array(
 				'nts-windows-vc15-x86',
 				'ts-windows-vc15-x86'
 		),
-		'7.1' => array(
-				'nts-windows-vc14-x64',
-				'ts-windows-vc14-x64',
-				'nts-windows-vc14-x86',
-				'ts-windows-vc14-x86'
-		),
 	);
 
 $labels = array(
-			'nts-windows-vc14-x86' => 'VC14 x86 Non Thread Safe',
-			'ts-windows-vc14-x86'  => 'VC14 x86 Thread Safe',
-			'nts-windows-vc14-x64' => 'VC14 x64 Non Thread Safe',
-			'ts-windows-vc14-x64'  => 'VC14 x64 Thread Safe',
 			'nts-windows-vc15-x86' => 'VC15 x86 Non Thread Safe',
 			'ts-windows-vc15-x86'  => 'VC15 x86 Thread Safe',
 			'nts-windows-vc15-x64' => 'VC15 x64 Non Thread Safe',
