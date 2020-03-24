@@ -67,7 +67,7 @@ if ((isset($mode) && ($mode == 'snapshots' || $mode == 'qa'))
 									They provide VC15 and VS16 builds of Apache for x86 and x64.
 									We use their binaries to build the Apache SAPIs.</p>
 
-									<p>With Apache you have to use the Thread Safe (TS) versions of PHP.</p>
+									<p>With Apache, using the apache2handler SAPI, you have to use the Thread Safe (TS) versions of PHP.</p>
 
 									<h4><u>VC15 &amp; VS16</u></h4>
 									<p>More recent versions of PHP are built with VC15 or VS16 (Visual Studio 2017 or 2019 compiler respectively) and 
