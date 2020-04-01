@@ -10,32 +10,32 @@ function bytes2string($size, $precision = 2) {
 }
 
 
-function processSha1Sums($path)
+function processSha1Sums()
 {
-	if (!file_exists($snaps_dir . 'sha1sum.txt')) {
+	if (!file_exists('sha1sum.txt')) {
 		return array();
 	}
-	$sha1sums = file($snaps_dir . 'sha1sum.txt');
+	$sha1sums = file('sha1sum.txt');
 	$res = array();
 	foreach ($sha1sums as $sha1){
 		list($sha1, $file) = explode('  ', $sha1);
-		$file = str_replace(array("\r","\n", $snaps_dir), array('','', ''), $file);
+		$file = str_replace(array("\r","\n"), array('',''), $file);
 		$res[strtolower(basename($file))] = $sha1;
 	}
 	return $res;
 }
 
 
-function processSha256Sums($path)
+function processSha256Sums()
 {
-	if (!file_exists($snaps_dir . 'sha256sum.txt')) {
+	if (!file_exists('sha256sum.txt')) {
 		return array();
 	}
-	$sha256sums = file($snaps_dir . 'sha256sum.txt');
+	$sha256sums = file('sha256sum.txt');
 	$res = array();
 	foreach ($sha256sums as $sha256){
 		list($sha256, $file) = preg_split("/\s+\*?/", $sha256);
-		$file = str_replace(array("\r","\n", $snaps_dir), array('','', ''), $file);
+		$file = str_replace(array("\r","\n"), array('',''), $file);
 		$res[strtolower(basename($file))] = $sha256;
 	}
 	return $res;
@@ -135,8 +135,8 @@ function generate_listing($path, $nmode) {
 	}
 
 	$releases = array();
-	$sha1sums = processSha1Sums($path);
-	$sha256sums = processSha256Sums($path);
+	$sha1sums = processSha1Sums();
+	$sha256sums = processSha256Sums();
 	foreach ($versions as $file) {
 		$file_ori = $file;
 		if (MODE_SNAP === $nmode) {
