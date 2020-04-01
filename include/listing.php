@@ -42,7 +42,7 @@ function processSha256Sums($path)
 }
 
 
-function generate_releases_json(array $releases)
+function generate_releases_json(array $releases, string $dir)
 {
 	/*
 	* Change date format to ISO 8601
@@ -66,7 +66,7 @@ function generate_releases_json(array $releases)
 	unset($release);
 
 	return 0 !== file_put_contents(
-		RELEASES_DIR . 'releases.json',
+		$dir . 'releases.json',
 		json_encode($releases, JSON_PRETTY_PRINT)
 	);
 }
@@ -245,7 +245,9 @@ function generate_listing($path, $nmode) {
 	if (MODE_RELEASE === $nmode) {
 		generate_web_config($releases);
 		generate_latest_releases_html($releases);
-		generate_releases_json($releases);
+		generate_releases_json($releases, RELEASES_DIR);
+	} elseif (MODE_QA === $nmode) {
+		generate_releases_json($releases, QA_DIR);
 	}
 
 	flock($lck, LOCK_UN);
