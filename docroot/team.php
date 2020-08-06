@@ -29,12 +29,6 @@ include TPL_PATH . 'left_column.php';
                                    <p></p>
 					<ul class="flex">
 						<li>
-							<strong>Pierre Joye</strong>
-							<p>
-								Team Leader, Developer
-							</p>
-						</li>
-						<li>
 							<strong>Kalle Sommer Nielsen</strong>
 							<p>
 								Developer
@@ -44,12 +38,6 @@ include TPL_PATH . 'left_column.php';
 							<strong>Anatol Belski</strong>
 							<p>
 								Development and Q/A
-							</p>
-						</li>
-						<li>
-							<strong>Stephen Zarkos</strong>
-							<p>
-								Builds, PGO &amp; Performance
 							</p>
 						</li>
 						<li>
@@ -64,6 +52,12 @@ include TPL_PATH . 'left_column.php';
 								Development and Q/A
 							</p>
 						</li>
+						<li>
+							<strong>Dale Hirt</strong>
+							<p>
+								Team Leader, Automation
+							</p>
+						</li>
 					</ul>
                                </div><!-- .info -->
  
@@ -71,6 +65,24 @@ include TPL_PATH . 'left_column.php';
                                    <h3 class="summary entry-title">Former Team Members</h3>
                                    <p></p>
 					<ul class="flex">
+						<li>
+							<strong>Pierre Joye</strong>
+							<p>
+								Team Leader, Developer
+							</p>
+						</li>
+						<li>
+							<strong>Stephen Zarkos</strong>
+							<p>
+								Team Leader, Builds, PGO &amp; Performance
+							</p>
+						</li>
+						<li>
+							<strong>Allen Truong</strong>
+							<p>
+								Q/A and Automation
+							</p>
+						</li>
 						<li>
 							<strong>Matt Ficken</strong>
 							<p>
