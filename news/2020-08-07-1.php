@@ -1,4 +1,4 @@
-<div class="info entry" id="news-2019-10-08-1">
+<div class="info entry" id="news-2020-08-07-1">
   <!-- .info -->
   <h3 class="summary entry-title">Windows Defender Warnings</h3>
   <?php news_date('07-Aug-2020') ?>
