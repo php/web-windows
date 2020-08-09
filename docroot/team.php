@@ -35,7 +35,7 @@ include TPL_PATH . 'left_column.php';
 							</p>
 						</li>
 						<li>
-							<strong>Anatol Belski</strong>
+							<strong><a href="http://people.php.net/ab">Anatol Belski</a></strong>
 							<p>
 								Development and Q/A
 							</p>
@@ -47,13 +47,13 @@ include TPL_PATH . 'left_column.php';
 							</p>
 						</li>
 						<li>
-							<strong>Christoph M. Becker</strong>
+							<strong><a href="http://people.php.net/cmb">Christoph M. Becker</a></strong>
 							<p>
 								Development and Q/A
 							</p>
 						</li>
 						<li>
-							<strong>Dale Hirt</strong>
+							<strong><a href="http://people.php.net/dalehirt">Dale Hirt</a></strong>
 							<p>
 								Team Leader, Automation
 							</p>
@@ -131,8 +131,9 @@ include TPL_PATH . 'left_column.php';
                                <div class="info entry"><!-- .info -->
                                    <h3 class="summary entry-title">Contact</h3>
                                    <p></p>
-					<ul class="flex">
+					<ul>
 						<li>#winphp-dev on freenode</li>
+						<li><a href="https://www.php.net/mailing-lists.php#internals">Windows Internals mailing list</a></li>
 					</ul>
                                </div><!-- .info -->
 
