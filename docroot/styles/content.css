@@ -475,6 +475,10 @@
 	font-weight:bold;
 }
 
+.content .info .x86 h4 {
+	font-weight:normal;
+}
+
 .content .info h3 a {
 	color:#000;
 }
