@@ -154,7 +154,7 @@ if (isset($versions[$major]['test_pack'])) {
 
 <?php if (isset($versions[$major][$minor])) {
 ?>
-		<div class="innerbox">
+		<div class="innerbox<?= stripos($minor, 'x86') !== false ? ' 32bit' : ''; ?>">
 		<span class="corners-top"><span></span></span>
 
 		<h4 id="php-<?php echo $major . '-' . $minor; ?>" name="php-<?php echo $major . '-' . $minor;?>"><?php echo $labels[$minor]; ?> (<?php echo $versions[$major][$minor]['mtime']; ?>)</h4>

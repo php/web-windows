@@ -475,6 +475,10 @@
 	font-weight:bold;
 }
 
+.content .info .32bit h4 {
+	font-weight:normal;
+}
+
 .content .info h3 a {
 	color:#000;
 }
