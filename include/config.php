@@ -1,4 +1,5 @@
 <?php
+define('BASE_URL', 'https://windows.php.net/');
 define('APP_PATH', 'C:/domains/windows.php.net/');
 define('SNAPS_DIR', APP_PATH . 'docroot/downloads/snaps/');
 define('RELEASES_DIR', APP_PATH . 'docroot/downloads/releases/');

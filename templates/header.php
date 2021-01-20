@@ -16,17 +16,17 @@
         <ul id="root">
             <li id="header">
                 <div class="content">
-                    <h1><a href="https://windows.php.net/index.php">PHP: Hypertext Preprocessor</a></h1>
+                    <h1><a href=<?=BASE_URL?>index.php">PHP: Hypertext Preprocessor</a></h1>
                 </div><!-- .content -->
             </li><!-- .header-->
 
             <li id="main-menu">
                 <ul id="top-navigation">
-                    <li><a href="https://windows.php.net">Home</a></li>
-                    <li><a href="https://windows.php.net/download/">Downloads</a></li>
-                    <li><a href="https://windows.php.net/qa/">QA Releases</a></li>
-                    <li><a href="https://windows.php.net/snapshots/">Snapshots</a></li>
-                    <li><a href="https://windows.php.net/team/">Team</a></li>
+                    <li><a href="<?=BASE_URL?>">Home</a></li>
+                    <li><a href="<?=BASE_URL?>download/">Downloads</a></li>
+                    <li><a href="<?=BASE_URL?>qa/">QA Releases</a></li>
+                    <li><a href="<?=BASE_URL?>snapshots/">Snapshots</a></li>
+                    <li><a href="<?=BASE_URL?>team.php">Team</a></li>
                     <li class="last"><a href="http://www.php.net">PHP.net site</a></li>
                 </ul>
             </li><!-- .main-menu-->
