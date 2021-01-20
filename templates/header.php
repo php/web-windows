@@ -16,7 +16,7 @@
         <ul id="root">
             <li id="header">
                 <div class="content">
-                    <h1><a href=<?=BASE_URL?>index.php">PHP: Hypertext Preprocessor</a></h1>
+                    <h1><a href="<?=BASE_URL?>index.php">PHP: Hypertext Preprocessor</a></h1>
                 </div><!-- .content -->
             </li><!-- .header-->
 
