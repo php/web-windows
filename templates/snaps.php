@@ -135,14 +135,18 @@ if (0) {
 			<a href="<?php echo $data[$major][$minor]['files']['php']['url']; ?>">Zip</a>
 			[<?php echo bytes2string($data[$major][$minor]['files']['php']['size']); ?>]<br />
 		</li>
+<?php if (isset($data[$major][$minor]['files']['debug'])):?>
 		<li>
 			<a href="<?php echo $data[$major][$minor]['files']['debug']['url']; ?>">Debug Pack</a>
 			[<?php echo bytes2string($data[$major][$minor]['files']['debug']['size']); ?>]<br />
 		</li>
+<?php endif?>
+<?php if (isset($data[$major][$minor]['files']['devel'])):?>
 		<li>
 			<a href="<?php echo $data[$major][$minor]['files']['devel']['url']; ?>">Development package (SDK to develop PHP extensions)</a>
 			[<?php echo bytes2string($data[$major][$minor]['files']['devel']['size']); ?>]<br />
 		</li>
+<?php endif?>
 <?php } else { ?>
 Build missing or in progress.
 
