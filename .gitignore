@@ -1,7 +1,9 @@
 data/*.json
+data/site_generate_listing.lock
 logs/*.log
 logs/*/*.log
 docroot/snapshot.html
+docroot/web.config
 docroot/downloads/pecl/
 docroot/downloads/php-sdk/
 docroot/downloads/pickle/
@@ -9,4 +11,3 @@ docroot/downloads/qa/
 docroot/downloads/releases/
 docroot/downloads/snaps/
 docroot/downloads/nano/
-
