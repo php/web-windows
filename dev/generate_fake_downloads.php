@@ -117,32 +117,6 @@ $versions = [
             "nts-windows-vc15-x64-avx"
         ]
     ],
-    'php-8.0' => [
-        "revision_last" => "65d7ade6842bcf06b3d2ed59a796bdd78d073df9",
-        "revision_previous" => null,
-        "revision_last_exported" => "65d7ade",
-        "build_num" => 5,
-        "builds" => [
-            "nts-windows-vs16-x64",
-            "nts-windows-vs16-x86",
-            "ts-windows-vs16-x86",
-            "ts-windows-vs16-x64",
-            "nts-windows-vs16-x64-avx"
-        ]
-    ],
-    'master' => [
-        "revision_last" => "65d7ade6842bcf06b3d2ed59a796bdd78d073df9",
-        "revision_previous" => null,
-        "revision_last_exported" => "65d7ade",
-        "build_num" => 5,
-        "builds" => [
-            "nts-windows-vs16-x64",
-            "nts-windows-vs16-x86",
-            "ts-windows-vs16-x86",
-            "ts-windows-vs16-x64",
-            "nts-windows-vs16-x64-avx"
-        ]
-    ],
 ];
 $json = '{"stats":{"warning":0,"error":0},"has_php_pkg":true,"has_debug_pkg":false,"has_devel_pkg":false,"has_test_pkg":false}';
 $dir = SNAPS_DIR;

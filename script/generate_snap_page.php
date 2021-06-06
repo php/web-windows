@@ -3,17 +3,9 @@
 include __DIR__ . '/../include/config.php';
 
 /* TODO: use exported branches list when available instead */
-$active_branches = array('master', '8.0', '7.4', '7.3');
+$active_branches = array('7.4', '7.3');
 
 $builds = array(
-		'master' => array(
-				'nts-windows-vs16-x64',
-				'ts-windows-vs16-x64',
-				'nts-windows-vs16-x86',
-				'ts-windows-vs16-x86',
-				'nts-windows-vs16-x86-avx',
-				'ts-windows-vs16-x86-avx'
-		),
 		'7.4' => array(
 				'nts-windows-vc15-x64',
 				'ts-windows-vc15-x64',
