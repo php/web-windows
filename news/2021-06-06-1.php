@@ -7,7 +7,7 @@
       You may have already noticed that we didn't provide snapshot builds for
       PHP 8 for many months. There are no plans to change that, but users can
       get <a href="https://github.com/shivammathur/php-builder-windows">third
-      party privided nighly builds</a>.
+      party provided nighly builds</a>.
     </p>
     <p>
       We will, of course, continue to provide Windows builds of all PHP
