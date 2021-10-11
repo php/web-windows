@@ -1,4 +1,4 @@
-<div class="info entry" id="news-2020-08-09-1">
+<div class="info entry" id="news-2021-07-14-1">
   <!-- .info -->
   <h3 class="summary entry-title">libjpeg dependency</h3>
   <?php news_date('14-Jul-2021') ?>

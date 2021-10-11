@@ -1,4 +1,4 @@
-<div class="info entry" id="news-2020-08-09-1">
+<div class="info entry" id="news-2021-06-06-1">
   <!-- .info -->
   <h3 class="summary entry-title">PHP 8 Snapshot Builds</h3>
   <?php news_date('06-Jun-2021') ?>
