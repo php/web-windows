@@ -29,7 +29,7 @@
                                     <h3>PECL For Windows</h3>
                                     <p>
                                     <a href="http://pecl.php.net">PECL extensions</a> for Windows is being worked on.
-                                    Windows DLL can be downloaded right from the <a href="http://pecl.php.net">PECL website</a>.
+                                    Windows DLL can be downloaded from the <a href="https://windows.php.net/downloads/pecl/releases/">our server</a>.
 				    <br /><br />
 
                                     The PECL extension 
