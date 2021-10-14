@@ -15,5 +15,8 @@
       packages for Windows. And you can <a href="https://windows.php.net/downloads/pecl/releases/">
       download the DLLs from our server</a>. Sorry for the inconvenience!
     </p>
+    <p>
+      PS: this issue has been resolved!
+    </p>
   </div>
 </div><!-- .info -->
