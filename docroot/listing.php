@@ -36,14 +36,8 @@ include __DIR__ . '/../include/listing.php';
 $baseurl = '/' . $dir_to_parse . '/';
 
 $versions = generate_listing($dir_to_parse, $nmode);
-$major_order = array('8.2', '8.1', '8.0', '7.4');
+$major_order = array('8.2', '8.1', '8.0');
 $minor_order = array(
-		'7.4' => array(
-			'nts-vc15-x64',
-			'ts-vc15-x64',
-			'nts-vc15-x86',
-			'ts-vc15-x86'
-		),
 		'8.0' => array(
 			'nts-vs16-x64',
 			'ts-vs16-x64',
