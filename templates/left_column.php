@@ -1,6 +1,6 @@
                     <li id="left-column">
                         <div class="content">
-                        
+
                             <div class="block"><!-- .block -->
                                 <span class="corners-top"><span></span></span>
 
@@ -8,11 +8,11 @@
 
                                     <h3>PHP For Windows</h3>
                                     <p>
-                                    This site is dedicated to supporting PHP on Microsoft Windows. 
-                                    It also supports ports of PHP extensions or features as well as 
+                                    This site is dedicated to supporting PHP on Microsoft Windows.
+                                    It also supports ports of PHP extensions or features as well as
                                     providing special builds for the various Windows architectures.</p>
                                     <p>
-                                    If you like to build your own PHP binaries, instructions can be found on the 
+                                    If you like to build your own PHP binaries, instructions can be found on the
                                     <a href="https://wiki.php.net/internals/windows/stepbystepbuild">Wiki</a>.
                                     </p>
 
@@ -30,12 +30,6 @@
                                     <p>
                                     <a href="http://pecl.php.net">PECL extensions</a> for Windows is being worked on.
                                     Windows DLL can be downloaded right from the <a href="http://pecl.php.net">PECL website</a>.
-				    <br /><br />
-
-                                    The PECL extension 
-                                    <a href="https://windows.php.net/downloads/pecl/releases/">release</a> and
-                                    <a href="https://windows.php.net/downloads/pecl/snaps/">snapshot</a> build directories are browsable
-				    directly.
                                     </p>
 
                                 </div><!-- .info -->
@@ -70,7 +64,7 @@ if ((isset($mode) && ($mode == 'snapshots' || $mode == 'qa'))
 									<p>With Apache, using the apache2handler SAPI, you have to use the Thread Safe (TS) versions of PHP.</p>
 
 									<h4><u>VC15 &amp; VS16</u></h4>
-									<p>More recent versions of PHP are built with VC15 or VS16 (Visual Studio 2017 or 2019 compiler respectively) and 
+									<p>More recent versions of PHP are built with VC15 or VS16 (Visual Studio 2017 or 2019 compiler respectively) and
 									include improvements in performance and stability.</p>
 
 									<p> - The VC15 and VS16 builds require to have the <i>Visual C++ Redistributable for Visual Studio 2015-2019</i> <a href="https://aka.ms/vs/16/release/VC_redist.x64.exe">x64</a> or <a href="https://aka.ms/vs/16/release/VC_redist.x86.exe">x86</a> installed</p>
@@ -79,7 +73,7 @@ if ((isset($mode) && ($mode == 'snapshots' || $mode == 'qa'))
 									<p><strong>TS</strong> refers to multithread capable builds. <strong>NTS</strong> refers to single thread only builds. Use case for <strong>TS</strong> binaries involves interaction with
 									a multithreaded <strong>SAPI</strong> and PHP loaded as a module into a web server. For <strong>NTS</strong> binaries the widespread use case is interaction with a web server through
 									the FastCGI protocol, utilizing no multithreading (but also for example CLI).</p>
-									
+
 									<h4><u>What is PGO?</u></h4>
 									<p><a href="http://msdn.microsoft.com/en-us/library/e7k32f4k%28v=vs.110%29.aspx" target="_blank">Profile Guided Optimization</a> is an optimization
 									feature available in Microsoft's Visual C++ compiler that allows you to optimize an output file based on profiling data collected during test runs of the application or module.<p>
@@ -124,7 +118,7 @@ if ((isset($mode) && ($mode == 'snapshots' || $mode == 'qa'))
 
                                     <h3>Archives</h3>
                                     <p>
-                                    Past releases are available from our <a href="https://windows.php.net/downloads/releases/archives/">archives</a>, older versions 
+                                    Past releases are available from our <a href="https://windows.php.net/downloads/releases/archives/">archives</a>, older versions
                                     not found there can be found at the <a href="http://museum.php.net/">Museum</a>.
                                     </p>
 
@@ -136,7 +130,7 @@ if ((isset($mode) && ($mode == 'snapshots' || $mode == 'qa'))
 
 
 <?php
-if ((isset($mode) && $mode == 'snapshots') 
+if ((isset($mode) && $mode == 'snapshots')
 || strpos($_SERVER['SCRIPT_FILENAME'], 'snapshots') !== FALSE)
 
 {
@@ -147,7 +141,7 @@ if ((isset($mode) && $mode == 'snapshots')
 
                                     <h3>Builds time (EST, Europe)</h3>
                                     <p>PHP 5.3 is built every hour</p>
-				    
+
 				    <p>PHP 5.2 two times per day</p>
                                 </div><!-- .info -->
                                <span class="corners-bottom"><span></span></span>
