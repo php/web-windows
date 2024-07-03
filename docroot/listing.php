@@ -36,7 +36,7 @@ include __DIR__ . '/../include/listing.php';
 $baseurl = '/' . $dir_to_parse . '/';
 
 $versions = generate_listing($dir_to_parse, $nmode);
-$major_order = array('8.3', '8.2', '8.1');
+$major_order = array('8.4', '8.3', '8.2', '8.1');
 $minor_order = array(
 		'8.1' => array(
 			'nts-vs16-x64',
@@ -56,6 +56,12 @@ $minor_order = array(
 			'nts-vs16-x86',
 			'ts-vs16-x86'
 		),
+		'8.4' => array(
+			'nts-vs17-x64',
+			'ts-vs17-x64',
+			'nts-vs17-x86',
+			'ts-vs17-x86'
+		),
 	);
 
 $labels = array(
@@ -71,6 +77,10 @@ $labels = array(
 			'ts-vs16-x86'  => 'VS16 x86 Thread Safe',
 			'nts-vs16-x64' => 'VS16 x64 Non Thread Safe',
 			'ts-vs16-x64'  => 'VS16 x64 Thread Safe',
+			'nts-vs17-x86' => 'VS17 x86 Non Thread Safe',
+			'ts-vs17-x86'  => 'VS17 x86 Thread Safe',
+			'nts-vs17-x64' => 'VS17 x64 Non Thread Safe',
+			'ts-vs17-x64'  => 'VS17 x64 Thread Safe',
 );
 
 if ($mode == 'snapshots') {
