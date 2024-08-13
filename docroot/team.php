@@ -52,12 +52,6 @@ include TPL_PATH . 'left_column.php';
 								Development and Q/A
 							</p>
 						</li>
-						<li>
-							<strong><a href="http://people.php.net/dalehirt">Dale Hirt</a></strong>
-							<p>
-								Team Leader, Automation
-							</p>
-						</li>
 					</ul>
                                </div><!-- .info -->
  
@@ -65,6 +59,12 @@ include TPL_PATH . 'left_column.php';
                                    <h3 class="summary entry-title">Former Team Members</h3>
                                    <p></p>
 					<ul class="flex">
+						<li>
+							<strong>Dale Hirt</strong>
+							<p>
+								Team Leader, Automation
+							</p>
+						</li>
 						<li>
 							<strong>Pierre Joye</strong>
 							<p>
