@@ -57,8 +57,8 @@ if ((isset($mode) && ($mode == 'snapshots' || $mode == 'qa'))
 									<p>If you are using PHP as FastCGI with IIS you should use the Non-Thread Safe (NTS) versions of PHP.</p>
 
 									<h4><u>Apache</u></h4>
-									<p>Please use the Apache builds provided by <a href="http://apachelounge.com">Apache Lounge</a>.
-									They provide VC15 and VS16 builds of Apache for x86 and x64.
+									<p>Please use the Apache HTTP Server builds provided by <a href="https://www.apachelounge.com/download/">Apache Lounge</a>.
+									They provide VC16 and VS17 builds of Apache for x86 and x64.
 									We use their binaries to build the Apache SAPIs.</p>
 
 									<p>With Apache, using the apache2handler SAPI, you have to use the Thread Safe (TS) versions of PHP.</p>
