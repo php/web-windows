@@ -62,6 +62,12 @@ $minor_order = array(
 			'nts-vs17-x86',
 			'ts-vs17-x86'
 		),
+		'8.5' => array(
+			'nts-vs17-x64',
+			'ts-vs17-x64',
+			'nts-vs17-x86',
+			'ts-vs17-x86'
+		),
 	);
 
 $labels = array(
