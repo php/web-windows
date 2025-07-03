@@ -83,7 +83,7 @@ foreach ($active_branches as $branch_name) {
 	/* Currently we always regenerate the snaps page completely. Alternatively, some more data might need
 		to be checked, for the case the script execution were caught at unlucky point where some build
 		upload is in the incomplete state. Both methods have their up and down sides. */
-	if ($force || substr($new['revision_last'], 0, 7) != substr($data[$branch_name]['revision_last'], 1)) {
+	if ($force || substr($new['revision_last'], 0, 10) != substr($data[$branch_name]['revision_last'], 1)) {
 		echo "new revision\n";
 		$has_new_revision = true;
 		$data[$branch_name] = $new;
